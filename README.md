@@ -1,14 +1,18 @@
 # Introduction
-    ## Pawn is a company that: a Loaner, a Seller, a Buyer
+
+ ## - Pawn is a company that: a Loaner, a Seller, a Buyer
 
 # Pawn's Company included
-    ## Pawn
-    ## Sales
-    ## Buy
+
+ ## - Pawn
+ ## - Sales
+ ## - Buy
 
 # Build and Test
-    ## Debugging to find error
+
+ ## - Debugging to find error
 
 # Contribute
-    ## Chea Sambo
-    ## Ong Sunlong
+
+ ## - Chea Sambo
+ ## - Ong Sunlong
