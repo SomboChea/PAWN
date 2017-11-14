@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SA_PAWN_Company.GUI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace SA_PAWN_Company
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new frmDashboard());
         }
     }
 }
