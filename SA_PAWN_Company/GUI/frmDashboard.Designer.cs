@@ -51,10 +51,12 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel2.Controls.Add(this.panelMain);
             this.panel2.Controls.Add(this.panelside);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(20, 60);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(714, 281);
@@ -65,9 +67,9 @@
             this.panelMain.BackColor = System.Drawing.Color.Red;
             this.panelMain.Controls.Add(this.btntoggle);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(180, 0);
+            this.panelMain.Location = new System.Drawing.Point(159, 0);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(534, 281);
+            this.panelMain.Size = new System.Drawing.Size(555, 281);
             this.panelMain.TabIndex = 1;
             // 
             // btntoggle
@@ -91,7 +93,7 @@
             this.panelside.HorizontalScrollbarSize = 10;
             this.panelside.Location = new System.Drawing.Point(0, 0);
             this.panelside.Name = "panelside";
-            this.panelside.Size = new System.Drawing.Size(180, 281);
+            this.panelside.Size = new System.Drawing.Size(159, 281);
             this.panelside.TabIndex = 0;
             this.panelside.VerticalScrollbar = true;
             this.panelside.VerticalScrollbarBarColor = true;

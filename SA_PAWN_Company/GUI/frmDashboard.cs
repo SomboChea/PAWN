@@ -43,15 +43,28 @@ namespace SA_PAWN_Company.GUI
 
         private void btntoggle_Click(object sender, EventArgs e)
         {
-         
+            // Way One
+            bool panelstatus = panel2.Location.X > 10;
             for (int i = panelside.Width; i > 0; i--)
             {
-                panelside.Width--;
-                Thread.Sleep(1);
+                panel2.Width+=panelstatus?1:-1;
+                panel2.Location = new Point(panel2.Location.X -(panelstatus?1:-1), panel2.Location.Y);
+                //panelside.Width--;
+                Thread.Sleep(10);
             }
+
+            // Way Two
+
+            //for (int i = panelside.Width; i > 0; i--)
+            //{
+            //    panelside.Width--;
+            //}
+
+
             // panelside.Width = 1;
             // toolStrip1.Location = new Point(-30, 0);
-            
+
+
         }
 
         private void panelside_Paint(object sender, PaintEventArgs e)
