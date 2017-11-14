@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SA_PAWN_Company.Library.Helper
+namespace SA_PAWN_Company
 {
     interface HP
     {
