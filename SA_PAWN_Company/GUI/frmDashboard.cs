@@ -25,14 +25,21 @@ namespace SA_PAWN_Company.GUI
             //toolStrip1.ImageScalingSize = new Size(300, 300);
             //toolStrip1.Refresh();
             //this.Refresh();
+            //toolStripButton1.Alignment = ToolStripItemAlignment.Right;
+            
     
             foreach (ToolStripButton temp in toolStrip1.Items)
             {
+                //temp.Alignment = ToolStripItemAlignment.Right;
                 //temp.ImageScaling = ToolStripItemImageScaling.None;
                 temp.AutoSize = false;
                 temp.Size = new Size(panelside.Width*90/100, panelside.Width * 90 / 100);
               
             }
+            UserControl uc=new UCpawn();
+            uc.Dock = DockStyle.Fill;
+               panelMain.Controls.Add(uc);
+           
 
         }
 
@@ -41,32 +48,50 @@ namespace SA_PAWN_Company.GUI
 
         }
 
+
+        bool Sidebaropen = true;
         private void btntoggle_Click(object sender, EventArgs e)
         {
+            ////////////////////////////////
             // Way One
-            bool panelstatus = panel2.Location.X > 10;
-            for (int i = panelside.Width; i > 0; i--)
+            //bool panelstatus = panel2.Location.X > 10;
+            for (int i = panelside.Width; i > -20; i--)
             {
-                panel2.Width+=panelstatus?1:-1;
-                panel2.Location = new Point(panel2.Location.X -(panelstatus?1:-1), panel2.Location.Y);
+                panel2.Width+=Sidebaropen?1:-1;
+                panel2.Location = new Point(panel2.Location.X - (Sidebaropen ? 1 : -1), panel2.Location.Y);
                 //panelside.Width--;
-                Thread.Sleep(10);
+                //if (i < 100)
+                //{
+                //    foreach (ToolStripButton temp in toolStrip1.Items)
+                //    {
+                //        //temp.ImageScaling = ToolStripItemImageScaling.None;
+                //        //temp.AutoSize = false;
+                //        btntoggle.Text = temp.Size.Width + "";
+                //        temp.Size = new Size(temp.Size.Width - 1, temp.Size.Height - 1);
+                        
+                //        temp.DisplayStyle = Sidebaropen?ToolStripItemDisplayStyle.ImageAndText: ToolStripItemDisplayStyle.Image;
+                //    }
+                //}
+               Thread.Sleep(1 / 3);
             }
+            btntoggle.Text = !Sidebaropen ? "<<<<<<<<<<<<<<<<<" : ">>>>>>>>>>>>>";
+            Sidebaropen = !Sidebaropen;
+            ///////////////////////
 
+            /////////////////////////
             // Way Two
-
             //for (int i = panelside.Width; i > 0; i--)
             //{
             //    panelside.Width--;
             //}
+            /////////////////////////
 
 
             // panelside.Width = 1;
             // toolStrip1.Location = new Point(-30, 0);
 
-
+      
         }
-
         private void panelside_Paint(object sender, PaintEventArgs e)
         {
 

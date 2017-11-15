@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.miniToolStrip = new System.Windows.Forms.ToolStrip();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panelMain = new System.Windows.Forms.Panel();
             this.btntoggle = new System.Windows.Forms.Button();
+            this.panelMain = new System.Windows.Forms.Panel();
             this.panelside = new MetroFramework.Controls.MetroPanel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
+            this.btnPawn = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -42,12 +43,28 @@
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.miniToolStrip = new System.Windows.Forms.ToolStrip();
             this.panel2.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.panelside.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // miniToolStrip
+            // 
+            this.miniToolStrip.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDown;
+            this.miniToolStrip.AutoSize = false;
+            this.miniToolStrip.BackColor = System.Drawing.Color.Transparent;
+            this.miniToolStrip.CanOverflow = false;
+            this.miniToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.miniToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.miniToolStrip.ImageScalingSize = new System.Drawing.Size(100, 100);
+            this.miniToolStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
+            this.miniToolStrip.Location = new System.Drawing.Point(36, 1098);
+            this.miniToolStrip.Name = "miniToolStrip";
+            this.miniToolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.miniToolStrip.Size = new System.Drawing.Size(105, 1100);
+            this.miniToolStrip.Stretch = true;
+            this.miniToolStrip.TabIndex = 2;
             // 
             // panel2
             // 
@@ -62,25 +79,25 @@
             this.panel2.Size = new System.Drawing.Size(714, 281);
             this.panel2.TabIndex = 1;
             // 
+            // btntoggle
+            // 
+            this.btntoggle.Location = new System.Drawing.Point(-34, 0);
+            this.btntoggle.Name = "btntoggle";
+            this.btntoggle.Size = new System.Drawing.Size(75, 23);
+            this.btntoggle.TabIndex = 1;
+            this.btntoggle.Text = "<<<<<<<<<<<<<<";
+            this.btntoggle.UseVisualStyleBackColor = true;
+            this.btntoggle.Click += new System.EventHandler(this.btntoggle_Click);
+            // 
             // panelMain
             // 
-            this.panelMain.BackColor = System.Drawing.Color.Red;
+            this.panelMain.BackColor = System.Drawing.Color.White;
             this.panelMain.Controls.Add(this.btntoggle);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(159, 0);
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(555, 281);
             this.panelMain.TabIndex = 1;
-            // 
-            // btntoggle
-            // 
-            this.btntoggle.Location = new System.Drawing.Point(26, 33);
-            this.btntoggle.Name = "btntoggle";
-            this.btntoggle.Size = new System.Drawing.Size(75, 23);
-            this.btntoggle.TabIndex = 1;
-            this.btntoggle.Text = "button1";
-            this.btntoggle.UseVisualStyleBackColor = true;
-            this.btntoggle.Click += new System.EventHandler(this.btntoggle_Click);
             // 
             // panelside
             // 
@@ -93,10 +110,11 @@
             this.panelside.HorizontalScrollbarSize = 10;
             this.panelside.Location = new System.Drawing.Point(0, 0);
             this.panelside.Name = "panelside";
+            this.panelside.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.panelside.Size = new System.Drawing.Size(159, 281);
             this.panelside.TabIndex = 0;
             this.panelside.VerticalScrollbar = true;
-            this.panelside.VerticalScrollbarBarColor = true;
+            this.panelside.VerticalScrollbarBarColor = false;
             this.panelside.VerticalScrollbarHighlightOnWheel = false;
             this.panelside.VerticalScrollbarSize = 10;
             // 
@@ -107,7 +125,7 @@
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(100, 100);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton9,
+            this.btnPawn,
             this.toolStripButton8,
             this.toolStripButton7,
             this.toolStripButton2,
@@ -120,20 +138,21 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.toolStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.toolStrip1.Size = new System.Drawing.Size(105, 1100);
             this.toolStrip1.Stretch = true;
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton9
+            // btnPawn
             // 
-            this.toolStripButton9.CheckOnClick = true;
-            this.toolStripButton9.Image = global::SA_PAWN_Company.Properties.Resources.ubuntu_logo_32;
-            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton9.Name = "toolStripButton9";
-            this.toolStripButton9.Size = new System.Drawing.Size(103, 119);
-            this.toolStripButton9.Text = "toolStripButton2";
-            this.toolStripButton9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnPawn.CheckOnClick = true;
+            this.btnPawn.Image = global::SA_PAWN_Company.Properties.Resources.icon_pawn_step_4;
+            this.btnPawn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnPawn.Name = "btnPawn";
+            this.btnPawn.Size = new System.Drawing.Size(103, 119);
+            this.btnPawn.Text = "PAWN";
+            this.btnPawn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // toolStripButton8
             // 
@@ -213,23 +232,6 @@
             this.toolStripButton3.Text = "toolStripButton1";
             this.toolStripButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // miniToolStrip
-            // 
-            this.miniToolStrip.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDown;
-            this.miniToolStrip.AutoSize = false;
-            this.miniToolStrip.BackColor = System.Drawing.Color.Transparent;
-            this.miniToolStrip.CanOverflow = false;
-            this.miniToolStrip.Dock = System.Windows.Forms.DockStyle.None;
-            this.miniToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.miniToolStrip.ImageScalingSize = new System.Drawing.Size(100, 100);
-            this.miniToolStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
-            this.miniToolStrip.Location = new System.Drawing.Point(36, 1098);
-            this.miniToolStrip.Name = "miniToolStrip";
-            this.miniToolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.miniToolStrip.Size = new System.Drawing.Size(105, 1100);
-            this.miniToolStrip.Stretch = true;
-            this.miniToolStrip.TabIndex = 2;
-            // 
             // frmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -253,9 +255,13 @@
         }
 
         #endregion
+        private System.Windows.Forms.ToolStrip miniToolStrip;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelMain;
+        private System.Windows.Forms.Button btntoggle;
+        private MetroFramework.Controls.MetroPanel panelside;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton9;
+        private System.Windows.Forms.ToolStripButton btnPawn;
         private System.Windows.Forms.ToolStripButton toolStripButton8;
         private System.Windows.Forms.ToolStripButton toolStripButton7;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
@@ -264,9 +270,5 @@
         private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.ToolStrip miniToolStrip;
-        private System.Windows.Forms.Button btntoggle;
-        private System.Windows.Forms.Panel panelMain;
-        private MetroFramework.Controls.MetroPanel panelside;
     }
 }
