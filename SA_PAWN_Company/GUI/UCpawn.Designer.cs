@@ -50,8 +50,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.metroTextBox6 = new MetroFramework.Controls.MetroTextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.metroComboBox3 = new MetroFramework.Controls.MetroComboBox();
@@ -66,7 +64,10 @@
             this.label12 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.metroTextBox8 = new MetroFramework.Controls.MetroTextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -80,8 +81,10 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.metroComboBox1);
             this.groupBox1.Controls.Add(this.metroTextBox1);
+            this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.metroTextBox8);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Location = new System.Drawing.Point(18, 25);
             this.groupBox1.Name = "groupBox1";
@@ -137,6 +140,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label9);
@@ -348,22 +352,6 @@
             this.metroTextBox6.TabIndex = 2;
             this.metroTextBox6.UseSelectable = true;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(30, 31);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(117, 137);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(15, 31);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(174, 239);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -489,7 +477,7 @@
             this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.ForeColor = System.Drawing.SystemColors.Control;
-            this.button8.Location = new System.Drawing.Point(720, 375);
+            this.button8.Location = new System.Drawing.Point(720, 332);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(311, 41);
             this.button8.TabIndex = 1;
@@ -501,24 +489,54 @@
             this.button9.BackColor = System.Drawing.Color.Blue;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.ForeColor = System.Drawing.SystemColors.Control;
-            this.button9.Location = new System.Drawing.Point(720, 430);
+            this.button9.Location = new System.Drawing.Point(895, 426);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(136, 110);
             this.button9.TabIndex = 1;
             this.button9.Text = "OK";
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
-            // button10
+            // pictureBox2
             // 
-            this.button10.BackColor = System.Drawing.Color.Red;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.ForeColor = System.Drawing.SystemColors.Control;
-            this.button10.Location = new System.Drawing.Point(895, 429);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(136, 110);
-            this.button10.TabIndex = 1;
-            this.button10.Text = "Cancel";
-            this.button10.UseVisualStyleBackColor = false;
+            this.pictureBox2.Location = new System.Drawing.Point(30, 31);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(117, 137);
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(15, 31);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(174, 239);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // metroTextBox8
+            // 
+            this.metroTextBox8.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.metroTextBox8.Lines = new string[0];
+            this.metroTextBox8.Location = new System.Drawing.Point(250, 164);
+            this.metroTextBox8.MaxLength = 32767;
+            this.metroTextBox8.Multiline = true;
+            this.metroTextBox8.Name = "metroTextBox8";
+            this.metroTextBox8.PasswordChar = '\0';
+            this.metroTextBox8.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroTextBox8.SelectedText = "";
+            this.metroTextBox8.Size = new System.Drawing.Size(218, 31);
+            this.metroTextBox8.TabIndex = 2;
+            this.metroTextBox8.UseSelectable = true;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.label13.Location = new System.Drawing.Point(204, 126);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(203, 24);
+            this.label13.TabIndex = 4;
+            this.label13.Text = "Attachment Description";
             // 
             // UCpawn
             // 
@@ -528,7 +546,6 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button10);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
@@ -588,6 +605,7 @@
         private MetroFramework.Controls.MetroTextBox metroTextBox7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Label label13;
+        private MetroFramework.Controls.MetroTextBox metroTextBox8;
     }
 }

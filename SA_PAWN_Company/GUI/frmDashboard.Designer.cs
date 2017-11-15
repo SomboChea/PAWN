@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDashboard));
             this.miniToolStrip = new System.Windows.Forms.ToolStrip();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btntoggle = new System.Windows.Forms.Button();
@@ -43,6 +44,7 @@
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
             this.panel2.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.panelside.SuspendLayout();
@@ -133,16 +135,17 @@
             this.toolStripButton6,
             this.toolStripButton5,
             this.toolStripButton4,
-            this.toolStripButton3});
+            this.toolStripButton3,
+            this.toolStripButton9});
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.toolStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStrip1.Size = new System.Drawing.Size(105, 1100);
-            this.toolStrip1.Stretch = true;
+            this.toolStrip1.Size = new System.Drawing.Size(105, 1226);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
             // 
             // btnPawn
             // 
@@ -151,67 +154,68 @@
             this.btnPawn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnPawn.Name = "btnPawn";
             this.btnPawn.Size = new System.Drawing.Size(103, 119);
-            this.btnPawn.Text = "PAWN";
+            this.btnPawn.Text = "Pawn";
             this.btnPawn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // toolStripButton8
             // 
             this.toolStripButton8.CheckOnClick = true;
-            this.toolStripButton8.Image = global::SA_PAWN_Company.Properties.Resources.ubuntu_logo_32;
+            this.toolStripButton8.Image = global::SA_PAWN_Company.Properties.Resources.Group_icon_blue;
             this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton8.Name = "toolStripButton8";
             this.toolStripButton8.Size = new System.Drawing.Size(103, 119);
-            this.toolStripButton8.Text = "toolStripButton2";
+            this.toolStripButton8.Text = "Employee";
             this.toolStripButton8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // toolStripButton7
             // 
             this.toolStripButton7.CheckOnClick = true;
-            this.toolStripButton7.Image = global::SA_PAWN_Company.Properties.Resources.ubuntu_logo_32;
+            this.toolStripButton7.Image = global::SA_PAWN_Company.Properties.Resources.download;
             this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton7.Name = "toolStripButton7";
             this.toolStripButton7.Size = new System.Drawing.Size(103, 119);
-            this.toolStripButton7.Text = "toolStripButton2";
+            this.toolStripButton7.Text = "Sell";
             this.toolStripButton7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // toolStripButton2
             // 
             this.toolStripButton2.CheckOnClick = true;
-            this.toolStripButton2.Image = global::SA_PAWN_Company.Properties.Resources.ubuntu_logo_32;
+            this.toolStripButton2.Image = global::SA_PAWN_Company.Properties.Resources.cart512x512;
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(103, 119);
-            this.toolStripButton2.Text = "toolStripButton2";
+            this.toolStripButton2.Text = "BUY";
             this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripButton1
             // 
             this.toolStripButton1.CheckOnClick = true;
-            this.toolStripButton1.Image = global::SA_PAWN_Company.Properties.Resources.ubuntu_logo_32;
+            this.toolStripButton1.Image = global::SA_PAWN_Company.Properties.Resources.download1;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(103, 119);
-            this.toolStripButton1.Text = "toolStripButton2";
+            this.toolStripButton1.Text = "Inventory";
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // toolStripButton6
             // 
             this.toolStripButton6.CheckOnClick = true;
-            this.toolStripButton6.Image = global::SA_PAWN_Company.Properties.Resources.ubuntu_logo_32;
+            this.toolStripButton6.Image = global::SA_PAWN_Company.Properties.Resources.download__1_;
             this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton6.Name = "toolStripButton6";
             this.toolStripButton6.Size = new System.Drawing.Size(103, 119);
-            this.toolStripButton6.Text = "toolStripButton2";
+            this.toolStripButton6.Text = "Holiday";
             this.toolStripButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // toolStripButton5
             // 
             this.toolStripButton5.CheckOnClick = true;
-            this.toolStripButton5.Image = global::SA_PAWN_Company.Properties.Resources.logo;
+            this.toolStripButton5.Image = global::SA_PAWN_Company.Properties.Resources.report;
             this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton5.Name = "toolStripButton5";
             this.toolStripButton5.Size = new System.Drawing.Size(103, 119);
-            this.toolStripButton5.Text = "toolStripButton1";
+            this.toolStripButton5.Text = "Report";
             this.toolStripButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // toolStripButton4
@@ -231,6 +235,15 @@
             this.toolStripButton3.Size = new System.Drawing.Size(103, 119);
             this.toolStripButton3.Text = "toolStripButton1";
             this.toolStripButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // toolStripButton9
+            // 
+            this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton9.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton9.Image")));
+            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton9.Name = "toolStripButton9";
+            this.toolStripButton9.Size = new System.Drawing.Size(103, 104);
+            this.toolStripButton9.Text = "toolStripButton9";
             // 
             // frmDashboard
             // 
@@ -270,5 +283,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripButton toolStripButton9;
     }
 }

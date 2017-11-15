@@ -44,8 +44,11 @@
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,6 +58,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GUI\frmDashboard.cs">
@@ -63,17 +67,71 @@
     <Compile Include="GUI\frmDashboard.Designer.cs">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmPay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmPay.Designer.cs">
+      <DependentUpon>frmPay.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UCbuyy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UCbuyy.Designer.cs">
+      <DependentUpon>UCbuyy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UCconvert.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UCconvert.Designer.cs">
+      <DependentUpon>UCconvert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmHoliday.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmHoliday.Designer.cs">
+      <DependentUpon>frmHoliday.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UCHoliday.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UCHoliday.Designer.cs">
+      <DependentUpon>UCHoliday.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UCinventory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UCinventory.Designer.cs">
+      <DependentUpon>UCinventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UCemployee.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UCemployee.Designer.cs">
+      <DependentUpon>UCemployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UCpawn.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="GUI\UCpawn.Designer.cs">
       <DependentUpon>UCpawn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UCReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UCReport.Designer.cs">
+      <DependentUpon>UCReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UCsell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UCsell.Designer.cs">
+      <DependentUpon>UCsell.cs</DependentUpon>
     </Compile>
     <Compile Include="Library\Data\Connection.cs" />
     <Compile Include="Library\Data\DataConnection.cs" />
@@ -84,11 +142,38 @@
     <EmbeddedResource Include="GUI\frmDashboard.resx">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmPay.resx">
+      <DependentUpon>frmPay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UCbuyy.resx">
+      <DependentUpon>UCbuyy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UCconvert.resx">
+      <DependentUpon>UCconvert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmHoliday.resx">
+      <DependentUpon>frmHoliday.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UCHoliday.resx">
+      <DependentUpon>UCHoliday.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UCinventory.resx">
+      <DependentUpon>UCinventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UCemployee.resx">
+      <DependentUpon>UCemployee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\UCpawn.resx">
       <DependentUpon>UCpawn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UCReport.resx">
+      <DependentUpon>UCReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UCsell.resx">
+      <DependentUpon>UCsell.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -131,6 +216,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon_pawn_step_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group_icon_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cart512x512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

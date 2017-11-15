@@ -36,13 +36,14 @@ namespace SA_PAWN_Company.GUI
                 temp.Size = new Size(panelside.Width*90/100, panelside.Width * 90 / 100);
               
             }
-            UserControl uc=new UCpawn();
+            UserControl uc=new UCpawn(panelMain);
             uc.Dock = DockStyle.Fill;
                panelMain.Controls.Add(uc);
            
 
         }
-
+        public static Panel MainPanel;
+        
         private void frmDashboard_Load(object sender, EventArgs e)
         {
 
@@ -93,6 +94,33 @@ namespace SA_PAWN_Company.GUI
       
         }
         private void panelside_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            UserControl UC;
+            switch(e.ClickedItem.Text)
+            {
+
+                case "PAWN":
+                    UC = new UCpawn();
+                    break;
+                case "Employee":
+                    UC = new UCemployee();
+                    break;
+                default:
+                    UC = new UserControl();
+                    break;            
+            }
+            UC.Dock = DockStyle.Fill;
+            foreach (Control temp in this.panelMain.Controls.OfType<UserControl>())
+                this.panelMain.Controls.Remove(temp);
+            panelMain.Controls.Add(UC);
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
         {
 
         }
