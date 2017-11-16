@@ -93,6 +93,7 @@
             // 
             // panelMain
             // 
+            this.panelMain.AutoScroll = true;
             this.panelMain.BackColor = System.Drawing.Color.White;
             this.panelMain.Controls.Add(this.btntoggle);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -138,7 +139,7 @@
             this.toolStripButton3,
             this.toolStripButton9});
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 2301);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.toolStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -220,11 +221,11 @@
             // 
             // toolStripButton4
             // 
-            this.toolStripButton4.Image = global::SA_PAWN_Company.Properties.Resources.Circle_icons_clock_svg;
+            this.toolStripButton4.Image = global::SA_PAWN_Company.Properties.Resources.icon;
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
             this.toolStripButton4.Size = new System.Drawing.Size(103, 119);
-            this.toolStripButton4.Text = "toolStripButton1";
+            this.toolStripButton4.Text = "Account";
             this.toolStripButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // toolStripButton3

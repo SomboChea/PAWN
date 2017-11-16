@@ -104,12 +104,32 @@ namespace SA_PAWN_Company.GUI
             switch(e.ClickedItem.Text)
             {
 
-                case "PAWN":
+                case "Pawn":
                     UC = new UCpawn();
                     break;
                 case "Employee":
                     UC = new UCemployee();
                     break;
+                case "Buy":
+                    UC = new UCbuyy();
+                    break;
+                case "Inventory":
+                    UC = new UCinventory(panelMain);
+                    break;
+                case "Holiday":
+                    UC = new UCHoliday();
+                    break;
+                case "Report":
+                    UC = new UCReport();
+                    break;
+                case "Sell":
+                    UC = new UCsell();
+                    break;
+                case "Account":
+                    UC = new UCaccount();
+                    break;
+              
+
                 default:
                     UC = new UserControl();
                     break;            

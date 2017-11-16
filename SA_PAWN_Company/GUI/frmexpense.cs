@@ -7,20 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework.Forms;
 
 namespace SA_PAWN_Company.GUI
 {
-    public partial class UCHoliday : UserControl
+    public partial class frmexpense : MetroForm
     {
-        public UCHoliday()
+        public frmexpense()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            frmPay frm = new frmPay();
-            frm.ShowDialog();
         }
     }
 }

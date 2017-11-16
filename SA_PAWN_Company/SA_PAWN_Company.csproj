@@ -79,6 +79,12 @@
     <Compile Include="GUI\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UCaccount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UCaccount.Designer.cs">
+      <DependentUpon>UCaccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UCbuyy.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -96,6 +102,12 @@
     </Compile>
     <Compile Include="GUI\frmHoliday.Designer.cs">
       <DependentUpon>frmHoliday.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmexpense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmexpense.Designer.cs">
+      <DependentUpon>frmexpense.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UCHoliday.cs">
       <SubType>UserControl</SubType>
@@ -148,6 +160,9 @@
     <EmbeddedResource Include="GUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UCaccount.resx">
+      <DependentUpon>UCaccount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\UCbuyy.resx">
       <DependentUpon>UCbuyy.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmHoliday.resx">
       <DependentUpon>frmHoliday.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmexpense.resx">
+      <DependentUpon>frmexpense.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UCHoliday.resx">
       <DependentUpon>UCHoliday.cs</DependentUpon>
@@ -234,6 +252,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

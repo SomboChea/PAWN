@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace SA_PAWN_Company.GUI
 {
-    public partial class UCHoliday : UserControl
+    public partial class UCaccount : UserControl
     {
-        public UCHoliday()
+        public UCaccount()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmPay frm = new frmPay();
+            frmexpense frm = new frmexpense();
             frm.ShowDialog();
         }
     }

@@ -88,6 +88,7 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "CANCEL";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -115,6 +116,7 @@
             this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "UCconvert";
             this.Size = new System.Drawing.Size(786, 536);
+            this.Load += new System.EventHandler(this.UCconvert_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -16,5 +16,22 @@ namespace SA_PAWN_Company.GUI
         {
             InitializeComponent();
         }
+        Panel MainPanel;
+        public UCconvert(Panel panel)
+        {
+            InitializeComponent();
+            MainPanel = panel;
+        }
+
+
+        private void UCconvert_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MainPanel.Controls.Remove(this);
+        }
     }
 }

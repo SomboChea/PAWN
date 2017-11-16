@@ -17,6 +17,13 @@ namespace SA_PAWN_Company.GUI
             InitializeComponent();
         }
 
+        Panel MainPanel;
+        public UCinventory(Panel panel)
+        {
+            InitializeComponent();
+            MainPanel = panel;
+        }
+
         private void UCinventory_Load(object sender, EventArgs e)
         {
 
@@ -24,7 +31,9 @@ namespace SA_PAWN_Company.GUI
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            UCconvert uc = new UCconvert(MainPanel);       
+            MainPanel.Controls.Add(uc);
+            uc.BringToFront();
         }
     }
 }
