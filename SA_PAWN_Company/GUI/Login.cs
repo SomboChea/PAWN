@@ -1,4 +1,6 @@
-﻿using MetroFramework.Forms;
+﻿using IniParser;
+using IniParser.Model;
+using MetroFramework.Forms;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -27,36 +29,40 @@ namespace SA_PAWN_Company
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string jsontext = File.ReadAllText(@"D:\SN1.2 C#\PAWN\Lang.json");
-            string jsonsplit = jsontext.Split(',')[3]+ jsontext.Split(',')[4];
-            string jsonfinal = jsonsplit.Substring(1, jsonsplit.Length - 2);
-            JObject json = JObject.Parse(jsonfinal);
-            //JArray jsonrow = new JArray(jsontext);
-            //JObject json=new JObject();
-            //int id = 0;
-            //foreach(JObject temp in jsonrow.Children<JObject>())
-            //{
-            //    if (id == comboBox1.SelectedIndex)
-            //        json = temp;
-            //    id++;
-            //}
-            //label1.Text =id+"";
-            //JObject json = JObject.Parse(jsonrow[0].ToString());
-           // JObject json = new JObject(jsontext);
-            //JObject json = JObject.Parse("{Username:\"ឈ្មោះ\",Password:\"លេខសម្ងាត់\"}");
-            //JObject json = JObject.Parse(jsonrow[0].ToString());
+            //////////////////////////////
+            // way one : JSON (Combobox1)
+            string jsontext = File.ReadAllText(@"D:\SN1.2 C#\PAWN\Language\" + comboBox1.Text + ".json");
+            JObject json = JObject.Parse(jsontext);
+            JArray jarr = new JArray();
             foreach (Control ctrl in Controls)
             {
                 try
                 {
-                    if (json[ctrl.Tag].ToString() != "")
-                    {
-                        ctrl.Text = json[ctrl.Tag].ToString();
-                    }
+                        ctrl.Text = json[ctrl.Tag].ToString();                 
                 }
                 catch (Exception) { }
             }
-            //metroLabel1.Text = File.ReadAllText(@"D:\SN1.2 C#\PAWN\Lang.json");
+            /////////////////////////////////
+
+
+
+       
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ///////////////////////////////////////
+            // Combobox2 : INIparser
+            FileIniDataParser parser = new FileIniDataParser();
+            IniData data = parser.ReadFile(@"D:\SN1.2 C#\PAWN\Language\Lang.ini");
+            foreach(Control temp in Controls)
+            {
+                try
+                {
+                    temp.Text = data[comboBox2.Text][temp.Tag.ToString()];
+                }
+                catch(Exception) { }
+            }
         }
     }
 }
