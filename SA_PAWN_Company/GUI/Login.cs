@@ -58,5 +58,11 @@ namespace SA_PAWN_Company
             }
             //metroLabel1.Text = File.ReadAllText(@"D:\SN1.2 C#\PAWN\Lang.json");
         }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            new GUI.frmDashboard().Show();
+            this.Hide();
+        }
     }
 }
