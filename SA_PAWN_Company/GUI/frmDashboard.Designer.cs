@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDashboard));
             this.miniToolStrip = new System.Windows.Forms.ToolStrip();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btntoggle = new System.Windows.Forms.Button();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.btntoggle = new System.Windows.Forms.Button();
             this.panelside = new MetroFramework.Controls.MetroPanel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnPawn = new System.Windows.Forms.ToolStripButton();
@@ -81,16 +81,6 @@
             this.panel2.Size = new System.Drawing.Size(714, 281);
             this.panel2.TabIndex = 1;
             // 
-            // btntoggle
-            // 
-            this.btntoggle.Location = new System.Drawing.Point(-34, 0);
-            this.btntoggle.Name = "btntoggle";
-            this.btntoggle.Size = new System.Drawing.Size(75, 23);
-            this.btntoggle.TabIndex = 1;
-            this.btntoggle.Text = "<<<<<<<<<<<<<<";
-            this.btntoggle.UseVisualStyleBackColor = true;
-            this.btntoggle.Click += new System.EventHandler(this.btntoggle_Click);
-            // 
             // panelMain
             // 
             this.panelMain.AutoScroll = true;
@@ -101,6 +91,16 @@
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(555, 281);
             this.panelMain.TabIndex = 1;
+            // 
+            // btntoggle
+            // 
+            this.btntoggle.Location = new System.Drawing.Point(-34, 0);
+            this.btntoggle.Name = "btntoggle";
+            this.btntoggle.Size = new System.Drawing.Size(75, 23);
+            this.btntoggle.TabIndex = 1;
+            this.btntoggle.Text = "<<<<<<<<<<<<<<";
+            this.btntoggle.UseVisualStyleBackColor = true;
+            this.btntoggle.Click += new System.EventHandler(this.btntoggle_Click);
             // 
             // panelside
             // 
@@ -139,7 +139,7 @@
             this.toolStripButton3,
             this.toolStripButton9});
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
-            this.toolStrip1.Location = new System.Drawing.Point(0, 2301);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.toolStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;

@@ -66,5 +66,11 @@ namespace SA_PAWN_Company
                 catch(Exception) { }
             }
         }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            new GUI.frmDashboard().Show();
+            this.Hide();
+        }
     }
 }
