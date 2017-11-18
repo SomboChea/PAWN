@@ -51,11 +51,13 @@ namespace SA_PAWN_Company
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+        
             ///////////////////////////////////////
             // Combobox2 : INIparser
             FileIniDataParser parser = new FileIniDataParser();
             IniData data = parser.ReadFile(@"D:\SN1.2 C#\PAWN\Language\Lang.ini");
-            foreach(Control temp in Controls)
+            
+            foreach (Control temp in Controls)
             {
                 try
                 {

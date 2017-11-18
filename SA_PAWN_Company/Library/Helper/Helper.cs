@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace SA_PAWN_Company
 {
-    class Helper
+   public  class Helper
     {
-
+        public static void sdsd (int i,string test="sdsd"){}
     }
 }
