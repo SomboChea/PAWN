@@ -13,6 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace SA_PAWN_Company
 {
     public partial class Login : MetroForm
@@ -24,7 +25,14 @@ namespace SA_PAWN_Company
 
         private void Login_Load(object sender, EventArgs e)
         {
-
+            string st = "";
+            string path = @"‪..\..\..\..\..\Language\";
+            DirectoryInfo dir = new DirectoryInfo(path);
+            foreach (FileInfo temp in dir.GetFiles("*.json"))
+            {
+                st +="  "+ temp.Name.Split('.')[0];
+            };
+            label1.Text = st;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
