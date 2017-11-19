@@ -33,5 +33,15 @@ namespace SA_PAWN_Company.GUI
             MainPanel.Controls.Remove(this);
             MainPanel.Controls.Add(new UCemployee());
         }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTextBox6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
