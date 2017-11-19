@@ -111,7 +111,7 @@ namespace SA_PAWN_Company.GUI
                     UC = new UCemployee();
                     break;
                 case "Buy":
-                    UC = new UCbuyy();
+                    UC = new UCbuy();
                     break;
                 case "Inventory":
                     UC = new UCinventory(panelMain);
