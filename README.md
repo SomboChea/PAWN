@@ -58,10 +58,10 @@
 
 ###    <code>function getScore(name, branch) {</code>
     
-###        <code>if(branch==git.getBranch)</code>
-###             <code>return branch.hasDo ? name.addOne : name.removeOne;</code>
-###        <code>else</code>
-###             <code>return null;</code>
+###        <code>  if(branch==git.getBranch)</code>
+###             <code>  return branch.hasDo ? name.addOne : name.removeOne;</code>
+###        <code>  else</code>
+###             <code>  return null;</code>
 
 ###    <code>}</code>
 
