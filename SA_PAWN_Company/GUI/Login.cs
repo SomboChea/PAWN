@@ -26,7 +26,7 @@ namespace SA_PAWN_Company
         private void Login_Load(object sender, EventArgs e)
         {
             string st = "";
-            string path = @".\Language\";
+            string path = @"..\..\Language\";
             DirectoryInfo dir = new DirectoryInfo(path);
             foreach (FileInfo temp in dir.GetFiles())
             {
