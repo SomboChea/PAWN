@@ -1,24 +1,24 @@
-# Introduction
+# <b>Introduction</b>
 
 ## - Pawn is a company that: a Loaner, a Seller, a Buyer
 
-# Pawn's Company included
+# <b>Pawn's Company included</b>
 
 ## - Pawn
 ## - Sales
 ## - Buy
 
-# Build and Test
+# <b>Build and Test</b>
 
 ## - Debugging to find error
 
 <br />
-# Master & Contributor
+# <b>Master & Contributor</b>
 
 ## - Chea Sambo
 ## - Ong Sunlong
 
-# Developer
+# <b>Developer</b>
 
 ## - LyHeng
 ## - Hilux
@@ -28,7 +28,7 @@
 ## - Kimhong
 
 <br />
-# GIT USAGE
+# <b>GIT USAGE</b>
 
 ## - ADD / STATUS
 ### <code>git status</code>
