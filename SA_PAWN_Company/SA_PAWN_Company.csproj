@@ -87,11 +87,11 @@
     <Compile Include="GUI\UCaccount.Designer.cs">
       <DependentUpon>UCaccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UCbuyy.cs">
+    <Compile Include="GUI\UCbuy.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UCbuyy.Designer.cs">
-      <DependentUpon>UCbuyy.cs</DependentUpon>
+    <Compile Include="GUI\UCbuy.Designer.cs">
+      <DependentUpon>UCbuy.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UCconvert.cs">
       <SubType>UserControl</SubType>
@@ -161,8 +161,8 @@
     <EmbeddedResource Include="GUI\UCaccount.resx">
       <DependentUpon>UCaccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UCbuyy.resx">
-      <DependentUpon>UCbuyy.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\UCbuy.resx">
+      <DependentUpon>UCbuy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UCconvert.resx">
       <DependentUpon>UCconvert.cs</DependentUpon>

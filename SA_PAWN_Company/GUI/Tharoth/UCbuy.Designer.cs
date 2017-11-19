@@ -1,6 +1,6 @@
 ﻿namespace SA_PAWN_Company.GUI
 {
-    partial class UCbuyy
+    partial class UCbuy
     {
         /// <summary> 
         /// Required designer variable.
