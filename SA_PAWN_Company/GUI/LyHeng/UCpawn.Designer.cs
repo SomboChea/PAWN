@@ -98,7 +98,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(203, 77);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 26);
+            this.label2.Size = new System.Drawing.Size(75, 31);
             this.label2.TabIndex = 4;
             this.label2.Text = "Type";
             // 
@@ -107,17 +107,17 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(203, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 26);
+            this.label1.Size = new System.Drawing.Size(108, 31);
             this.label1.TabIndex = 4;
             this.label1.Text = "Name : ";
             // 
             // metroComboBox1
             // 
             this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
+            this.metroComboBox1.ItemHeight = 24;
             this.metroComboBox1.Location = new System.Drawing.Point(298, 77);
             this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(92, 29);
+            this.metroComboBox1.Size = new System.Drawing.Size(92, 30);
             this.metroComboBox1.TabIndex = 3;
             this.metroComboBox1.UseSelectable = true;
             // 
@@ -142,7 +142,7 @@
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.label13.Location = new System.Drawing.Point(204, 126);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(203, 24);
+            this.label13.Size = new System.Drawing.Size(259, 29);
             this.label13.TabIndex = 4;
             this.label13.Text = "Attachment Description";
             // 
@@ -220,7 +220,7 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(6, 261);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(128, 26);
+            this.label12.Size = new System.Drawing.Size(160, 31);
             this.label12.TabIndex = 4;
             this.label12.Text = "Interest Pay";
             // 
@@ -229,7 +229,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(6, 214);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(84, 26);
+            this.label10.Size = new System.Drawing.Size(106, 31);
             this.label10.TabIndex = 4;
             this.label10.Text = "Interest";
             // 
@@ -238,27 +238,27 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(6, 169);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(177, 26);
+            this.label9.Size = new System.Drawing.Size(218, 31);
             this.label9.TabIndex = 4;
             this.label9.Text = "Payment Method";
             // 
             // metroComboBox5
             // 
             this.metroComboBox5.FormattingEnabled = true;
-            this.metroComboBox5.ItemHeight = 23;
+            this.metroComboBox5.ItemHeight = 24;
             this.metroComboBox5.Location = new System.Drawing.Point(210, 258);
             this.metroComboBox5.Name = "metroComboBox5";
-            this.metroComboBox5.Size = new System.Drawing.Size(201, 29);
+            this.metroComboBox5.Size = new System.Drawing.Size(201, 30);
             this.metroComboBox5.TabIndex = 3;
             this.metroComboBox5.UseSelectable = true;
             // 
             // metroComboBox4
             // 
             this.metroComboBox4.FormattingEnabled = true;
-            this.metroComboBox4.ItemHeight = 23;
+            this.metroComboBox4.ItemHeight = 24;
             this.metroComboBox4.Location = new System.Drawing.Point(210, 211);
             this.metroComboBox4.Name = "metroComboBox4";
-            this.metroComboBox4.Size = new System.Drawing.Size(201, 29);
+            this.metroComboBox4.Size = new System.Drawing.Size(201, 30);
             this.metroComboBox4.TabIndex = 3;
             this.metroComboBox4.UseSelectable = true;
             // 
@@ -267,17 +267,17 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(6, 125);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(94, 26);
+            this.label8.Size = new System.Drawing.Size(117, 31);
             this.label8.TabIndex = 4;
             this.label8.Text = "Duration";
             // 
             // metroComboBox3
             // 
             this.metroComboBox3.FormattingEnabled = true;
-            this.metroComboBox3.ItemHeight = 23;
+            this.metroComboBox3.ItemHeight = 24;
             this.metroComboBox3.Location = new System.Drawing.Point(210, 166);
             this.metroComboBox3.Name = "metroComboBox3";
-            this.metroComboBox3.Size = new System.Drawing.Size(201, 29);
+            this.metroComboBox3.Size = new System.Drawing.Size(201, 30);
             this.metroComboBox3.TabIndex = 3;
             this.metroComboBox3.UseSelectable = true;
             // 
@@ -286,7 +286,7 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(6, 82);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(116, 26);
+            this.label11.Size = new System.Drawing.Size(143, 31);
             this.label11.TabIndex = 4;
             this.label11.Text = "Loan Price";
             // 
@@ -305,7 +305,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(6, 45);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 26);
+            this.label3.Size = new System.Drawing.Size(86, 31);
             this.label3.TabIndex = 4;
             this.label3.Text = "Name";
             // 
@@ -322,10 +322,10 @@
             // metroComboBox2
             // 
             this.metroComboBox2.FormattingEnabled = true;
-            this.metroComboBox2.ItemHeight = 23;
+            this.metroComboBox2.ItemHeight = 24;
             this.metroComboBox2.Location = new System.Drawing.Point(210, 122);
             this.metroComboBox2.Name = "metroComboBox2";
-            this.metroComboBox2.Size = new System.Drawing.Size(201, 29);
+            this.metroComboBox2.Size = new System.Drawing.Size(201, 30);
             this.metroComboBox2.TabIndex = 3;
             this.metroComboBox2.UseSelectable = true;
             // 
@@ -433,7 +433,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(163, 152);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 26);
+            this.label7.Size = new System.Drawing.Size(114, 31);
             this.label7.TabIndex = 4;
             this.label7.Text = "Address";
             // 
@@ -442,7 +442,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(163, 110);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 26);
+            this.label6.Size = new System.Drawing.Size(52, 31);
             this.label6.TabIndex = 4;
             this.label6.Text = "Tel";
             // 
@@ -452,7 +452,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.label5.Location = new System.Drawing.Point(163, 73);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(203, 24);
+            this.label5.Size = new System.Drawing.Size(259, 29);
             this.label5.TabIndex = 4;
             this.label5.Text = "Attachment Description";
             // 
@@ -461,7 +461,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(163, 36);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 26);
+            this.label4.Size = new System.Drawing.Size(108, 31);
             this.label4.TabIndex = 4;
             this.label4.Text = "Name : ";
             // 
@@ -518,7 +518,7 @@
             this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.ForeColor = System.Drawing.SystemColors.Control;
-            this.button8.Location = new System.Drawing.Point(717, 438);
+            this.button8.Location = new System.Drawing.Point(717, 421);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(311, 41);
             this.button8.TabIndex = 1;
@@ -540,7 +540,7 @@
             // 
             // UCpawn
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.groupBox2);
