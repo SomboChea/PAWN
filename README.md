@@ -55,16 +55,15 @@
 <br />
 <br />
 # Score Function
-### <code>
-###    function getScore(name, branch) {
-    
-###        if(branch==git.getBranch)
-###             return branch.hasDo ? name.addOne : name.removeOne;
-###        else
-###             return null;
 
-###    }
-###</code>
+###    <code>function getScore(name, branch) {</code>
+    
+###        <code>if(branch==git.getBranch)</code>
+###             <code>return branch.hasDo ? name.addOne : name.removeOne;</code>
+###        <code>else</code>
+###             <code>return null;</code>
+
+###    <code>}</code>
 
 <br />
 ### Meaning if someone has do, score will be add one automatically. Revseved someone not do score will be remove one.
