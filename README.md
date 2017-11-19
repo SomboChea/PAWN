@@ -29,7 +29,7 @@
 # GIT USAGE
 
 ## - ADD / STATUS
-### git status
+<code>git status</code>
 ### Meaning: view git files has changed
 ### git add <file>
 ### Example 1: git add myfile.txt
