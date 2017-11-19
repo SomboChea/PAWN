@@ -8,9 +8,10 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>SA_PAWN_Company</RootNamespace>
     <AssemblyName>SA_PAWN_Company</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -67,21 +68,16 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GUI\frmDashboard.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="GUI\frmDashboard.cs" />
     <Compile Include="GUI\frmDashboard.Designer.cs">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\frmPay.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="GUI\frmPay.cs" />
     <Compile Include="GUI\frmPay.Designer.cs">
       <DependentUpon>frmPay.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="GUI\FromLyHeng.cs" />
+    <Compile Include="GUI\Login.cs" />
     <Compile Include="GUI\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
@@ -103,15 +99,11 @@
     <Compile Include="GUI\UCconvert.Designer.cs">
       <DependentUpon>UCconvert.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\frmHoliday.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="GUI\frmHoliday.cs" />
     <Compile Include="GUI\frmHoliday.Designer.cs">
       <DependentUpon>frmHoliday.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\frmexpense.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="GUI\frmexpense.cs" />
     <Compile Include="GUI\frmexpense.Designer.cs">
       <DependentUpon>frmexpense.cs</DependentUpon>
     </Compile>
