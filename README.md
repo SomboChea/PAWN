@@ -12,7 +12,7 @@
 
 ## - Debugging to find error
 
-<hr />
+<br />
 # Master & Contributor
 
 ## - Chea Sambo
@@ -27,7 +27,7 @@
 ## - Sellida
 ## - Kimhong
 
-<hr />
+<br />
 # GIT USAGE
 
 ## - ADD / STATUS
