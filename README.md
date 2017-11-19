@@ -51,3 +51,20 @@
 ### <code>git push -u [remote] [branchname]
 ### Example 1: <code>git push -u origin master</code> (Push to Master's Branch)
 ### Example 2: <code>git push -u origin LyHeng</code> (Push to LyHeng's Branch)
+
+<br />
+<br />
+# Score Function
+### <code>
+###    function getScore(name, branch) {
+    
+###        if(branch==git.getBranch)
+###             return branch.hasDo ? name.addOne : name.removeOne;
+###        else
+###             return null;
+
+###    }
+###</code>
+
+<br />
+### Meaning if someone has do, score will be add one automatically. Revseved someone not do score will be remove one.
