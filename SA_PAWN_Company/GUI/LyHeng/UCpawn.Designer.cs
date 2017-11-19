@@ -208,7 +208,7 @@
             this.groupBox2.Controls.Add(this.metroTextBox7);
             this.groupBox2.Controls.Add(this.metroTextBox2);
             this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Location = new System.Drawing.Point(507, 25);
+            this.groupBox2.Location = new System.Drawing.Point(595, 25);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(539, 293);
             this.groupBox2.TabIndex = 0;
@@ -518,7 +518,7 @@
             this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.ForeColor = System.Drawing.SystemColors.Control;
-            this.button8.Location = new System.Drawing.Point(717, 421);
+            this.button8.Location = new System.Drawing.Point(715, 384);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(311, 41);
             this.button8.TabIndex = 1;
@@ -551,7 +551,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "UCpawn";
-            this.Size = new System.Drawing.Size(1063, 595);
+            this.Size = new System.Drawing.Size(1238, 787);
             this.Load += new System.EventHandler(this.UCpawn_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
