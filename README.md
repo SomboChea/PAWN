@@ -29,14 +29,14 @@
 # GIT USAGE
 
 ## - ADD / STATUS
-<code>git status</code>
+### <code>git status</code>
 ### Meaning: view git files has changed
-### git add <file>
-### Example 1: git add myfile.txt
-### Example 2: git add .
+### <code>git add <file> </code>
+### Example 1: <code>git add myfile.txt<code>
+### Example 2: <code>git add .</code>
 ### Meaning add all files & folders
 ## - COMMIT / CHANGE
-### git commit -m <message>
+### <code>git commit -m <message></code>
 ### Example: git commit -m "My Changed"
 ## - FETCH / PULL
 ### git fetch
