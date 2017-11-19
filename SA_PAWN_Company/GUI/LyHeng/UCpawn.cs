@@ -31,7 +31,7 @@ namespace SA_PAWN_Company.GUI
         private void button9_Click(object sender, EventArgs e)
         {
             MainPanel.Controls.Remove(this);
-            MainPanel.Controls.Add(new UCemployee());
+            MainPanel.Controls.Add(new GUI.Hilux.UCemployee());
         }
 
         private void label13_Click(object sender, EventArgs e)
