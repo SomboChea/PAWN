@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SA_PAWN_Company.GUI.Hilux
+namespace SA_PAWN_Company.GUI
 {
     public partial class UCemployee : UserControl
     {
