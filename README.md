@@ -43,7 +43,7 @@
 ## - FETCH / PULL
 ### <code>git fetch</code>
 ### <code>git pull</code>
-### <code>git pull <remote> <branchname></code>
+### <code>git pull [remote] [branchname]</code>
 ### Example 1: <code>git pull origin master</code> (From Master's Branch)
 ### Example 2: <code>git pull origin LyHeng</code> (From LyHeng's Branch)
 
