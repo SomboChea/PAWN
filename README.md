@@ -8,10 +8,6 @@
 ## - Sales
 ## - Buy
 
-# <b>Build and Test</b>
-
-## - Debugging to find error
-
 <br />
 # <b>Master & Contributor</b>
 
@@ -59,9 +55,9 @@
 ###    <code>function getScore(name, branch) {</code>
     
 ###        <code>  if(branch==git.getBranch)</code>
-###             <code>  return branch.hasDo ? name.addOne : name.removeOne;</code>
+###             <code>    return branch.hasDo ? name.addOne : name.removeOne;</code>
 ###        <code>  else</code>
-###             <code>  return null;</code>
+###             <code>    return null;</code>
 
 ###    <code>}</code>
 
