@@ -68,16 +68,21 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GUI\frmDashboard.cs" />
+    <Compile Include="GUI\frmDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GUI\frmDashboard.Designer.cs">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\frmPay.cs" />
+    <Compile Include="GUI\frmPay.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GUI\frmPay.Designer.cs">
       <DependentUpon>frmPay.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\FromLyHeng.cs" />
-    <Compile Include="GUI\Login.cs" />
+    <Compile Include="GUI\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GUI\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
@@ -87,10 +92,10 @@
     <Compile Include="GUI\UCaccount.Designer.cs">
       <DependentUpon>UCaccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UCbuy.cs">
+    <Compile Include="GUI\Tharoth\UCbuy.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UCbuy.Designer.cs">
+    <Compile Include="GUI\Tharoth\UCbuy.Designer.cs">
       <DependentUpon>UCbuy.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UCconvert.cs">
@@ -99,11 +104,15 @@
     <Compile Include="GUI\UCconvert.Designer.cs">
       <DependentUpon>UCconvert.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\frmHoliday.cs" />
+    <Compile Include="GUI\frmHoliday.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GUI\frmHoliday.Designer.cs">
       <DependentUpon>frmHoliday.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\frmexpense.cs" />
+    <Compile Include="GUI\frmexpense.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GUI\frmexpense.Designer.cs">
       <DependentUpon>frmexpense.cs</DependentUpon>
     </Compile>
@@ -113,22 +122,22 @@
     <Compile Include="GUI\UCHoliday.Designer.cs">
       <DependentUpon>UCHoliday.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UCinventory.cs">
+    <Compile Include="GUI\Lida\UCinventory.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UCinventory.Designer.cs">
+    <Compile Include="GUI\Lida\UCinventory.Designer.cs">
       <DependentUpon>UCinventory.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UCemployee.cs">
+    <Compile Include="GUI\Hilux\UCemployee.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UCemployee.Designer.cs">
+    <Compile Include="GUI\Hilux\UCemployee.Designer.cs">
       <DependentUpon>UCemployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UCpawn.cs">
+    <Compile Include="GUI\LyHeng\UCpawn.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UCpawn.Designer.cs">
+    <Compile Include="GUI\LyHeng\UCpawn.Designer.cs">
       <DependentUpon>UCpawn.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UCReport.cs">
@@ -137,10 +146,10 @@
     <Compile Include="GUI\UCReport.Designer.cs">
       <DependentUpon>UCReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UCsell.cs">
+    <Compile Include="GUI\Theareach\UCsell.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UCsell.Designer.cs">
+    <Compile Include="GUI\Theareach\UCsell.Designer.cs">
       <DependentUpon>UCsell.cs</DependentUpon>
     </Compile>
     <Compile Include="Library\Data\Connection.cs" />
@@ -161,7 +170,7 @@
     <EmbeddedResource Include="GUI\UCaccount.resx">
       <DependentUpon>UCaccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UCbuy.resx">
+    <EmbeddedResource Include="GUI\Tharoth\UCbuy.resx">
       <DependentUpon>UCbuy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UCconvert.resx">
@@ -176,19 +185,19 @@
     <EmbeddedResource Include="GUI\UCHoliday.resx">
       <DependentUpon>UCHoliday.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UCinventory.resx">
+    <EmbeddedResource Include="GUI\Lida\UCinventory.resx">
       <DependentUpon>UCinventory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UCemployee.resx">
+    <EmbeddedResource Include="GUI\Hilux\UCemployee.resx">
       <DependentUpon>UCemployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UCpawn.resx">
+    <EmbeddedResource Include="GUI\LyHeng\UCpawn.resx">
       <DependentUpon>UCpawn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UCReport.resx">
       <DependentUpon>UCReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UCsell.resx">
+    <EmbeddedResource Include="GUI\Theareach\UCsell.resx">
       <DependentUpon>UCsell.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -216,6 +225,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="GUI\Hong\" />
     <Folder Include="Reports\" />
   </ItemGroup>
   <ItemGroup>
