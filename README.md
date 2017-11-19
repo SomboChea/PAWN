@@ -1,51 +1,65 @@
-# Introduction
+# <b>Introduction</b>
 
- ## - Pawn is a company that: a Loaner, a Seller, a Buyer
+## - Pawn is a company that: a Loaner, a Seller, a Buyer
 
-# Pawn's Company included
+# <b>Pawn's Company included</b>
 
- ## - Pawn
- ## - Sales
- ## - Buy
+## - Pawn
+## - Sales
+## - Buy
 
-# Build and Test
+<br />
+# <b>Master & Contributor</b>
 
- ## - Debugging to find error
+## - Chea Sambo
+## - Ong Sunlong
 
-# Master & Contributor
+# <b>Developer</b>
 
- ## - Chea Sambo
- ## - Ong Sunlong
+## - LyHeng
+## - Hilux
+## - Theareach
+## - Tharoth
+## - Sellida
+## - Kimhong
 
- # Developer
+<br />
+# <b>GIT USAGE</b>
 
- ## - LyHeng
- ## - Hilux
- ## - Theareach
- ## - Tharoth
- ## - Sellida
- ## - Kimhong
+## - ADD / STATUS
+### <code>git status</code>
+### Meaning: view git files has changed
+### <code>git add [file] </code>
+### Example 1: <code>git add myfile.txt<code>
+### Example 2: <code>git add .</code>
+### Meaning add all files & folders
+## - COMMIT / CHANGE
+### <code>git commit -m [message]</code>
+### Example: <code>git commit -m "My Changed"</code>
+## - FETCH / PULL
+### <code>git fetch</code>
+### <code>git pull</code>
+### <code>git pull [remote] [branchname]</code>
+### Example 1: <code>git pull origin master</code> (From Master's Branch)
+### Example 2: <code>git pull origin LyHeng</code> (From LyHeng's Branch)
 
- # GIT USAGE
+## - PUSH
+### <code>git push -u [remote] [branchname]
+### Example 1: <code>git push -u origin master</code> (Push to Master's Branch)
+### Example 2: <code>git push -u origin LyHeng</code> (Push to LyHeng's Branch)
 
- ## - ADD / STATUS
- ### git status
- ### Meaning: view git files has changed
- ### git add <file>
- ### Example 1: git add myfile.txt
- ### Example 2: git add .
- ### Meaning add all files & folders
- ## - COMMIT / CHANGE
- ### git commit -m <message>
- ### Example: git commit -m "My Changed"
- ## - FETCH / PULL
- ### git fetch
- ### git pull
- ### git pull <remote> <branchname>
- ### Example 1: git pull origin master (From Master's Branch)
- ### Example 2: git pull origin LyHeng (From LyHeng's Branch)
+<br />
+<br />
+# Score Function
 
- ## - PUSH
- ### git push -u <remote> <branchname>
- ### Example 1: git push -u origin master (Push to Master's Branch)
- ### Example 2: git push -u origin LyHeng (Push to LyHeng's Branch)
+###    <code>function getScore(name, branch) {</code>
+    
+###        <code>  if(branch==git.getBranch)</code>
+###             <code>    return branch.hasDo ? name.addOne : name.removeOne;</code>
+###        <code>  else</code>
+###             <code>    return null;</code>
+
+###    <code>}</code>
+
+<br />
+### Meaning if someone has do, score will be add one automatically. Revseved someone not do score will be remove one.
