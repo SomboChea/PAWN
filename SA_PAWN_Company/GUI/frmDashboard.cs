@@ -18,7 +18,7 @@ namespace SA_PAWN_Company.GUI
         {
             InitializeComponent();
       
-            panelside.Size = new Size(this.Size.Width * 20/100,this.Size.Height);
+            panelside.Size = new Size(this.Size.Width * 15/100,this.Size.Height);
             toolStrip1.Size = new Size(panelside.Size.Width, toolStrip1.Size.Height);
             //toolStripButton2.Size = new Size(toolStrip1.Size.Width * 90 / 100, toolStrip1.Size.Width * 90 / 100);
             //toolStrip1.ImageScalingSize = new Size(100,  100);
@@ -34,11 +34,13 @@ namespace SA_PAWN_Company.GUI
                 //temp.ImageScaling = ToolStripItemImageScaling.None;
                 temp.AutoSize = false;
                 temp.Size = new Size(panelside.Width*90/100, panelside.Width * 90 / 100);
-              
+                temp.CheckOnClick = false;
             }
+
+
             UserControl uc=new UCpawn(panelMain);
             uc.Dock = DockStyle.Fill;
-               panelMain.Controls.Add(uc);
+            panelMain.Controls.Add(uc);
            
 
         }
@@ -101,14 +103,15 @@ namespace SA_PAWN_Company.GUI
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
             UserControl UC;
+            
             switch(e.ClickedItem.Text)
             {
-
+                
                 case "Pawn":
                     UC = new UCpawn();
                     break;
                 case "Employee":
-                    UC = new UCemployee();
+                    UC = new GUI.Hilux.UCemployee();
                     break;
                 case "Buy":
                     UC = new UCbuy();
@@ -122,7 +125,7 @@ namespace SA_PAWN_Company.GUI
                 case "Report":
                     UC = new UCReport();
                     break;
-                case "Sell":
+                case "Sale":
                     UC = new UCsell();
                     break;
                 case "Account":
@@ -134,15 +137,32 @@ namespace SA_PAWN_Company.GUI
                     UC = new UserControl();
                     break;            
             }
+            
             UC.Dock = DockStyle.Fill;
+            foreach (ToolStripButton temp in toolStrip1.Items)
+            {
+                if (temp.Text == e.ClickedItem.Text)
+                {
+                    temp.Checked = true;
+                    continue;
+                }
+                temp.Checked = false;
+            }
+            foreach (Control c in UC.Controls)
+                c.Anchor = AnchorStyles.Top;
+            
             foreach (Control temp in this.panelMain.Controls.OfType<UserControl>())
+            {
                 this.panelMain.Controls.Remove(temp);
+            }
             panelMain.Controls.Add(UC);
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-
+            
         }
+
+        
     }
 }

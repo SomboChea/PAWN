@@ -164,7 +164,7 @@
             this.groupBox1.Controls.Add(this.metroButton2);
             this.groupBox1.Controls.Add(this.metroTextBox2);
             this.groupBox1.Controls.Add(this.metroButton1);
-            this.groupBox1.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("AKbalthom KhmerLer", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(262, 382);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(664, 344);

@@ -39,9 +39,7 @@
             // 
             // listView1
             // 
-            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listView1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.listView1.Location = new System.Drawing.Point(27, 198);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(913, 429);
@@ -50,6 +48,7 @@
             // 
             // bunifuTileButton6
             // 
+            this.bunifuTileButton6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.bunifuTileButton6.BackColor = System.Drawing.Color.SeaGreen;
             this.bunifuTileButton6.color = System.Drawing.Color.SeaGreen;
             this.bunifuTileButton6.colorActive = System.Drawing.Color.MediumSeaGreen;
@@ -69,6 +68,7 @@
             // 
             // bunifuTileButton5
             // 
+            this.bunifuTileButton5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.bunifuTileButton5.BackColor = System.Drawing.Color.SeaGreen;
             this.bunifuTileButton5.color = System.Drawing.Color.SeaGreen;
             this.bunifuTileButton5.colorActive = System.Drawing.Color.MediumSeaGreen;
@@ -88,6 +88,7 @@
             // 
             // bunifuTileButton4
             // 
+            this.bunifuTileButton4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.bunifuTileButton4.BackColor = System.Drawing.Color.SeaGreen;
             this.bunifuTileButton4.color = System.Drawing.Color.SeaGreen;
             this.bunifuTileButton4.colorActive = System.Drawing.Color.MediumSeaGreen;
@@ -107,6 +108,7 @@
             // 
             // bunifuTileButton3
             // 
+            this.bunifuTileButton3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.bunifuTileButton3.BackColor = System.Drawing.Color.SeaGreen;
             this.bunifuTileButton3.color = System.Drawing.Color.SeaGreen;
             this.bunifuTileButton3.colorActive = System.Drawing.Color.MediumSeaGreen;
@@ -126,6 +128,7 @@
             // 
             // bunifuTileButton2
             // 
+            this.bunifuTileButton2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.bunifuTileButton2.BackColor = System.Drawing.Color.SeaGreen;
             this.bunifuTileButton2.color = System.Drawing.Color.SeaGreen;
             this.bunifuTileButton2.colorActive = System.Drawing.Color.MediumSeaGreen;
@@ -145,6 +148,7 @@
             // 
             // bunifuTileButton1
             // 
+            this.bunifuTileButton1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.bunifuTileButton1.BackColor = System.Drawing.Color.SeaGreen;
             this.bunifuTileButton1.color = System.Drawing.Color.SeaGreen;
             this.bunifuTileButton1.colorActive = System.Drawing.Color.MediumSeaGreen;
@@ -174,7 +178,7 @@
             this.Controls.Add(this.bunifuTileButton1);
             this.Controls.Add(this.listView1);
             this.Name = "UCinventory";
-            this.Size = new System.Drawing.Size(971, 655);
+            this.Size = new System.Drawing.Size(971, 644);
             this.Load += new System.EventHandler(this.UCinventory_Load);
             this.ResumeLayout(false);
 
