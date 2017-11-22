@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2002
+VisualStudioVersion = 15.0.27004.2006
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SA_PAWN_Company", "SA_PAWN_Company\SA_PAWN_Company.csproj", "{DAD9771A-7F72-4635-82B0-8002DDE1EFB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpers", "Helpers\Helpers.csproj", "{3EBD23A0-04DE-4F61-AD7A-BCF1F4585AB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataConnection", "DataConnection\DataConnection.csproj", "{D3CE12CC-8526-42A1-BD11-AF3D7F4DB2EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{DAD9771A-7F72-4635-82B0-8002DDE1EFB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DAD9771A-7F72-4635-82B0-8002DDE1EFB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DAD9771A-7F72-4635-82B0-8002DDE1EFB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EBD23A0-04DE-4F61-AD7A-BCF1F4585AB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EBD23A0-04DE-4F61-AD7A-BCF1F4585AB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EBD23A0-04DE-4F61-AD7A-BCF1F4585AB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EBD23A0-04DE-4F61-AD7A-BCF1F4585AB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3CE12CC-8526-42A1-BD11-AF3D7F4DB2EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3CE12CC-8526-42A1-BD11-AF3D7F4DB2EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3CE12CC-8526-42A1-BD11-AF3D7F4DB2EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3CE12CC-8526-42A1-BD11-AF3D7F4DB2EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

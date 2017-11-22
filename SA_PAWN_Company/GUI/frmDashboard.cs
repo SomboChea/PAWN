@@ -1,4 +1,5 @@
-﻿using MetroFramework.Forms;
+﻿using Helper;
+using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,7 +47,7 @@ namespace SA_PAWN_Company.GUI
         
         private void frmDashboard_Load(object sender, EventArgs e)
         {
-
+           
         }
 
 

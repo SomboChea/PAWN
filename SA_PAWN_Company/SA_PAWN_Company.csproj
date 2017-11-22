@@ -160,10 +160,6 @@
     <Compile Include="GUI\Theareach\UCsell.Designer.cs">
       <DependentUpon>UCsell.cs</DependentUpon>
     </Compile>
-    <Compile Include="Library\Data\Connection.cs" />
-    <Compile Include="Library\Data\DataConnection.cs" />
-    <Compile Include="Library\Helper\Helper.cs" />
-    <Compile Include="Library\Helper\HP.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\frmDashboard.resx">
@@ -301,6 +297,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\badge1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataConnection\DataConnection.csproj">
+      <Project>{d3ce12cc-8526-42a1-bd11-af3d7f4db2ef}</Project>
+      <Name>DataConnection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Helpers\Helpers.csproj">
+      <Project>{3ebd23a0-04de-4f61-ad7a-bcf1f4585ab5}</Project>
+      <Name>Helpers</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
