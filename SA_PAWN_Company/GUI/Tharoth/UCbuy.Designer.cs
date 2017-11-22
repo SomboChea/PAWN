@@ -64,7 +64,7 @@
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.metroTextBox8);
             this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Location = new System.Drawing.Point(82, 78);
+            this.groupBox1.Location = new System.Drawing.Point(17, 20);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(820, 432);
             this.groupBox1.TabIndex = 1;
@@ -223,10 +223,11 @@
             // 
             // button3
             // 
+            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button3.BackColor = System.Drawing.Color.Red;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.SystemColors.Control;
-            this.button3.Location = new System.Drawing.Point(733, 533);
+            this.button3.Location = new System.Drawing.Point(668, 468);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(169, 43);
             this.button3.TabIndex = 1;
@@ -235,10 +236,11 @@
             // 
             // button4
             // 
+            this.button4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button4.BackColor = System.Drawing.Color.DodgerBlue;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.ForeColor = System.Drawing.SystemColors.Control;
-            this.button4.Location = new System.Drawing.Point(499, 534);
+            this.button4.Location = new System.Drawing.Point(434, 469);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(169, 42);
             this.button4.TabIndex = 1;
@@ -256,7 +258,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "UCbuy";
-            this.Size = new System.Drawing.Size(994, 611);
+            this.Size = new System.Drawing.Size(862, 539);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

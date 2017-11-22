@@ -33,6 +33,9 @@ namespace SA_PAWN_Company
             //    st += "  " + temp.Name.Split('.')[0];
             //};
             //label1.Text = st;
+
+            JObject j = JObject.Parse("{'user':1}");
+            MessageBox.Show(j["user"]+"");
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

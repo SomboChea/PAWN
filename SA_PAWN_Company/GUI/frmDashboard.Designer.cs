@@ -84,6 +84,7 @@
             this.panelMain.AutoScroll = true;
             this.panelMain.BackColor = System.Drawing.Color.White;
             this.panelMain.Controls.Add(this.btntoggle);
+            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(132, 0);
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(1128, 674);
@@ -135,7 +136,7 @@
             this.toolStripButton4,
             this.toolStripButton3});
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
-            this.toolStrip1.Location = new System.Drawing.Point(0, 19);
+            this.toolStrip1.Location = new System.Drawing.Point(7, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.toolStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
