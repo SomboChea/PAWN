@@ -1,0 +1,21 @@
+Button (Color Code) :
+
+
+Add (Green):33CC66
+
+Delete (Red):FF0000
+
+
+Add for Position (Grey):58595B
+
+
+OK And Cancel (Blue):336699
+
+
+For Font :
+
+Add,Delete,Browse : Lucida Calligraphy Italic
+
+Letter add for Position : Time New Romman (Bold and Italic)
+
+Detail : Arial

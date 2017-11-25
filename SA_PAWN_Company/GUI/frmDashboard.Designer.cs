@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDashboard));
             this.miniToolStrip = new System.Windows.Forms.ToolStrip();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
@@ -44,7 +43,6 @@
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
             this.panel2.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.panelside.SuspendLayout();
@@ -78,7 +76,7 @@
             this.panel2.Controls.Add(this.panelside);
             this.panel2.Location = new System.Drawing.Point(20, 60);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(714, 281);
+            this.panel2.Size = new System.Drawing.Size(1260, 674);
             this.panel2.TabIndex = 1;
             // 
             // panelMain
@@ -87,14 +85,14 @@
             this.panelMain.BackColor = System.Drawing.Color.White;
             this.panelMain.Controls.Add(this.btntoggle);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(159, 0);
+            this.panelMain.Location = new System.Drawing.Point(132, 0);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(555, 281);
+            this.panelMain.Size = new System.Drawing.Size(1128, 674);
             this.panelMain.TabIndex = 1;
             // 
             // btntoggle
             // 
-            this.btntoggle.Location = new System.Drawing.Point(-34, 0);
+            this.btntoggle.Location = new System.Drawing.Point(-35, 0);
             this.btntoggle.Name = "btntoggle";
             this.btntoggle.Size = new System.Drawing.Size(75, 23);
             this.btntoggle.TabIndex = 1;
@@ -114,7 +112,7 @@
             this.panelside.Location = new System.Drawing.Point(0, 0);
             this.panelside.Name = "panelside";
             this.panelside.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panelside.Size = new System.Drawing.Size(159, 281);
+            this.panelside.Size = new System.Drawing.Size(132, 674);
             this.panelside.TabIndex = 0;
             this.panelside.VerticalScrollbar = true;
             this.panelside.VerticalScrollbarBarColor = false;
@@ -136,14 +134,13 @@
             this.toolStripButton6,
             this.toolStripButton5,
             this.toolStripButton4,
-            this.toolStripButton3,
-            this.toolStripButton9});
+            this.toolStripButton3});
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Location = new System.Drawing.Point(7, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.toolStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStrip1.Size = new System.Drawing.Size(105, 1226);
+            this.toolStrip1.Size = new System.Drawing.Size(105, 1100);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
@@ -175,7 +172,7 @@
             this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton7.Name = "toolStripButton7";
             this.toolStripButton7.Size = new System.Drawing.Size(103, 119);
-            this.toolStripButton7.Text = "Sell";
+            this.toolStripButton7.Text = "Sale";
             this.toolStripButton7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // toolStripButton2
@@ -185,7 +182,7 @@
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(103, 119);
-            this.toolStripButton2.Text = "BUY";
+            this.toolStripButton2.Text = "Buy";
             this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
@@ -234,28 +231,19 @@
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
             this.toolStripButton3.Size = new System.Drawing.Size(103, 119);
-            this.toolStripButton3.Text = "toolStripButton1";
+            this.toolStripButton3.Text = "Customer";
             this.toolStripButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // toolStripButton9
-            // 
-            this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton9.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton9.Image")));
-            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton9.Name = "toolStripButton9";
-            this.toolStripButton9.Size = new System.Drawing.Size(103, 104);
-            this.toolStripButton9.Text = "toolStripButton9";
             // 
             // frmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(754, 361);
+            this.ClientSize = new System.Drawing.Size(1300, 754);
             this.Controls.Add(this.panel2);
             this.Movable = false;
             this.Name = "frmDashboard";
             this.Resizable = false;
-            this.Text = "Welcome - User";
+            this.Text = "{ Welcome Board }";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmDashboard_Load);
             this.panel2.ResumeLayout(false);
@@ -284,6 +272,5 @@
         private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.ToolStripButton toolStripButton9;
     }
 }

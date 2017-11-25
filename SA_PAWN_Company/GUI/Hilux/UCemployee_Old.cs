@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace SA_PAWN_Company.GUI
 {
-    public partial class UCsell : UserControl
+    public partial class UCemployee : UserControl
     {
-        public UCsell()
+        public UCemployee()
         {
             InitializeComponent();
-        }
-
-        private void bunifuDropdown2_onItemSelected(object sender, EventArgs e)
-        {
-
         }
     }
 }
