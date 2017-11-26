@@ -271,7 +271,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Helpers\Helpers.csproj">
+      <Project>{3ebd23a0-04de-4f61-ad7a-bcf1f4585ab5}</Project>
+      <Name>Helpers</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AAEAAQAAAAAAAAbGAAAAJGNhYjRlNDM5LTgxOTItNDlmYS1iNjAzLTdiOWVhMWNjMzg4ZQ.png" />
   </ItemGroup>
