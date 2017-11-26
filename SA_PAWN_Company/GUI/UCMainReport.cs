@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SA_PAWN_Company.GUI
 {
-    public partial class UCemployee : UserControl
+    public partial class UCMainReport : UserControl
     {
-        public UCemployee()
+        public UCMainReport()
         {
             InitializeComponent();
         }

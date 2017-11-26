@@ -2,9 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using DataConnection;
@@ -120,8 +117,10 @@ namespace Helpers
         /// Use for refresh Language
         /// </summary>
         /// <param name="uc">Current UserControl</param>
-        public static void SetLanguage(UserControl uc)
+        /// <param name="path2">Set custom path</param>
+        public static void SetLanguage(UserControl uc, string path2=null)
         {
+            path = path2.Equals(null)?path:path2;
             json = JObject.Parse(path + SetCurrentLang + ".json");
             foreach (Control ctrl in uc.Controls)
             {
