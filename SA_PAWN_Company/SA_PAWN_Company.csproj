@@ -89,6 +89,12 @@
     <Compile Include="GUI\frmPay.Designer.cs">
       <DependentUpon>frmPay.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Hilux\PositionType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Hilux\PositionType.Designer.cs">
+      <DependentUpon>PositionType.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Hilux\UCemployee.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -100,6 +106,18 @@
     </Compile>
     <Compile Include="GUI\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\LyHeng\StuffType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\LyHeng\StuffType.Designer.cs">
+      <DependentUpon>StuffType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Theareach\SearchInventory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Theareach\SearchInventory.Designer.cs">
+      <DependentUpon>SearchInventory.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UCaccount.cs">
       <SubType>UserControl</SubType>
@@ -143,12 +161,6 @@
     <Compile Include="GUI\Lida\UCinventory.Designer.cs">
       <DependentUpon>UCinventory.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Hilux\UCemployee_Old.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\Hilux\UCemployee_Old.Designer.cs">
-      <DependentUpon>UCemployee_Old.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\LyHeng\UCpawn.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -187,11 +199,20 @@
     <EmbeddedResource Include="GUI\frmPay.resx">
       <DependentUpon>frmPay.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Hilux\PositionType.resx">
+      <DependentUpon>PositionType.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Hilux\UCemployee.resx">
       <DependentUpon>UCemployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\LyHeng\StuffType.resx">
+      <DependentUpon>StuffType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Theareach\SearchInventory.resx">
+      <DependentUpon>SearchInventory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UCaccount.resx">
       <DependentUpon>UCaccount.cs</DependentUpon>
@@ -213,9 +234,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Lida\UCinventory.resx">
       <DependentUpon>UCinventory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Hilux\UCemployee_Old.resx">
-      <DependentUpon>UCemployee_Old.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\LyHeng\UCpawn.resx">
       <DependentUpon>UCpawn.cs</DependentUpon>
