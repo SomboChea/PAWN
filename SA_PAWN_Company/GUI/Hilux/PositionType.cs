@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SA_PAWN_Company.GUI
+namespace SA_PAWN_Company.GUI.Hilux
 {
-    public partial class UCemployee : UserControl
+    public partial class PositionType : UserControl
     {
-        public UCemployee()
+        public PositionType()
         {
             InitializeComponent();
         }
