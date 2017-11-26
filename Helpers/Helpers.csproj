@@ -50,6 +50,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataConnection\DataConnection.csproj">
+      <Project>{d3ce12cc-8526-42a1-bd11-af3d7f4db2ef}</Project>
+      <Name>DataConnection</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
+using DataConnection;
 
 namespace Helpers
 {
@@ -89,8 +90,29 @@ namespace Helpers
             foreach (FileInfo file in dir.GetFiles("*.json"))
                 cb.Items.Add(file.Name.Split('.')[0]);
         }
-
-
+        /// <summary>
+        /// Use for Fill item in Combobox from Database
+        /// </summary>
+        /// <param name="cb">Combobox Control</param>
+        /// <param name="displaymember">(ColumnName) items you want to show in combobox</param>
+        /// <param name="valuemember">(ColumnName) what you get when selecteditem</param>
+        /// <param name="sql">SQL Select Command</param>
+        public static void FillCombobox(ComboBox cb, string displaymember, string valuemember,string sql)
+        {
+            cb.ValueMember = valuemember;
+            cb.DisplayMember = displaymember;
+            cb.DataSource = Connect.GetModel(sql);
+        }
+        /// <summary>
+        /// Fill Datagridview from database
+        /// </summary>
+        /// <param name="Dg">Datagridview you want to fill</param>
+        /// <param name="sql">SQL Select Command</param>
+        public static void FillDatagridview(DataGridView Dg,string sql)
+        {
+            Dg.DataSource = Connect.GetModel(sql);
+        }
+ 
         /// <summary>
         /// Use for refresh Language
         /// </summary>
