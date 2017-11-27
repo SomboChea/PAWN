@@ -13,75 +13,34 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Helpers;
 
 namespace SA_PAWN_Company
 {
-    public partial class Login : MetroForm
+    public partial class Login : Form
     {
         public Login()
         {
             InitializeComponent();
+            this.ControlBox = false;
+            FullMode.Fullscreen(this);
         }
 
         private void Login_Load(object sender, EventArgs e)
         {
-            //string st = "";
-            //string path = @"..\..\Language\";
-            //DirectoryInfo dir = new DirectoryInfo(path);
-            //foreach (FileInfo temp in dir.GetFiles())
-            //{
-            //    st += "  " + temp.Name.Split('.')[0];
-            //};
-            //label1.Text = st;
-
-            JObject j = JObject.Parse("{'user':1}");
-            MessageBox.Show(j["user"]+"");
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //////////////////////////////
-            // way one : JSON (Combobox1)
-            //string jsontext = File.ReadAllText(@"D:\SN1.2 C#\PAWN\Language\" + comboBox1.Text + ".json");
-            //JObject json = JObject.Parse(jsontext);
-            //JArray jarr = new JArray();
-            //foreach (Control ctrl in Controls)
-            //{
-            //    try
-            //    {
-            //            ctrl.Text = json[ctrl.Tag].ToString();                 
-            //    }
-            //    catch (Exception) { }
-            //}
-            /////////////////////////////////
-
-
-
-       
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        
-            ///////////////////////////////////////
-            // Combobox2 : INIparser
-            FileIniDataParser parser = new FileIniDataParser();
-            IniData data = parser.ReadFile(@"D:\SN1.2 C#\PAWN\Language\Lang.ini");
             
-            foreach (Control temp in Controls)
-            {
-                //try
-                //{
-                //    temp.Text = data[comboBox2.Text][temp.Tag.ToString()];
-                //}
-                //catch(Exception) { }
-            }
         }
 
-        private void metroButton1_Click(object sender, EventArgs e)
+        private void btnForceExit_Click(object sender, EventArgs e)
         {
-            new GUI.frmDashboard().Show();
-            this.Hide();
+            Application.Exit();
+        }
+
+        private void btnSignIn_Click(object sender, EventArgs e)
+        {
+            frmDashboardMaterial main = new frmDashboardMaterial();
+            new Loading(this ,main ).ShowDialog();
+            
         }
     }
 }

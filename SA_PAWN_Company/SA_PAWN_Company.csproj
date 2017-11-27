@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>SA_PAWN_Company.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>C:\Program Files (x86)\Bunifu Technologies\Bunifu Framework Manager\bin\updates\Bunifu_UI_1.5\Bunifu_UI_v1.5.3.dll</HintPath>
@@ -77,6 +80,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GUI\DBSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DBSetting.Designer.cs">
+      <DependentUpon>DBSetting.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +97,12 @@
     </Compile>
     <Compile Include="GUI\frmDashboard2.Designer.cs">
       <DependentUpon>frmDashboard2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmDashboardMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmDashboardMaterial.Designer.cs">
+      <DependentUpon>frmDashboardMaterial.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmPay.cs">
       <SubType>Form</SubType>
@@ -106,6 +121,12 @@
     </Compile>
     <Compile Include="GUI\Hilux\UCemployee.Designer.cs">
       <DependentUpon>UCemployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Loading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Loading.Designer.cs">
+      <DependentUpon>Loading.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Login.cs">
       <SubType>Form</SubType>
@@ -155,6 +176,12 @@
     <Compile Include="GUI\frmexpense.Designer.cs">
       <DependentUpon>frmexpense.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UCDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UCDashboard.Designer.cs">
+      <DependentUpon>UCDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UCHoliday.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -191,19 +218,36 @@
     <Compile Include="GUI\Theareach\UCsell.Designer.cs">
       <DependentUpon>UCsell.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Welcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Welcome.Designer.cs">
+      <DependentUpon>Welcome.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Reports\struct\ST_DailyReport.cs" />
     <Compile Include="STR_CLASS\Customer.cs" />
     <Compile Include="STR_CLASS\Employee.cs" />
     <Compile Include="STR_CLASS\People.cs" />
     <Compile Include="STR_CLASS\Role.cs" />
     <Compile Include="STR_CLASS\RoleOption.cs" />
+    <EmbeddedResource Include="GUI\DBSetting.resx">
+      <DependentUpon>DBSetting.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmDashboard.resx">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmDashboard2.resx">
       <DependentUpon>frmDashboard2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmDashboardMaterial.resx">
+      <DependentUpon>frmDashboardMaterial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmPay.resx">
       <DependentUpon>frmPay.cs</DependentUpon>
@@ -213,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Hilux\UCemployee.resx">
       <DependentUpon>UCemployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Loading.resx">
+      <DependentUpon>Loading.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -238,6 +285,9 @@
     <EmbeddedResource Include="GUI\frmexpense.resx">
       <DependentUpon>frmexpense.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UCDashboard.resx">
+      <DependentUpon>UCDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\UCHoliday.resx">
       <DependentUpon>UCHoliday.cs</DependentUpon>
     </EmbeddedResource>
@@ -256,16 +306,14 @@
     <EmbeddedResource Include="GUI\Theareach\UCsell.resx">
       <DependentUpon>UCsell.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Welcome.resx">
+      <DependentUpon>Welcome.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -279,12 +327,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Helpers\Helpers.csproj">
-      <Project>{3ebd23a0-04de-4f61-ad7a-bcf1f4585ab5}</Project>
-      <Name>Helpers</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AAEAAQAAAAAAAAbGAAAAJGNhYjRlNDM5LTgxOTItNDlmYS1iNjAzLTdiOWVhMWNjMzg4ZQ.png" />
@@ -348,6 +390,58 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\badge1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\google-Assistant-1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lg.messenger-typing-preloader.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DDA1om1 - Imgur.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shutdown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo_PAWN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\keyboard-right-arrow-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataConnection\DataConnection.csproj">
+      <Project>{d3ce12cc-8526-42a1-bd11-af3d7f4db2ef}</Project>
+      <Name>DataConnection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Helpers\Helpers.csproj">
+      <Project>{3ebd23a0-04de-4f61-ad7a-bcf1f4585ab5}</Project>
+      <Name>Helpers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smartphone1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
