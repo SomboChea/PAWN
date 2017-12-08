@@ -31,5 +31,19 @@ namespace SA_PAWN_Company
         {
             new Loading(this,new Login()).ShowDialog();
         }
+
+       
+
+        bool open = true;
+        private void btnNav_Click(object sender, EventArgs e)
+        {
+            bunifuGradientPanel2.Visible = false;
+            bunifuGradientPanel2.Width = open?43: 242;
+            bunifuGradientPanel2.GradientTopLeft = Color.White;
+            bunifuGradientPanel2.GradientTopRight = Color.White;
+            profileImg.Visible = !open;
+            open = !open;
+            bunifuTransition1.ShowSync(bunifuGradientPanel2,true,null);
+        }
     }
 }

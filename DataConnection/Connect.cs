@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data;
+using System.Runtime.InteropServices;
 
 namespace DataConnection
 {
@@ -14,10 +12,11 @@ namespace DataConnection
         public static SqlConnection Connection { get; set; }
 
         ///<Summary>
-        /// Open the Connection 
+        /// Open the Connection
         /// Cautious : Only using in SA_PAWN
         /// fix SERVER and DATABASE
         ///</Summary>
+
         public static bool Open()
         {
             Connection = new SqlConnection("SERVER=localhost;DATABASE=,TRUSTED_CONNECTION=TRUE");
@@ -29,26 +28,13 @@ namespace DataConnection
             }
             return true;
         }
+
         ///<Summary>
-        /// Open the Connection 
+        /// Open the Connection
         ///</Summary>
-        public static bool Open(string SERVER,string DATABASE)
-        { 
-            Connection = new SqlConnection("SERVER="+SERVER+";DATABASE="+DATABASE+",TRUSTED_CONNECTION=TRUE");
-            try { Connection.Open(); }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Connect Failed!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            return true;
-        }
-        ///<Summary>
-        /// Open the Connection 
-        ///</Summary>
-        public static bool Open(string SERVER, string DATABASE,string Username,string Password)
+        public static bool Open(string SERVER, string DATABASE)
         {
-            Connection = new SqlConnection("SERVER=" + SERVER + ";DATABASE=" + DATABASE + ",UserID="+Username+",Password="+Password);
+            Connection = new SqlConnection("SERVER=" + SERVER + ";DATABASE=" + DATABASE + ",TRUSTED_CONNECTION=TRUE");
             try { Connection.Open(); }
             catch (Exception ex)
             {
@@ -57,17 +43,36 @@ namespace DataConnection
             }
             return true;
         }
+
+        ///<Summary>
+        /// Open the Connection
+        ///</Summary>
+        public static bool Open(string SERVER, string DATABASE, string Username, string Password)
+        {
+            Connection = new SqlConnection("SERVER=" + SERVER + ";DATABASE=" + DATABASE + ",UserID=" + Username + ",Password=" + Password);
+            try { Connection.Open(); }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Connect Failed!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
+
         public static void Close()
         {
-            try {
+            try
+            {
                 Connection.Close();
             }
-            catch(Exception ex) {
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.Message, "Connect Failed!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         /// <summary>
-        /// Execute without Return anything 
+        /// Execute without Return anything
         /// </summary>
         /// <param name="sql">Command Select</param>
         /// <param name="param">Nullable , use with command have parameter</param>
@@ -78,9 +83,10 @@ namespace DataConnection
             cmd.ExecuteNonQuery();
             cmd.Dispose();
         }
+
         ///<Summary>
         /// Execute with Return a value as object
-        /// 
+        ///
         ///</Summary>
         public static object ExecuteScalar(string sql, SqlParameter[] param = null)
         {
@@ -90,6 +96,7 @@ namespace DataConnection
             cmd.Dispose();
             return value;
         }
+
         /// <summary>
         /// Use for return Datatable
         /// </summary>
@@ -103,6 +110,7 @@ namespace DataConnection
             adapter.Dispose();
             return dt;
         }
+
         /// <summary>
         /// Use for get parameters
         /// </summary>
@@ -111,7 +119,7 @@ namespace DataConnection
         public static List<SqlParameter> GetParams(object[] values)
         {
             List<SqlParameter> parameters = new List<SqlParameter>();
-            for(int i=0;i<values.Length;i++)
+            for (int i = 0; i < values.Length; i++)
             {
                 SqlParameter param = new SqlParameter();
                 param.Value = values[i];
@@ -119,6 +127,13 @@ namespace DataConnection
                 parameters.Add(param);
             }
             return parameters;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static void BindGridView(DataGridView dg)
+        {
         }
     }
 }

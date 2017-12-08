@@ -5,6 +5,9 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
 using DataConnection;
+using System.Reflection;
+using System.Runtime.InteropServices;
+using System.Text;
 
 namespace Helpers
 {
@@ -15,13 +18,16 @@ namespace Helpers
         /// Recommend Dont Change it
         /// </summary>
         public static string path = "../../Language/";
+
         public static JObject json;
+
         /// <summary>
         /// English or Khmer or Other
         /// </summary>
         public static string SetCurrentLang;
+
         /// <summary>
-        /// Use For set Redbox around TextBox , Combobox. 
+        /// Use For set Redbox around TextBox , Combobox.
         /// By Create Label with Backcolor
         /// </summary>
         /// <param name="control">Textbox or ComboBox</param>
@@ -33,8 +39,9 @@ namespace Helpers
             Redbox.BackColor = Color.Red;
             Redbox.Tag = "remove";
         }
+
         /// <summary>
-        /// Use For CheckRequirement if Text is null or not 
+        /// Use For CheckRequirement if Text is null or not
         /// </summary>
         /// <param name="controls">instance of TextBox or ComboBox that can get text</param>
         /// <returns>True: No problem , False: Have null</returns>
@@ -90,6 +97,7 @@ namespace Helpers
             foreach (FileInfo file in dir.GetFiles("*.json"))
                 cb.Items.Add(file.Name.Split('.')[0]);
         }
+
         /// <summary>
         /// Use for Fill item in Combobox from Database
         /// </summary>
@@ -97,30 +105,31 @@ namespace Helpers
         /// <param name="displaymember">(ColumnName) items you want to show in combobox</param>
         /// <param name="valuemember">(ColumnName) what you get when selecteditem</param>
         /// <param name="sql">SQL Select Command</param>
-        public static void FillCombobox(ComboBox cb, string displaymember, string valuemember,string sql)
+        public static void FillCombobox(ComboBox cb, string displaymember, string valuemember, string sql)
         {
             cb.ValueMember = valuemember;
             cb.DisplayMember = displaymember;
             cb.DataSource = Connect.GetModel(sql);
         }
+
         /// <summary>
         /// Fill Datagridview from database
         /// </summary>
         /// <param name="Dg">Datagridview you want to fill</param>
         /// <param name="sql">SQL Select Command</param>
-        public static void FillDatagridview(DataGridView Dg,string sql)
+        public static void FillDatagridview(DataGridView Dg, string sql)
         {
             Dg.DataSource = Connect.GetModel(sql);
         }
- 
+
         /// <summary>
         /// Use for refresh Language
         /// </summary>
         /// <param name="uc">Current UserControl</param>
         /// <param name="path2">Set custom path</param>
-        public static void SetLanguage(UserControl uc, string path2=null)
+        public static void SetLanguage(UserControl uc, string path2 = null)
         {
-            path = path2.Equals(null)?path:path2;
+            path = path2.Equals(null) ? path : path2;
             json = JObject.Parse(path + SetCurrentLang + ".json");
             foreach (Control ctrl in uc.Controls)
             {
@@ -128,7 +137,10 @@ namespace Helpers
                 {
                     ctrl.Text = json[ctrl.Tag].ToString();
                 }
-                catch (Exception ex) { }
+                catch (Exception ex)
+                {
+                    Log.Write(ex.Message);
+                }
             }
         }
     }
@@ -151,6 +163,80 @@ namespace Helpers
             else
             {
                 Fullscreen(context);
+            }
+        }
+    }
+
+    public class INIParser
+    {
+        private string Path;
+        private string EXE = Assembly.GetExecutingAssembly().GetName().Name;
+
+        [DllImport("kernel32", CharSet = CharSet.Unicode)]
+        private static extern long WritePrivateProfileString(string Section, string Key, string Value, string FilePath);
+
+        [DllImport("kernel32", CharSet = CharSet.Unicode)]
+        private static extern int GetPrivateProfileString(string Section, string Key, string Default, StringBuilder RetVal, int Size, string FilePath);
+
+        public INIParser(string IniPath = null)
+        {
+            Path = new FileInfo(IniPath ?? EXE + ".ini").FullName.ToString();
+        }
+
+        public string Read(string Key, string Section = null)
+        {
+            var RetVal = new StringBuilder(255);
+            GetPrivateProfileString(Section ?? EXE, Key, "", RetVal, 255, Path);
+            return RetVal.ToString();
+        }
+
+        public void Write(string Key, string Value, string Section = null)
+        {
+            WritePrivateProfileString(Section ?? EXE, Key, Value, Path);
+        }
+
+        public void DeleteKey(string Key, string Section = null)
+        {
+            Write(Key, null, Section ?? EXE);
+        }
+
+        public void DeleteSection(string Section = null)
+        {
+            Write(null, null, Section ?? EXE);
+        }
+
+        public bool KeyExists(string Key, string Section = null)
+        {
+            return Read(Key, Section).Length > 0;
+        }
+    }
+
+    public class Log
+    {
+        private static string path = "log.txt";
+
+        public static void Write(string text)
+        {
+            if (!File.Exists(path))
+            {
+                File.WriteAllText(path, text);
+            }
+            else
+            {
+                File.AppendAllText(path, Environment.NewLine + text, Encoding.UTF8);
+            }
+        }
+
+        public static string Read()
+        {
+            if (File.Exists(path))
+            {
+                return File.ReadAllText(path);
+            }
+            else
+            {
+                MessageBox.Show("Can't read log file!");
+                return null;
             }
         }
     }

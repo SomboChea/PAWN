@@ -30,44 +30,38 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Loading));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.bunifuElipse = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.timerLoading = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.LoadingImg = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.LoadingImg)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::SA_PAWN_Company.Properties.Resources.DDA1om1___Imgur;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(500, 200);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.UseWaitCursor = true;
-            // 
-            // bunifuElipse
-            // 
-            this.bunifuElipse.ElipseRadius = 50;
-            this.bunifuElipse.TargetControl = this;
             // 
             // timerLoading
             // 
             this.timerLoading.Interval = 2000;
             this.timerLoading.Tick += new System.EventHandler(this.timerLoading_Tick);
             // 
+            // LoadingImg
+            // 
+            this.LoadingImg.BackColor = System.Drawing.SystemColors.Control;
+            this.LoadingImg.Image = global::SA_PAWN_Company.Properties.Resources.DDA1om1___Imgur;
+            this.LoadingImg.Location = new System.Drawing.Point(0, -1);
+            this.LoadingImg.Name = "LoadingImg";
+            this.LoadingImg.Size = new System.Drawing.Size(500, 200);
+            this.LoadingImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.LoadingImg.TabIndex = 2;
+            this.LoadingImg.TabStop = false;
+            this.LoadingImg.UseWaitCursor = true;
+            this.LoadingImg.Click += new System.EventHandler(this.LoadingImg_Click);
+            // 
             // Loading
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.ProgressBar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Silver;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(500, 200);
             this.ControlBox = false;
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.LoadingImg);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
@@ -79,17 +73,16 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Loading";
             this.TopMost = true;
-            this.TransparencyKey = System.Drawing.Color.Transparent;
+            this.TransparencyKey = System.Drawing.Color.Black;
             this.UseWaitCursor = true;
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LoadingImg)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipse;
+        private System.Windows.Forms.PictureBox LoadingImg;
         private System.Windows.Forms.Timer timerLoading;
     }
 }

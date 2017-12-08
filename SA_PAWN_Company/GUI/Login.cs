@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using Helpers;
+using SA_PAWN_Company.GUI;
 
 namespace SA_PAWN_Company
 {
@@ -28,7 +29,6 @@ namespace SA_PAWN_Company
 
         private void Login_Load(object sender, EventArgs e)
         {
-            
         }
 
         private void btnForceExit_Click(object sender, EventArgs e)
@@ -39,8 +39,7 @@ namespace SA_PAWN_Company
         private void btnSignIn_Click(object sender, EventArgs e)
         {
             frmDashboardMaterial main = new frmDashboardMaterial();
-            new Loading(this ,main ).ShowDialog();
-            
+            new Loading(this, main).ShowDialog();
         }
     }
 }

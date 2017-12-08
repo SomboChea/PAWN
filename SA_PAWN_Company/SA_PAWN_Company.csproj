@@ -37,7 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.5.3">
-      <HintPath>C:\Program Files (x86)\Bunifu Technologies\Bunifu Framework Manager\bin\updates\Bunifu_UI_1.5\Bunifu_UI_v1.5.3.dll</HintPath>
+      <HintPath>..\libs\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -139,6 +139,18 @@
     </Compile>
     <Compile Include="GUI\LyHeng\StuffType.Designer.cs">
       <DependentUpon>StuffType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Overlay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Overlay.Designer.cs">
+      <DependentUpon>Overlay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\test.Designer.cs">
+      <DependentUpon>test.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Theareach\SearchInventory.cs">
       <SubType>UserControl</SubType>
@@ -266,6 +278,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\LyHeng\StuffType.resx">
       <DependentUpon>StuffType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Overlay.resx">
+      <DependentUpon>Overlay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\test.resx">
+      <DependentUpon>test.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Theareach\SearchInventory.resx">
       <DependentUpon>SearchInventory.cs</DependentUpon>
@@ -442,6 +460,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\smartphone1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pawn-shop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pawn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping-cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping-cart %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clerk-with-tie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hospital-supplies.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tran.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
