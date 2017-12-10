@@ -1,1 +1,1 @@
-﻿ALTER TABLE [dbo].[Schedule] ADD [PaymentCount] int NULL
+﻿ALTER TABLE [dbo].[PawnContract] ADD [PaymentCounts] float NULL
