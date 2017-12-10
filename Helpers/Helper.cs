@@ -165,6 +165,20 @@ namespace Helpers
                 Fullscreen(context);
             }
         }
+
+        public static void PopUp(Form context)
+        {
+            context.FormBorderStyle = FormBorderStyle.None;
+            context.ShowIcon = false;
+            context.ShowInTaskbar = false;
+            context.MinimizeBox = false;
+            context.MaximizeBox = false;
+            context.WindowState = FormWindowState.Normal;
+            context.StartPosition = FormStartPosition.CenterScreen;
+            context.TopMost = true;
+            context.TopLevel = true;
+            context.Visible = true;
+        }
     }
 
     public class INIParser
