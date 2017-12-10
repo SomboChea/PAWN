@@ -1,0 +1,1 @@
+﻿ALTER TABLE [dbo].[PawnContract] ADD [PaymentCounts] float NULL

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SA_PAWN_Company.GUI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace SA_PAWN_Company
         public frmDashboardMaterial()
         {
             InitializeComponent();
+
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -30,6 +32,7 @@ namespace SA_PAWN_Company
         private void btnSignOut_Click(object sender, EventArgs e)
         {
             new Loading(this,new Login()).ShowDialog();
+            
         }
 
        
