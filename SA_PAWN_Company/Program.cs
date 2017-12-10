@@ -17,7 +17,7 @@ namespace SA_PAWN_Company
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GUI.test());
+            Application.Run(new frmDashboardMaterial());
         }
     }
 }

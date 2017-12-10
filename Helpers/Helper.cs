@@ -8,6 +8,7 @@ using DataConnection;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
+using Bunifu.Framework.UI;
 
 namespace Helpers
 {
@@ -33,6 +34,14 @@ namespace Helpers
         /// <param name="control">Textbox or ComboBox</param>
         public static void SetRedbox(Control control)
         {
+            if (control is BunifuMetroTextbox) {
+                BunifuMetroTextbox box = (BunifuMetroTextbox)control;
+                box.BorderColorFocused = Color.Red;
+                box.BorderColorIdle = Color.Red;
+                box.BorderColorMouseHover = Color.Red;
+                control = box;
+                return;
+            }
             Label Redbox = new Label();
             Redbox.Size = new System.Drawing.Size(Redbox.Width + 4, Redbox.Height + 4);
             Redbox.Location = new System.Drawing.Point(Redbox.Location.X - 2, Redbox.Location.Y - 2);
