@@ -7,41 +7,52 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
-namespace SA_PAWN_Company.GUI
+namespace SA_PAWN_Company
 {
-    public partial class UCpawn : UserControl
+    public partial class UCPawn : UserControl
     {
-        Panel MainPanel;
-        public UCpawn()
+        public UCPawn()
         {
             InitializeComponent();
         }
-        public UCpawn(Panel panel)
+
+        private void stuffPicture_Click(object sender, EventArgs e)
         {
-            InitializeComponent();
-            MainPanel = panel;
+            FileDialog fd = new OpenFileDialog();
+            if (fd.ShowDialog() == DialogResult.OK)
+            {
+                this.stuffPicture.Image = Image.FromFile(fd.FileName);
+                MessageBox.Show(Path.GetFullPath(fd.FileName));
+            }
         }
 
-        private void UCpawn_Load(object sender, EventArgs e)
+        private void btnGenerate_Click(object sender, EventArgs e)
         {
-           
+            string stuffname = txtStuffName.Text;
+            string stufftype = stuffType.Text;
+
+            float pawnprice = float.Parse(txtPawnPrice.Text);
+            int duration = int.Parse(durationType.Text);
+            float interestrate = float.Parse(txtRate.Text);
+            int paycount = int.Parse(txtPaycount.Text);
+            string file = txtAttachement.Text;
+
+            string customername = txtCustomerName.Text;
+            string gender = cbGender.Text;
+            string tel = txtTel.Text;
+            int idtype = int.Parse(idType.Text);
+            string address = txtAddress.Text;
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void btnBrowse_Click(object sender, EventArgs e)
         {
-            MainPanel.Controls.Remove(this);
-            MainPanel.Controls.Add(new GUI.Hilux.UCemployee());
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void metroTextBox6_Click(object sender, EventArgs e)
-        {
-
+            FileDialog fd = new OpenFileDialog();
+            if (fd.ShowDialog() == DialogResult.OK)
+            {
+                txtAttachement.Text = Path.GetFileName(fd.FileName);
+            }
         }
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SA_PAWN_Company
 {
-    public partial class PositionType : UserControl
+    public partial class Stuff : UserControl
     {
-        public PositionType()
+        public Stuff()
         {
             InitializeComponent();
         }

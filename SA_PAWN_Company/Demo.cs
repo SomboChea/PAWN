@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace SA_PAWN_Company
 {
-    public partial class PositionType : UserControl
+    public partial class Demo : Form
     {
-        public PositionType()
+        public Demo()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Stuff st = new Stuff();
+            DialogList.UC.Add(st);
+            //new PopupBox(st, true);
         }
     }
 }

@@ -7,14 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Helpers;
 
-namespace SA_PAWN_Company.GUI.Theareach
+namespace SA_PAWN_Company
 {
-    public partial class SearchInventory : UserControl
+    public partial class SearchInventory : Form
     {
         public SearchInventory()
         {
             InitializeComponent();
+            FullMode.PopUp(this);
         }
     }
 }

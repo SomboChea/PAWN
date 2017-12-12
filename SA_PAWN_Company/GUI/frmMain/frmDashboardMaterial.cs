@@ -16,7 +16,6 @@ namespace SA_PAWN_Company
         public frmDashboardMaterial()
         {
             InitializeComponent();
-
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -31,22 +30,33 @@ namespace SA_PAWN_Company
 
         private void btnSignOut_Click(object sender, EventArgs e)
         {
-            new Loading(this,new Login()).ShowDialog();
-            
+            new Loading(this, new Login()).ShowDialog();
         }
 
-       
+        private bool open = true;
 
-        bool open = true;
         private void btnNav_Click(object sender, EventArgs e)
         {
             bunifuGradientPanel2.Visible = false;
-            bunifuGradientPanel2.Width = open?43: 242;
+            bunifuGradientPanel2.Width = open ? 43 : 242;
             bunifuGradientPanel2.GradientTopLeft = Color.White;
             bunifuGradientPanel2.GradientTopRight = Color.White;
             profileImg.Visible = !open;
             open = !open;
-            bunifuTransition1.ShowSync(bunifuGradientPanel2,true,null);
+            bunifuTransition1.ShowSync(bunifuGradientPanel2, true, null);
+        }
+
+        private void btnNewPawn_Click(object sender, EventArgs e)
+        {
+            UCPawn pawn = new UCPawn();
+            pawn.Dock = DockStyle.Fill;
+
+            foreach (Control temp in MainUC.Controls.OfType<Control>())
+            {
+                MainUC.Controls.Remove(temp);
+            }
+
+            MainUC.Controls.Add(pawn);
         }
     }
 }

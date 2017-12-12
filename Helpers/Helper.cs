@@ -34,7 +34,8 @@ namespace Helpers
         /// <param name="control">Textbox or ComboBox</param>
         public static void SetRedbox(Control control)
         {
-            if (control is BunifuMetroTextbox) {
+            if (control is BunifuMetroTextbox)
+            {
                 BunifuMetroTextbox box = (BunifuMetroTextbox)control;
                 box.BorderColorFocused = Color.Red;
                 box.BorderColorIdle = Color.Red;
@@ -154,6 +155,9 @@ namespace Helpers
         }
     }
 
+    /// <summary>
+    /// Fullmode { Screen }
+    /// </summary>
     public class FullMode
     {
         public static void Fullscreen(Form context)
@@ -162,7 +166,7 @@ namespace Helpers
             context.Height = Screen.PrimaryScreen.Bounds.Height;
         }
 
-        public static void Fullscreen(Form context, bool workingAreaEnable)
+        public static void Fullscreen(Form context, bool workingAreaEnable = false)
         {
             if (workingAreaEnable)
             {
@@ -190,6 +194,9 @@ namespace Helpers
         }
     }
 
+    /// <summary>
+    /// Ini Parser
+    /// </summary>
     public class INIParser
     {
         private string Path;
@@ -234,6 +241,9 @@ namespace Helpers
         }
     }
 
+    /// <summary>
+    /// Log files
+    /// </summary>
     public class Log
     {
         private static string path = "log.txt";

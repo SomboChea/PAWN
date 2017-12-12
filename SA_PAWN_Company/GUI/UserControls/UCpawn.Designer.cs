@@ -1,6 +1,6 @@
-﻿namespace SA_PAWN_Company.GUI
+﻿namespace SA_PAWN_Company
 {
-    partial class UCpawn
+    partial class UCPawn
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,626 +28,541 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
-            this.label13 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
+            this.idType = new System.Windows.Forms.ComboBox();
+            this.btnAddId = new System.Windows.Forms.Button();
+            this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.bunifuCustomLabel9 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtTel = new System.Windows.Forms.TextBox();
+            this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtCustomerName = new System.Windows.Forms.TextBox();
+            this.cbGender = new System.Windows.Forms.ComboBox();
+            this.bunifuCustomLabel11 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel12 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCards3 = new Bunifu.Framework.UI.BunifuCards();
+            this.btnBrowse = new System.Windows.Forms.Button();
+            this.txtAttachement = new System.Windows.Forms.TextBox();
+            this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtPaycount = new System.Windows.Forms.TextBox();
+            this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtRate = new System.Windows.Forms.TextBox();
+            this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.metroTextBox8 = new MetroFramework.Controls.MetroTextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.metroComboBox5 = new MetroFramework.Controls.MetroComboBox();
-            this.metroComboBox4 = new MetroFramework.Controls.MetroComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.metroComboBox3 = new MetroFramework.Controls.MetroComboBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.metroTextBox7 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.metroTextBox6 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox5 = new MetroFramework.Controls.MetroTextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.metroTextBox4 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.txtPawnPrice = new System.Windows.Forms.TextBox();
+            this.durationType = new System.Windows.Forms.ComboBox();
+            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
+            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.stuffPicture = new System.Windows.Forms.PictureBox();
+            this.btnStuffType = new System.Windows.Forms.Button();
+            this.txtStuffName = new System.Windows.Forms.TextBox();
+            this.stuffType = new System.Windows.Forms.ComboBox();
+            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel13 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel14 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel15 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.btnGenerate = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
+            this.bunifuCards2.SuspendLayout();
+            this.bunifuCards3.SuspendLayout();
+            this.bunifuCards1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stuffPicture)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // panel1
             // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.metroComboBox1);
-            this.groupBox1.Controls.Add(this.metroTextBox1);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.metroTextBox8);
-            this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(33, 24);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(598, 340);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "STUFF";
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel1.Controls.Add(this.bunifuCards1);
+            this.panel1.Controls.Add(this.bunifuCards2);
+            this.panel1.Controls.Add(this.bunifuCards3);
+            this.panel1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1264, 564);
+            this.panel1.TabIndex = 0;
             // 
-            // label2
+            // bunifuCards2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(203, 104);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 27);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Type:";
+            this.bunifuCards2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.bunifuCards2.BackColor = System.Drawing.Color.White;
+            this.bunifuCards2.BorderRadius = 5;
+            this.bunifuCards2.BottomSahddow = true;
+            this.bunifuCards2.color = System.Drawing.Color.Tomato;
+            this.bunifuCards2.Controls.Add(this.bunifuCustomLabel15);
+            this.bunifuCards2.Controls.Add(this.idType);
+            this.bunifuCards2.Controls.Add(this.btnAddId);
+            this.bunifuCards2.Controls.Add(this.bunifuCustomLabel8);
+            this.bunifuCards2.Controls.Add(this.txtAddress);
+            this.bunifuCards2.Controls.Add(this.bunifuCustomLabel9);
+            this.bunifuCards2.Controls.Add(this.txtTel);
+            this.bunifuCards2.Controls.Add(this.bunifuCustomLabel10);
+            this.bunifuCards2.Controls.Add(this.txtCustomerName);
+            this.bunifuCards2.Controls.Add(this.cbGender);
+            this.bunifuCards2.Controls.Add(this.bunifuCustomLabel11);
+            this.bunifuCards2.Controls.Add(this.bunifuCustomLabel12);
+            this.bunifuCards2.LeftSahddow = false;
+            this.bunifuCards2.Location = new System.Drawing.Point(630, 26);
+            this.bunifuCards2.Name = "bunifuCards2";
+            this.bunifuCards2.RightSahddow = true;
+            this.bunifuCards2.ShadowDepth = 20;
+            this.bunifuCards2.Size = new System.Drawing.Size(592, 526);
+            this.bunifuCards2.TabIndex = 19;
             // 
-            // label1
+            // idType
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(203, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 27);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Name:";
+            this.idType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.idType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.idType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.idType.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idType.FormattingEnabled = true;
+            this.idType.IntegralHeight = false;
+            this.idType.ItemHeight = 27;
+            this.idType.Items.AddRange(new object[] {
+            "Male",
+            "Female",
+            "Other"});
+            this.idType.Location = new System.Drawing.Point(194, 266);
+            this.idType.Name = "idType";
+            this.idType.Size = new System.Drawing.Size(268, 35);
+            this.idType.TabIndex = 22;
             // 
-            // metroComboBox1
+            // btnAddId
             // 
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Location = new System.Drawing.Point(286, 101);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(225, 29);
-            this.metroComboBox1.TabIndex = 3;
-            this.metroComboBox1.UseSelectable = true;
+            this.btnAddId.Location = new System.Drawing.Point(468, 266);
+            this.btnAddId.Name = "btnAddId";
+            this.btnAddId.Size = new System.Drawing.Size(108, 36);
+            this.btnAddId.TabIndex = 18;
+            this.btnAddId.Text = "Add";
+            this.btnAddId.UseVisualStyleBackColor = true;
             // 
-            // metroTextBox1
+            // bunifuCustomLabel8
             // 
-            this.metroTextBox1.BackColor = System.Drawing.Color.White;
-            this.metroTextBox1.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.metroTextBox1.Lines = new string[0];
-            this.metroTextBox1.Location = new System.Drawing.Point(286, 43);
-            this.metroTextBox1.MaxLength = 32767;
-            this.metroTextBox1.Multiline = true;
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox1.SelectedText = "";
-            this.metroTextBox1.Size = new System.Drawing.Size(290, 30);
-            this.metroTextBox1.TabIndex = 2;
-            this.metroTextBox1.UseCustomBackColor = true;
-            this.metroTextBox1.UseSelectable = true;
+            this.bunifuCustomLabel8.AutoSize = true;
+            this.bunifuCustomLabel8.Location = new System.Drawing.Point(22, 273);
+            this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
+            this.bunifuCustomLabel8.Size = new System.Drawing.Size(91, 23);
+            this.bunifuCustomLabel8.TabIndex = 16;
+            this.bunifuCustomLabel8.Text = "ID Type :";
             // 
-            // label13
+            // txtAddress
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(203, 164);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(268, 27);
-            this.label13.TabIndex = 4;
-            this.label13.Text = "Attachment Description:";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
+            this.txtAddress.Font = new System.Drawing.Font("Century Gothic", 13.8F);
+            this.txtAddress.Location = new System.Drawing.Point(192, 325);
+            this.txtAddress.Multiline = true;
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(384, 104);
+            this.txtAddress.TabIndex = 15;
+            // 
+            // bunifuCustomLabel9
+            // 
+            this.bunifuCustomLabel9.AutoSize = true;
+            this.bunifuCustomLabel9.Location = new System.Drawing.Point(22, 332);
+            this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
+            this.bunifuCustomLabel9.Size = new System.Drawing.Size(95, 23);
+            this.bunifuCustomLabel9.TabIndex = 14;
+            this.bunifuCustomLabel9.Text = "Address :";
+            // 
+            // txtTel
+            // 
+            this.txtTel.Font = new System.Drawing.Font("Century Gothic", 13.8F);
+            this.txtTel.Location = new System.Drawing.Point(192, 211);
+            this.txtTel.Multiline = true;
+            this.txtTel.Name = "txtTel";
+            this.txtTel.Size = new System.Drawing.Size(385, 35);
+            this.txtTel.TabIndex = 13;
+            // 
+            // bunifuCustomLabel10
+            // 
+            this.bunifuCustomLabel10.AutoSize = true;
+            this.bunifuCustomLabel10.Location = new System.Drawing.Point(22, 218);
+            this.bunifuCustomLabel10.Name = "bunifuCustomLabel10";
+            this.bunifuCustomLabel10.Size = new System.Drawing.Size(111, 23);
+            this.bunifuCustomLabel10.TabIndex = 12;
+            this.bunifuCustomLabel10.Text = "Telephone :";
+            // 
+            // txtCustomerName
+            // 
+            this.txtCustomerName.Font = new System.Drawing.Font("Century Gothic", 13.8F);
+            this.txtCustomerName.Location = new System.Drawing.Point(192, 93);
+            this.txtCustomerName.Multiline = true;
+            this.txtCustomerName.Name = "txtCustomerName";
+            this.txtCustomerName.Size = new System.Drawing.Size(384, 35);
+            this.txtCustomerName.TabIndex = 10;
+            // 
+            // cbGender
+            // 
+            this.cbGender.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbGender.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGender.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbGender.FormattingEnabled = true;
+            this.cbGender.IntegralHeight = false;
+            this.cbGender.ItemHeight = 27;
+            this.cbGender.Items.AddRange(new object[] {
+            "Male",
+            "Female",
+            "Other"});
+            this.cbGender.Location = new System.Drawing.Point(192, 155);
+            this.cbGender.Name = "cbGender";
+            this.cbGender.Size = new System.Drawing.Size(384, 35);
+            this.cbGender.TabIndex = 9;
+            // 
+            // bunifuCustomLabel11
+            // 
+            this.bunifuCustomLabel11.AutoSize = true;
+            this.bunifuCustomLabel11.Location = new System.Drawing.Point(22, 162);
+            this.bunifuCustomLabel11.Name = "bunifuCustomLabel11";
+            this.bunifuCustomLabel11.Size = new System.Drawing.Size(88, 23);
+            this.bunifuCustomLabel11.TabIndex = 8;
+            this.bunifuCustomLabel11.Text = "Gender :";
+            // 
+            // bunifuCustomLabel12
+            // 
+            this.bunifuCustomLabel12.AutoSize = true;
+            this.bunifuCustomLabel12.Location = new System.Drawing.Point(22, 100);
+            this.bunifuCustomLabel12.Name = "bunifuCustomLabel12";
+            this.bunifuCustomLabel12.Size = new System.Drawing.Size(164, 23);
+            this.bunifuCustomLabel12.TabIndex = 7;
+            this.bunifuCustomLabel12.Text = "Customer Name :";
+            // 
+            // bunifuCards3
+            // 
+            this.bunifuCards3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.bunifuCards3.BackColor = System.Drawing.Color.White;
+            this.bunifuCards3.BorderRadius = 5;
+            this.bunifuCards3.BottomSahddow = true;
+            this.bunifuCards3.color = System.Drawing.Color.Tomato;
+            this.bunifuCards3.Controls.Add(this.bunifuCustomLabel14);
+            this.bunifuCards3.Controls.Add(this.btnBrowse);
+            this.bunifuCards3.Controls.Add(this.txtAttachement);
+            this.bunifuCards3.Controls.Add(this.bunifuCustomLabel7);
+            this.bunifuCards3.Controls.Add(this.txtPaycount);
+            this.bunifuCards3.Controls.Add(this.bunifuCustomLabel6);
+            this.bunifuCards3.Controls.Add(this.txtRate);
+            this.bunifuCards3.Controls.Add(this.bunifuCustomLabel5);
+            this.bunifuCards3.Controls.Add(this.button2);
+            this.bunifuCards3.Controls.Add(this.txtPawnPrice);
+            this.bunifuCards3.Controls.Add(this.durationType);
+            this.bunifuCards3.Controls.Add(this.bunifuCustomLabel3);
+            this.bunifuCards3.Controls.Add(this.bunifuCustomLabel4);
+            this.bunifuCards3.LeftSahddow = false;
+            this.bunifuCards3.Location = new System.Drawing.Point(19, 245);
+            this.bunifuCards3.Name = "bunifuCards3";
+            this.bunifuCards3.RightSahddow = true;
+            this.bunifuCards3.ShadowDepth = 20;
+            this.bunifuCards3.Size = new System.Drawing.Size(595, 307);
+            this.bunifuCards3.TabIndex = 3;
+            // 
+            // btnBrowse
+            // 
+            this.btnBrowse.Location = new System.Drawing.Point(450, 240);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(108, 35);
+            this.btnBrowse.TabIndex = 18;
+            this.btnBrowse.Text = "Browse...";
+            this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
+            // 
+            // txtAttachement
+            // 
+            this.txtAttachement.Font = new System.Drawing.Font("Century Gothic", 13.8F);
+            this.txtAttachement.Location = new System.Drawing.Point(176, 240);
+            this.txtAttachement.Multiline = true;
+            this.txtAttachement.Name = "txtAttachement";
+            this.txtAttachement.ReadOnly = true;
+            this.txtAttachement.Size = new System.Drawing.Size(268, 35);
+            this.txtAttachement.TabIndex = 17;
+            // 
+            // bunifuCustomLabel7
+            // 
+            this.bunifuCustomLabel7.AutoSize = true;
+            this.bunifuCustomLabel7.Location = new System.Drawing.Point(24, 247);
+            this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
+            this.bunifuCustomLabel7.Size = new System.Drawing.Size(132, 23);
+            this.bunifuCustomLabel7.TabIndex = 16;
+            this.bunifuCustomLabel7.Text = "Attachement :";
+            // 
+            // txtPaycount
+            // 
+            this.txtPaycount.Font = new System.Drawing.Font("Century Gothic", 13.8F);
+            this.txtPaycount.Location = new System.Drawing.Point(473, 185);
+            this.txtPaycount.Multiline = true;
+            this.txtPaycount.Name = "txtPaycount";
+            this.txtPaycount.Size = new System.Drawing.Size(85, 35);
+            this.txtPaycount.TabIndex = 15;
+            // 
+            // bunifuCustomLabel6
+            // 
+            this.bunifuCustomLabel6.AutoSize = true;
+            this.bunifuCustomLabel6.Location = new System.Drawing.Point(311, 192);
+            this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
+            this.bunifuCustomLabel6.Size = new System.Drawing.Size(156, 23);
+            this.bunifuCustomLabel6.TabIndex = 14;
+            this.bunifuCustomLabel6.Text = "Payment Count :";
+            // 
+            // txtRate
+            // 
+            this.txtRate.Font = new System.Drawing.Font("Century Gothic", 13.8F);
+            this.txtRate.Location = new System.Drawing.Point(176, 185);
+            this.txtRate.Multiline = true;
+            this.txtRate.Name = "txtRate";
+            this.txtRate.Size = new System.Drawing.Size(129, 35);
+            this.txtRate.TabIndex = 13;
+            // 
+            // bunifuCustomLabel5
+            // 
+            this.bunifuCustomLabel5.AutoSize = true;
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(24, 192);
+            this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
+            this.bunifuCustomLabel5.Size = new System.Drawing.Size(137, 23);
+            this.bunifuCustomLabel5.TabIndex = 12;
+            this.bunifuCustomLabel5.Text = "Interest Rate :";
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.Info;
-            this.button2.Location = new System.Drawing.Point(517, 101);
+            this.button2.Location = new System.Drawing.Point(473, 129);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(59, 28);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "ADD";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(15, 278);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(174, 36);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Browse";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // metroTextBox8
-            // 
-            this.metroTextBox8.BackColor = System.Drawing.Color.White;
-            this.metroTextBox8.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.metroTextBox8.Lines = new string[0];
-            this.metroTextBox8.Location = new System.Drawing.Point(208, 212);
-            this.metroTextBox8.MaxLength = 32767;
-            this.metroTextBox8.Multiline = true;
-            this.metroTextBox8.Name = "metroTextBox8";
-            this.metroTextBox8.PasswordChar = '\0';
-            this.metroTextBox8.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox8.SelectedText = "";
-            this.metroTextBox8.Size = new System.Drawing.Size(368, 102);
-            this.metroTextBox8.TabIndex = 2;
-            this.metroTextBox8.UseCustomBackColor = true;
-            this.metroTextBox8.UseSelectable = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Image = global::SA_PAWN_Company.Properties.Resources.icon;
-            this.pictureBox1.Location = new System.Drawing.Point(15, 43);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(174, 229);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.metroComboBox5);
-            this.groupBox2.Controls.Add(this.metroComboBox4);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.metroComboBox3);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.button7);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.button6);
-            this.groupBox2.Controls.Add(this.metroComboBox2);
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.metroTextBox7);
-            this.groupBox2.Controls.Add(this.metroTextBox2);
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(651, 24);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(634, 340);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "PAWN";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(6, 274);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(147, 27);
-            this.label12.TabIndex = 4;
-            this.label12.Text = "Interest Pay:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(6, 225);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(99, 27);
-            this.label10.TabIndex = 4;
-            this.label10.Text = "Interest:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(6, 177);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(201, 27);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "Payment Method:";
-            // 
-            // metroComboBox5
-            // 
-            this.metroComboBox5.FormattingEnabled = true;
-            this.metroComboBox5.ItemHeight = 23;
-            this.metroComboBox5.Location = new System.Drawing.Point(211, 271);
-            this.metroComboBox5.Name = "metroComboBox5";
-            this.metroComboBox5.Size = new System.Drawing.Size(293, 29);
-            this.metroComboBox5.TabIndex = 3;
-            this.metroComboBox5.UseSelectable = true;
-            // 
-            // metroComboBox4
-            // 
-            this.metroComboBox4.FormattingEnabled = true;
-            this.metroComboBox4.ItemHeight = 23;
-            this.metroComboBox4.Location = new System.Drawing.Point(211, 223);
-            this.metroComboBox4.Name = "metroComboBox4";
-            this.metroComboBox4.Size = new System.Drawing.Size(293, 29);
-            this.metroComboBox4.TabIndex = 3;
-            this.metroComboBox4.UseSelectable = true;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(6, 130);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(110, 27);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "Duration:";
-            // 
-            // metroComboBox3
-            // 
-            this.metroComboBox3.FormattingEnabled = true;
-            this.metroComboBox3.ItemHeight = 23;
-            this.metroComboBox3.Location = new System.Drawing.Point(211, 174);
-            this.metroComboBox3.Name = "metroComboBox3";
-            this.metroComboBox3.Size = new System.Drawing.Size(293, 29);
-            this.metroComboBox3.TabIndex = 3;
-            this.metroComboBox3.UseSelectable = true;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(6, 85);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(133, 27);
-            this.label11.TabIndex = 4;
-            this.label11.Text = "Loan Price:";
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.SystemColors.Info;
-            this.button7.Location = new System.Drawing.Point(510, 271);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(104, 30);
-            this.button7.TabIndex = 1;
-            this.button7.Text = "ADD";
-            this.button7.UseVisualStyleBackColor = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 43);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 27);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Name:";
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.SystemColors.Info;
-            this.button6.Location = new System.Drawing.Point(510, 223);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(104, 30);
-            this.button6.TabIndex = 1;
-            this.button6.Text = "ADD";
-            this.button6.UseVisualStyleBackColor = false;
-            // 
-            // metroComboBox2
-            // 
-            this.metroComboBox2.FormattingEnabled = true;
-            this.metroComboBox2.ItemHeight = 23;
-            this.metroComboBox2.Location = new System.Drawing.Point(211, 127);
-            this.metroComboBox2.Name = "metroComboBox2";
-            this.metroComboBox2.Size = new System.Drawing.Size(293, 29);
-            this.metroComboBox2.TabIndex = 3;
-            this.metroComboBox2.UseSelectable = true;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.Info;
-            this.button4.Location = new System.Drawing.Point(510, 172);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(104, 30);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "ADD";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // metroTextBox7
-            // 
-            this.metroTextBox7.BackColor = System.Drawing.Color.White;
-            this.metroTextBox7.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.metroTextBox7.Lines = new string[0];
-            this.metroTextBox7.Location = new System.Drawing.Point(211, 80);
-            this.metroTextBox7.MaxLength = 32767;
-            this.metroTextBox7.Multiline = true;
-            this.metroTextBox7.Name = "metroTextBox7";
-            this.metroTextBox7.PasswordChar = '\0';
-            this.metroTextBox7.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox7.SelectedText = "";
-            this.metroTextBox7.Size = new System.Drawing.Size(403, 30);
-            this.metroTextBox7.TabIndex = 2;
-            this.metroTextBox7.UseCustomBackColor = true;
-            this.metroTextBox7.UseSelectable = true;
-            // 
-            // metroTextBox2
-            // 
-            this.metroTextBox2.BackColor = System.Drawing.Color.White;
-            this.metroTextBox2.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.metroTextBox2.Lines = new string[0];
-            this.metroTextBox2.Location = new System.Drawing.Point(211, 38);
-            this.metroTextBox2.MaxLength = 32767;
-            this.metroTextBox2.Multiline = true;
-            this.metroTextBox2.Name = "metroTextBox2";
-            this.metroTextBox2.PasswordChar = '\0';
-            this.metroTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox2.SelectedText = "";
-            this.metroTextBox2.Size = new System.Drawing.Size(403, 30);
-            this.metroTextBox2.TabIndex = 2;
-            this.metroTextBox2.UseCustomBackColor = true;
-            this.metroTextBox2.UseSelectable = true;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.Info;
-            this.button3.Location = new System.Drawing.Point(510, 125);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(104, 30);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "ADD";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.groupBox3.Controls.Add(this.metroTextBox6);
-            this.groupBox3.Controls.Add(this.metroTextBox5);
-            this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Controls.Add(this.metroTextBox4);
-            this.groupBox3.Controls.Add(this.metroTextBox3);
-            this.groupBox3.Controls.Add(this.button5);
-            this.groupBox3.Controls.Add(this.pictureBox2);
-            this.groupBox3.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(33, 386);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(917, 364);
-            this.groupBox3.TabIndex = 0;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "CUSTOMER";
-            // 
-            // metroTextBox6
-            // 
-            this.metroTextBox6.BackColor = System.Drawing.Color.White;
-            this.metroTextBox6.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.metroTextBox6.Lines = new string[0];
-            this.metroTextBox6.Location = new System.Drawing.Point(416, 259);
-            this.metroTextBox6.MaxLength = 32767;
-            this.metroTextBox6.Multiline = true;
-            this.metroTextBox6.Name = "metroTextBox6";
-            this.metroTextBox6.PasswordChar = '\0';
-            this.metroTextBox6.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox6.SelectedText = "";
-            this.metroTextBox6.Size = new System.Drawing.Size(382, 87);
-            this.metroTextBox6.TabIndex = 2;
-            this.metroTextBox6.UseCustomBackColor = true;
-            this.metroTextBox6.UseSelectable = true;
-            this.metroTextBox6.Click += new System.EventHandler(this.metroTextBox6_Click);
-            // 
-            // metroTextBox5
-            // 
-            this.metroTextBox5.BackColor = System.Drawing.Color.White;
-            this.metroTextBox5.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.metroTextBox5.Lines = new string[0];
-            this.metroTextBox5.Location = new System.Drawing.Point(416, 205);
-            this.metroTextBox5.MaxLength = 32767;
-            this.metroTextBox5.Multiline = true;
-            this.metroTextBox5.Name = "metroTextBox5";
-            this.metroTextBox5.PasswordChar = '\0';
-            this.metroTextBox5.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox5.SelectedText = "";
-            this.metroTextBox5.Size = new System.Drawing.Size(382, 31);
-            this.metroTextBox5.TabIndex = 2;
-            this.metroTextBox5.UseCustomBackColor = true;
-            this.metroTextBox5.UseSelectable = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(203, 259);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(107, 27);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Address:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(203, 209);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 27);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Tel:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(197, 98);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(268, 27);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Attachment Description:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(196, 47);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 27);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Name : ";
-            // 
-            // metroTextBox4
-            // 
-            this.metroTextBox4.BackColor = System.Drawing.Color.White;
-            this.metroTextBox4.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.metroTextBox4.Lines = new string[0];
-            this.metroTextBox4.Location = new System.Drawing.Point(201, 131);
-            this.metroTextBox4.MaxLength = 32767;
-            this.metroTextBox4.Multiline = true;
-            this.metroTextBox4.Name = "metroTextBox4";
-            this.metroTextBox4.PasswordChar = '\0';
-            this.metroTextBox4.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox4.SelectedText = "";
-            this.metroTextBox4.Size = new System.Drawing.Size(597, 64);
-            this.metroTextBox4.TabIndex = 2;
-            this.metroTextBox4.UseCustomBackColor = true;
-            this.metroTextBox4.UseSelectable = true;
-            // 
-            // metroTextBox3
-            // 
-            this.metroTextBox3.BackColor = System.Drawing.Color.White;
-            this.metroTextBox3.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.metroTextBox3.Lines = new string[0];
-            this.metroTextBox3.Location = new System.Drawing.Point(416, 47);
-            this.metroTextBox3.MaxLength = 32767;
-            this.metroTextBox3.Multiline = true;
-            this.metroTextBox3.Name = "metroTextBox3";
-            this.metroTextBox3.PasswordChar = '\0';
-            this.metroTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox3.SelectedText = "";
-            this.metroTextBox3.Size = new System.Drawing.Size(382, 31);
-            this.metroTextBox3.TabIndex = 2;
-            this.metroTextBox3.UseCustomBackColor = true;
-            this.metroTextBox3.UseSelectable = true;
-            // 
-            // button5
-            // 
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(15, 246);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(150, 38);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "Browse";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::SA_PAWN_Company.Properties.Resources.logo;
-            this.pictureBox2.Location = new System.Drawing.Point(15, 48);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(150, 188);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // button8
-            // 
-            this.button8.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button8.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.SystemColors.Control;
-            this.button8.Location = new System.Drawing.Point(956, 687);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(329, 63);
-            this.button8.TabIndex = 1;
-            this.button8.Text = "Generate Schedule";
-            this.button8.UseVisualStyleBackColor = false;
-            // 
-            // UCpawn
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
+            this.button2.Size = new System.Drawing.Size(85, 35);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Add";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // txtPawnPrice
+            // 
+            this.txtPawnPrice.Font = new System.Drawing.Font("Century Gothic", 13.8F);
+            this.txtPawnPrice.Location = new System.Drawing.Point(176, 73);
+            this.txtPawnPrice.Multiline = true;
+            this.txtPawnPrice.Name = "txtPawnPrice";
+            this.txtPawnPrice.Size = new System.Drawing.Size(382, 35);
+            this.txtPawnPrice.TabIndex = 10;
+            // 
+            // durationType
+            // 
+            this.durationType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.durationType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.durationType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.durationType.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.durationType.FormattingEnabled = true;
+            this.durationType.IntegralHeight = false;
+            this.durationType.ItemHeight = 27;
+            this.durationType.Location = new System.Drawing.Point(176, 129);
+            this.durationType.Name = "durationType";
+            this.durationType.Size = new System.Drawing.Size(290, 35);
+            this.durationType.TabIndex = 9;
+            // 
+            // bunifuCustomLabel3
+            // 
+            this.bunifuCustomLabel3.AutoSize = true;
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(24, 136);
+            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(95, 23);
+            this.bunifuCustomLabel3.TabIndex = 8;
+            this.bunifuCustomLabel3.Text = "Duration :";
+            // 
+            // bunifuCustomLabel4
+            // 
+            this.bunifuCustomLabel4.AutoSize = true;
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(24, 80);
+            this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
+            this.bunifuCustomLabel4.Size = new System.Drawing.Size(122, 23);
+            this.bunifuCustomLabel4.TabIndex = 7;
+            this.bunifuCustomLabel4.Text = "Pawn Price :";
+            // 
+            // bunifuCards1
+            // 
+            this.bunifuCards1.BackColor = System.Drawing.Color.White;
+            this.bunifuCards1.BorderRadius = 5;
+            this.bunifuCards1.BottomSahddow = true;
+            this.bunifuCards1.color = System.Drawing.Color.Tomato;
+            this.bunifuCards1.Controls.Add(this.bunifuCustomLabel1);
+            this.bunifuCards1.Controls.Add(this.stuffPicture);
+            this.bunifuCards1.Controls.Add(this.btnStuffType);
+            this.bunifuCards1.Controls.Add(this.txtStuffName);
+            this.bunifuCards1.Controls.Add(this.stuffType);
+            this.bunifuCards1.Controls.Add(this.bunifuCustomLabel2);
+            this.bunifuCards1.Controls.Add(this.bunifuCustomLabel13);
+            this.bunifuCards1.LeftSahddow = false;
+            this.bunifuCards1.Location = new System.Drawing.Point(19, 26);
+            this.bunifuCards1.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuCards1.Name = "bunifuCards1";
+            this.bunifuCards1.RightSahddow = true;
+            this.bunifuCards1.ShadowDepth = 20;
+            this.bunifuCards1.Size = new System.Drawing.Size(594, 202);
+            this.bunifuCards1.TabIndex = 20;
+            // 
+            // bunifuCustomLabel1
+            // 
+            this.bunifuCustomLabel1.AutoSize = true;
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 14.8F);
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(18, 18);
+            this.bunifuCustomLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(211, 31);
+            this.bunifuCustomLabel1.TabIndex = 8;
+            this.bunifuCustomLabel1.Text = "Stuff Information";
+            // 
+            // stuffPicture
+            // 
+            this.stuffPicture.Image = global::SA_PAWN_Company.Properties.Resources.report;
+            this.stuffPicture.Location = new System.Drawing.Point(475, 73);
+            this.stuffPicture.Margin = new System.Windows.Forms.Padding(4);
+            this.stuffPicture.Name = "stuffPicture";
+            this.stuffPicture.Size = new System.Drawing.Size(93, 97);
+            this.stuffPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.stuffPicture.TabIndex = 7;
+            this.stuffPicture.TabStop = false;
+            this.stuffPicture.Click += new System.EventHandler(this.stuffPicture_Click);
+            // 
+            // btnStuffType
+            // 
+            this.btnStuffType.Location = new System.Drawing.Point(370, 133);
+            this.btnStuffType.Margin = new System.Windows.Forms.Padding(4);
+            this.btnStuffType.Name = "btnStuffType";
+            this.btnStuffType.Size = new System.Drawing.Size(97, 37);
+            this.btnStuffType.TabIndex = 6;
+            this.btnStuffType.Text = "Add";
+            this.btnStuffType.UseVisualStyleBackColor = true;
+            // 
+            // txtStuffName
+            // 
+            this.txtStuffName.Font = new System.Drawing.Font("Century Gothic", 13.8F);
+            this.txtStuffName.Location = new System.Drawing.Point(150, 73);
+            this.txtStuffName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtStuffName.Multiline = true;
+            this.txtStuffName.Name = "txtStuffName";
+            this.txtStuffName.Size = new System.Drawing.Size(317, 35);
+            this.txtStuffName.TabIndex = 5;
+            // 
+            // stuffType
+            // 
+            this.stuffType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.stuffType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.stuffType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.stuffType.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stuffType.FormattingEnabled = true;
+            this.stuffType.IntegralHeight = false;
+            this.stuffType.ItemHeight = 27;
+            this.stuffType.Location = new System.Drawing.Point(150, 133);
+            this.stuffType.Margin = new System.Windows.Forms.Padding(4);
+            this.stuffType.Name = "stuffType";
+            this.stuffType.Size = new System.Drawing.Size(212, 35);
+            this.stuffType.TabIndex = 4;
+            // 
+            // bunifuCustomLabel2
+            // 
+            this.bunifuCustomLabel2.AutoSize = true;
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(22, 136);
+            this.bunifuCustomLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(112, 23);
+            this.bunifuCustomLabel2.TabIndex = 3;
+            this.bunifuCustomLabel2.Text = "Stuff Type :";
+            // 
+            // bunifuCustomLabel13
+            // 
+            this.bunifuCustomLabel13.AutoSize = true;
+            this.bunifuCustomLabel13.Location = new System.Drawing.Point(22, 80);
+            this.bunifuCustomLabel13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.bunifuCustomLabel13.Name = "bunifuCustomLabel13";
+            this.bunifuCustomLabel13.Size = new System.Drawing.Size(120, 23);
+            this.bunifuCustomLabel13.TabIndex = 1;
+            this.bunifuCustomLabel13.Text = "Stuff Name :";
+            // 
+            // bunifuCustomLabel14
+            // 
+            this.bunifuCustomLabel14.AutoSize = true;
+            this.bunifuCustomLabel14.Font = new System.Drawing.Font("Century Gothic", 14.8F);
+            this.bunifuCustomLabel14.Location = new System.Drawing.Point(22, 20);
+            this.bunifuCustomLabel14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.bunifuCustomLabel14.Name = "bunifuCustomLabel14";
+            this.bunifuCustomLabel14.Size = new System.Drawing.Size(198, 31);
+            this.bunifuCustomLabel14.TabIndex = 19;
+            this.bunifuCustomLabel14.Text = "Pawn Contract";
+            // 
+            // bunifuCustomLabel15
+            // 
+            this.bunifuCustomLabel15.AutoSize = true;
+            this.bunifuCustomLabel15.Font = new System.Drawing.Font("Century Gothic", 14.8F);
+            this.bunifuCustomLabel15.Location = new System.Drawing.Point(20, 18);
+            this.bunifuCustomLabel15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.bunifuCustomLabel15.Name = "bunifuCustomLabel15";
+            this.bunifuCustomLabel15.Size = new System.Drawing.Size(277, 31);
+            this.bunifuCustomLabel15.TabIndex = 23;
+            this.bunifuCustomLabel15.Text = "Customer Information";
+            // 
+            // btnGenerate
+            // 
+            this.btnGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerate.Font = new System.Drawing.Font("Century Gothic", 13.8F);
+            this.btnGenerate.Location = new System.Drawing.Point(495, 582);
+            this.btnGenerate.Name = "btnGenerate";
+            this.btnGenerate.Size = new System.Drawing.Size(268, 52);
+            this.btnGenerate.TabIndex = 1;
+            this.btnGenerate.Text = "Generate Schedule";
+            this.btnGenerate.UseVisualStyleBackColor = true;
+            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
+            // 
+            // UCPawn
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button8);
-            this.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(6);
-            this.Name = "UCpawn";
-            this.Size = new System.Drawing.Size(1307, 776);
-            this.Load += new System.EventHandler(this.UCpawn_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.Controls.Add(this.btnGenerate);
+            this.Controls.Add(this.panel1);
+            this.Name = "UCPawn";
+            this.Size = new System.Drawing.Size(1264, 653);
+            this.panel1.ResumeLayout(false);
+            this.bunifuCards2.ResumeLayout(false);
+            this.bunifuCards2.PerformLayout();
+            this.bunifuCards3.ResumeLayout(false);
+            this.bunifuCards3.PerformLayout();
+            this.bunifuCards1.ResumeLayout(false);
+            this.bunifuCards1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stuffPicture)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
+        private System.Windows.Forms.Panel panel1;
+        private Bunifu.Framework.UI.BunifuCards bunifuCards3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private MetroFramework.Controls.MetroComboBox metroComboBox2;
-        private MetroFramework.Controls.MetroTextBox metroTextBox2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private MetroFramework.Controls.MetroTextBox metroTextBox5;
-        private MetroFramework.Controls.MetroTextBox metroTextBox4;
-        private MetroFramework.Controls.MetroTextBox metroTextBox3;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label3;
-        private MetroFramework.Controls.MetroTextBox metroTextBox6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private MetroFramework.Controls.MetroComboBox metroComboBox5;
-        private MetroFramework.Controls.MetroComboBox metroComboBox4;
-        private System.Windows.Forms.Label label8;
-        private MetroFramework.Controls.MetroComboBox metroComboBox3;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button4;
-        private MetroFramework.Controls.MetroTextBox metroTextBox7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Label label13;
-        private MetroFramework.Controls.MetroTextBox metroTextBox8;
+        private System.Windows.Forms.TextBox txtPawnPrice;
+        private System.Windows.Forms.ComboBox durationType;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
+        private System.Windows.Forms.TextBox txtRate;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
+        private System.Windows.Forms.TextBox txtPaycount;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel7;
+        private System.Windows.Forms.TextBox txtAttachement;
+        private System.Windows.Forms.Button btnBrowse;
+        private Bunifu.Framework.UI.BunifuCards bunifuCards2;
+        private System.Windows.Forms.Button btnAddId;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
+        private System.Windows.Forms.TextBox txtAddress;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel9;
+        private System.Windows.Forms.TextBox txtTel;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel10;
+        private System.Windows.Forms.TextBox txtCustomerName;
+        private System.Windows.Forms.ComboBox cbGender;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel11;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel12;
+        private System.Windows.Forms.ComboBox idType;
+        private Bunifu.Framework.UI.BunifuCards bunifuCards1;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
+        private System.Windows.Forms.PictureBox stuffPicture;
+        private System.Windows.Forms.Button btnStuffType;
+        private System.Windows.Forms.TextBox txtStuffName;
+        private System.Windows.Forms.ComboBox stuffType;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel13;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel14;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel15;
+        private System.Windows.Forms.Button btnGenerate;
     }
 }
