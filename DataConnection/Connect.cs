@@ -19,7 +19,7 @@ namespace DataConnection
 
         public static bool Open()
         {
-            Connection = new SqlConnection("SERVER=localhost;DATABASE=,TRUSTED_CONNECTION=TRUE");
+            Connection = new SqlConnection("SERVER=localhost;DATABASE=SAPAWN;TRUSTED_CONNECTION=TRUE");
             try { Connection.Open(); }
             catch (Exception ex)
             {

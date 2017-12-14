@@ -87,6 +87,12 @@
       <DependentUpon>Demo.cs</DependentUpon>
     </Compile>
     <Compile Include="DialogList.cs" />
+    <Compile Include="GUI\frmComponents\frmRegisteruser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmComponents\frmRegisteruser.Designer.cs">
+      <DependentUpon>frmRegisteruser.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmMain\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -272,6 +278,9 @@
     <EmbeddedResource Include="Demo.resx">
       <DependentUpon>Demo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmComponents\frmRegisteruser.resx">
+      <DependentUpon>frmRegisteruser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmMain\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -372,108 +381,55 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\AAEAAQAAAAAAAAbGAAAAJGNhYjRlNDM5LTgxOTItNDlmYS1iNjAzLTdiOWVhMWNjMzg4ZQ.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Circle-icons-clock.svg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ubuntu-logo-32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icon_pawn_step_4.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Group_icon_blue.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\download.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cart512x512.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\download.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\download %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\report.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Settings-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\delete.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\smartphone.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\add-documents%281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="Resources\badge.png" />
+    <None Include="Resources\badge1.png" />
+    <None Include="Resources\calendar.png" />
+    <None Include="Resources\cart512x512.png" />
+    <None Include="Resources\Circle-icons-clock.svg.png" />
+    <None Include="Resources\clerk-with-tie.png" />
+    <None Include="Resources\close-button.png" />
+    <None Include="Resources\DDA1om1 - Imgur.gif" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\download %281%29.png" />
+    <None Include="Resources\download.jpg" />
+    <None Include="Resources\download.png" />
+    <None Include="Resources\exit1.jpg" />
+    <None Include="Resources\google-Assistant-1.gif" />
+    <None Include="Resources\Group_icon_blue.png" />
+    <None Include="Resources\home.png" />
+    <None Include="Resources\hospital-supplies.png" />
+    <None Include="Resources\icon.png" />
+    <None Include="Resources\icon_pawn_step_4.png" />
+    <None Include="Resources\keyboard-right-arrow-button.png" />
+    <None Include="Resources\lg.messenger-typing-preloader.gif" />
+    <None Include="Resources\login.png" />
+    <None Include="Resources\login_2.png" />
+    <None Include="Resources\login_3.png" />
+    <None Include="Resources\logo.png" />
+    <None Include="Resources\Logo_PAWN.png" />
+    <None Include="Resources\menu.png" />
+    <None Include="Resources\pawn-shop.png" />
+    <None Include="Resources\pawn.png" />
+    <None Include="Resources\remove.png" />
+    <None Include="Resources\report.png" />
+    <None Include="Resources\rubbish-bin.png" />
+    <None Include="Resources\Settings-icon.png" />
+    <None Include="Resources\shopping-cart %281%29.png" />
+    <None Include="Resources\shopping-cart.png" />
+    <None Include="Resources\shutdown.png" />
+    <None Include="Resources\smartphone.png" />
+    <None Include="Resources\smartphone1.png" />
+    <None Include="Resources\sweep.png" />
+    <None Include="Resources\tran.png" />
+    <None Include="Resources\ubuntu-logo-32.png" />
+    <None Include="Resources\Untitled-1.png" />
+    <None Include="Resources\users.png" />
     <None Include="Resources\warehouse.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\sweep.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\rubbish-bin.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\badge.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\badge1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\google-Assistant-1.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\lg.messenger-typing-preloader.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\DDA1om1 - Imgur.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\shutdown.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Logo_PAWN.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\login.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\login_2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\login_3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\close-button.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\remove.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\menu.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\keyboard-right-arrow-button.png" />
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataConnection\DataConnection.csproj">
@@ -486,47 +442,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\exit1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\smartphone1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\home.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pawn-shop.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pawn.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\shopping-cart.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\shopping-cart %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\users.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\clerk-with-tie.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\hospital-supplies.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\calendar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\tran.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Untitled-1.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\Simpleicons_Interface_business-man-1.svg.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

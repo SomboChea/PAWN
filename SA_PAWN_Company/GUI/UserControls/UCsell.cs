@@ -15,7 +15,6 @@ namespace SA_PAWN_Company.GUI
         public UCsell()
         {
             InitializeComponent();
-            Helpers.Helper.SetRedbox(bunifuMetroTextbox1);
         }
 
         private void bunifuDropdown2_onItemSelected(object sender, EventArgs e)
