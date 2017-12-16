@@ -19,7 +19,7 @@ namespace DataConnection
 
         public static bool Open()
         {
-            Connection = new SqlConnection("SERVER=localhost;DATABASE=,TRUSTED_CONNECTION=TRUE");
+            Connection = new SqlConnection("SERVER=localhost;DATABASE=SAPAWN;TRUSTED_CONNECTION=TRUE");
             try { Connection.Open(); }
             catch (Exception ex)
             {
@@ -34,7 +34,7 @@ namespace DataConnection
         ///</Summary>
         public static bool Open(string SERVER, string DATABASE)
         {
-            Connection = new SqlConnection("SERVER=" + SERVER + ";DATABASE=" + DATABASE + ",TRUSTED_CONNECTION=TRUE");
+            Connection = new SqlConnection("SERVER=" + SERVER + ";DATABASE=" + DATABASE + ";TRUSTED_CONNECTION=TRUE");
             try { Connection.Open(); }
             catch (Exception ex)
             {
@@ -49,7 +49,7 @@ namespace DataConnection
         ///</Summary>
         public static bool Open(string SERVER, string DATABASE, string Username, string Password)
         {
-            Connection = new SqlConnection("SERVER=" + SERVER + ";DATABASE=" + DATABASE + ",UserID=" + Username + ",Password=" + Password);
+            Connection = new SqlConnection("Server=" + SERVER + ";Database=" + DATABASE + ";User Id=" + Username + ";Password=" + Password);
             try { Connection.Open(); }
             catch (Exception ex)
             {
@@ -79,7 +79,8 @@ namespace DataConnection
         public static void ExecuteNonQuery(string sql, SqlParameter[] param = null)
         {
             SqlCommand cmd = new SqlCommand(sql, Connection);
-            cmd.Parameters.AddRange(param);
+            if (param != null)
+                cmd.Parameters.AddRange(param);
             cmd.ExecuteNonQuery();
             cmd.Dispose();
         }
@@ -91,7 +92,8 @@ namespace DataConnection
         public static object ExecuteScalar(string sql, SqlParameter[] param = null)
         {
             SqlCommand cmd = new SqlCommand(sql, Connection);
-            cmd.Parameters.AddRange(param);
+            if (param != null)
+                cmd.Parameters.AddRange(param);
             object value = cmd.ExecuteScalar();
             cmd.Dispose();
             return value;
@@ -134,6 +136,36 @@ namespace DataConnection
         /// </summary>
         public static void BindGridView(DataGridView dg)
         {
+        }
+    }
+
+    public class Test
+    {
+        public static int logUser(string user, string pass, ref string FullName)
+        {
+            try
+            {
+                DataTable usr = Connect.GetModel("SELECT * FROM [User] WHERE [Username] = '" + user + "' AND [Password] = '" + pass + "' AND [Status] = 1;");
+                DataRow r = usr.Rows[0];
+                FullName = r["Name"] + "";
+                return int.Parse(r["UID"].ToString());
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+        }
+
+        public static bool config(string server, string dbname, string user = null, string pass = null)
+        {
+            try
+            {
+                return user != null && pass != null ? Connect.Open(server, dbname, user, pass) : Connect.Open(server, dbname);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }

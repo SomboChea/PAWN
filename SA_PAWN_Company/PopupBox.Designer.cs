@@ -37,10 +37,10 @@
             // 
             // panOne
             // 
-            this.panOne.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panOne.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panOne.Location = new System.Drawing.Point(0, 0);
             this.panOne.Name = "panOne";
-            this.panOne.Size = new System.Drawing.Size(620, 266);
+            this.panOne.Size = new System.Drawing.Size(620, 291);
             this.panOne.TabIndex = 0;
             // 
             // btnNext

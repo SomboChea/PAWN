@@ -13,10 +13,26 @@ namespace SA_PAWN_Company
 {
     public partial class frmMain : Form
     {
+        private int userID;
+
         public frmMain()
         {
             InitializeComponent();
             FullMode.Fullscreen(this);
+            //btnReports.Text = " របាយការណ៍";
+        }
+
+        public frmMain(int userID)
+        {
+            InitializeComponent();
+            FullMode.Fullscreen(this);
+
+            DataConnection.Connect.Open();
+            this.userID = userID;
+            getTags();
+            loadMenu(userID);
+
+            //btnReports.Text = " របាយការណ៍";
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -36,7 +52,40 @@ namespace SA_PAWN_Company
             panNav.Visible = false;
             panNav.Width = open ? 0 : 258;
             open = !open;
-            bunifuTransition1.ShowSync(panNav, true, null);
+            bTran.ShowSync(panNav, true, null);
+        }
+
+        /** Tags **/
+        private List<string> tags = new List<string>();
+
+        private void getTags()
+        {
+            foreach (Bunifu.Framework.UI.BunifuFlatButton tag in panMenu.Controls.OfType<Bunifu.Framework.UI.BunifuFlatButton>())
+            {
+                tags.Add(tag.Tag + "");
+            }
+        }
+
+        private List<string> getUserTags(int roleID)
+        {
+            List<string> list = new List<string>();
+            DataTable d = DataConnection.Connect.GetModel("SELECT Tag FROM viewRoleOption WHERE PID = " + roleID);
+            foreach (DataRow row in d.Rows)
+                list.Add(row["Tag"] + "");
+            return list;
+        }
+
+        private void loadMenu(int id)
+        {
+            List<string> list = getUserTags(id);
+            for (int i = 0; i < list.Count; i++)
+            {
+                foreach (Bunifu.Framework.UI.BunifuFlatButton tag in panMenu.Controls.OfType<Bunifu.Framework.UI.BunifuFlatButton>())
+                {
+                    if (list[i] == tag.Tag.ToString())
+                        tag.Visible = true;
+                }
+            }
         }
     }
 }

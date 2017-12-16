@@ -38,8 +38,17 @@ namespace SA_PAWN_Company
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
-            frmDashboardMaterial main = new frmDashboardMaterial();
-            new Loading(this, main).ShowDialog();
+            DataConnection.Connect.Open();
+            string name = DataConnection.Test.logUser(txtUsername.Text, txtPassword.Text);
+            if (name != null)
+            {
+                frmMain main = new frmMain();
+                new Loading(this, main).ShowDialog();
+            }
+            else
+            {
+                //new Alert();
+            }
         }
     }
 }
