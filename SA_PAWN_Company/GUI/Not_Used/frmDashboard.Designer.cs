@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.miniToolStrip = new System.Windows.Forms.ToolStrip();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
             this.btntoggle = new System.Windows.Forms.Button();
             this.panelside = new MetroFramework.Controls.MetroPanel();
@@ -43,7 +42,6 @@
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.panel2.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.panelside.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -66,19 +64,6 @@
             this.miniToolStrip.Stretch = true;
             this.miniToolStrip.TabIndex = 2;
             // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel2.Controls.Add(this.panelMain);
-            this.panel2.Controls.Add(this.panelside);
-            this.panel2.Location = new System.Drawing.Point(20, 60);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1260, 674);
-            this.panel2.TabIndex = 1;
-            // 
             // panelMain
             // 
             this.panelMain.AutoScroll = true;
@@ -87,8 +72,9 @@
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(132, 0);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1128, 674);
+            this.panelMain.Size = new System.Drawing.Size(1168, 741);
             this.panelMain.TabIndex = 1;
+            this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             // 
             // btntoggle
             // 
@@ -112,7 +98,7 @@
             this.panelside.Location = new System.Drawing.Point(0, 0);
             this.panelside.Name = "panelside";
             this.panelside.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panelside.Size = new System.Drawing.Size(132, 674);
+            this.panelside.Size = new System.Drawing.Size(132, 741);
             this.panelside.TabIndex = 0;
             this.panelside.VerticalScrollbar = true;
             this.panelside.VerticalScrollbarBarColor = false;
@@ -238,15 +224,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1300, 754);
-            this.Controls.Add(this.panel2);
-            this.Movable = false;
+            this.ClientSize = new System.Drawing.Size(1300, 741);
+            this.Controls.Add(this.panelMain);
+            this.Controls.Add(this.panelside);
             this.Name = "frmDashboard";
-            this.Resizable = false;
             this.Text = "{ Welcome Board }";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmDashboard_Load);
-            this.panel2.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
             this.panelside.ResumeLayout(false);
             this.panelside.PerformLayout();
@@ -258,7 +242,6 @@
 
         #endregion
         private System.Windows.Forms.ToolStrip miniToolStrip;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Button btntoggle;
         private MetroFramework.Controls.MetroPanel panelside;

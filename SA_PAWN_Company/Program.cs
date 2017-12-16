@@ -14,7 +14,11 @@ namespace SA_PAWN_Company
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+<<<<<<< HEAD
             Application.Run(new Login());
+=======
+            Application.Run(new frmDashboard());
+>>>>>>> bc69fe7376d26b3d0a9e315bdcdd74952fd3e4cc
         }
     }
 }

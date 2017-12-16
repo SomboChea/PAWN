@@ -32,7 +32,7 @@ namespace Helpers
         /// By Create Label with Backcolor
         /// </summary>
         /// <param name="control">Textbox or ComboBox</param>
-        public static void SetRedbox(Control control)
+        public static void SetRedbox(Control control,Control main)
         {
             if (control is BunifuMetroTextbox)
             {
@@ -41,6 +41,7 @@ namespace Helpers
                 box.BorderColorIdle = Color.Red;
                 box.BorderColorMouseHover = Color.Red;
                 control = box;
+                main.Controls.Add(box);
                 return;
             }
             Label Redbox = new Label();
@@ -55,13 +56,13 @@ namespace Helpers
         /// </summary>
         /// <param name="controls">instance of TextBox or ComboBox that can get text</param>
         /// <returns>True: No problem , False: Have null</returns>
-        public static Boolean CheckRequirement(Control[] controls)
+        public static Boolean CheckRequirement(Control main,Control[] requirement)
         {
             bool check = true;
-            foreach (Control ctrl in controls)
+            foreach (Control ctrl in requirement)
                 if (ctrl.Text.Equals(""))
                 {
-                    SetRedbox(ctrl);
+                    SetRedbox(ctrl,main);
                     check = false;
                 }
             return check;
