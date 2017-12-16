@@ -79,6 +79,7 @@ namespace DataConnection
         public static void ExecuteNonQuery(string sql, SqlParameter[] param = null)
         {
             SqlCommand cmd = new SqlCommand(sql, Connection);
+            if(param!=null)
             cmd.Parameters.AddRange(param);
             cmd.ExecuteNonQuery();
             cmd.Dispose();
@@ -91,6 +92,7 @@ namespace DataConnection
         public static object ExecuteScalar(string sql, SqlParameter[] param = null)
         {
             SqlCommand cmd = new SqlCommand(sql, Connection);
+            if(param!=null)
             cmd.Parameters.AddRange(param);
             object value = cmd.ExecuteScalar();
             cmd.Dispose();
