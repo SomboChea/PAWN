@@ -22,13 +22,14 @@ namespace SA_PAWN_Company
             //btnReports.Text = " របាយការណ៍";
         }
 
-        public frmMain(int userID)
+        public frmMain(int userID, string Name = null)
         {
             InitializeComponent();
             FullMode.Fullscreen(this);
 
             DataConnection.Connect.Open();
             this.userID = userID;
+            lbUsername.Text = !Name.Equals(null) ? Name : "Undefined";
             getTags();
             loadMenu(userID);
 
@@ -77,7 +78,8 @@ namespace SA_PAWN_Company
 
         private void loadMenu(int id)
         {
-            List<string> list = getUserTags(id);
+            int role_id = int.Parse(DataConnection.Connect.ExecuteScalar("EXEC getUserRole " + id) + "");
+            List<string> list = getUserTags(role_id);
             for (int i = 0; i < list.Count; i++)
             {
                 foreach (Bunifu.Framework.UI.BunifuFlatButton tag in panMenu.Controls.OfType<Bunifu.Framework.UI.BunifuFlatButton>())
@@ -86,6 +88,15 @@ namespace SA_PAWN_Company
                         tag.Visible = true;
                 }
             }
+        }
+
+        /** Sign Out **/
+
+        private void btnSignOut_Click(object sender, EventArgs e)
+        {
+            App.Hide(this);
+            App.ExitThread(this);
+            App.Open(new Login());
         }
     }
 }

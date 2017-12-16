@@ -149,6 +149,7 @@
             this.txtPassword.Size = new System.Drawing.Size(481, 50);
             this.txtPassword.TabIndex = 3;
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtPassword.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtUsername_KeyUp);
             // 
             // bunifuCustomLabel1
             // 
@@ -177,6 +178,7 @@
             this.txtUsername.Size = new System.Drawing.Size(481, 51);
             this.txtUsername.TabIndex = 1;
             this.txtUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtUsername.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtUsername_KeyUp);
             // 
             // btnSignIn
             // 

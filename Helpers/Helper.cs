@@ -32,7 +32,7 @@ namespace Helpers
         /// By Create Label with Backcolor
         /// </summary>
         /// <param name="control">Textbox or ComboBox</param>
-        public static void SetRedbox(Control control,Control main)
+        public static void SetRedbox(Control control, Control main)
         {
             if (control is BunifuMetroTextbox)
             {
@@ -56,13 +56,13 @@ namespace Helpers
         /// </summary>
         /// <param name="controls">instance of TextBox or ComboBox that can get text</param>
         /// <returns>True: No problem , False: Have null</returns>
-        public static Boolean CheckRequirement(Control main,Control[] requirement)
+        public static Boolean CheckRequirement(Control main, Control[] requirement)
         {
             bool check = true;
             foreach (Control ctrl in requirement)
                 if (ctrl.Text.Equals(""))
                 {
-                    SetRedbox(ctrl,main);
+                    SetRedbox(ctrl, main);
                     check = false;
                 }
             return check;
@@ -272,6 +272,34 @@ namespace Helpers
                 MessageBox.Show("Can't read log file!");
                 return null;
             }
+        }
+    }
+
+    public class App
+    {
+        public static void Open(Form context)
+        {
+            context.Show();
+            return;
+        }
+
+        public static void ExitThread(Form context)
+        {
+            new ApplicationContext(context).ExitThread();
+            return;
+        }
+
+        public static void Hide(Form context)
+        {
+            context.Hide();
+            return;
+        }
+
+        public static void ExitAll()
+        {
+            Application.Exit();
+            Application.ExitThread();
+            return;
         }
     }
 }
