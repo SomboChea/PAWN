@@ -40,7 +40,7 @@ namespace SA_PAWN_Company
                 return;
             }
 
-           
+            sql = "Insert into [User] values('"+txtusername.Text.Trim()+"','"+txtpass.Text.Trim()+"',"+1+")";
 
 
         }

@@ -266,6 +266,7 @@
     <Compile Include="Reports\struct\ST_DailyReport.cs" />
     <Compile Include="STR_CLASS\Customer.cs" />
     <Compile Include="STR_CLASS\Employee.cs" />
+    <Compile Include="STR_CLASS\Pawnshop.cs" />
     <Compile Include="STR_CLASS\People.cs" />
     <Compile Include="STR_CLASS\Role.cs" />
     <Compile Include="STR_CLASS\RoleOption.cs" />

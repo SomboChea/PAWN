@@ -80,7 +80,7 @@ namespace SA_PAWN_Company
             {
                 DataRow row = dt.Rows[dgEmployee.SelectedRows[0].Index];
 
-                picturebox.Image = File.Exists(@"./image/" + row["Photo"]) ? Image.FromFile(@"./image/" + row["Photo"]) : Properties.Resources.Simpleicons_Interface_business_man_1_svg;
+                picturebox.Image = File.Exists(Pawnshop.PATH_PREFIX + row["Photo"]) ? Image.FromFile(@"./image/" + row["Photo"]) : Properties.Resources.Simpleicons_Interface_business_man_1_svg;
                 foreach (Control ctrl in groupBox1.Controls)
                 {
                     try

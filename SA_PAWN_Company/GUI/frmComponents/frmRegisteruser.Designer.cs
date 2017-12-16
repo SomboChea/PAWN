@@ -36,7 +36,6 @@
             this.txtrepass = new System.Windows.Forms.TextBox();
             this.btncancel = new System.Windows.Forms.Button();
             this.btnok = new System.Windows.Forms.Button();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
             // 
             // label1
@@ -106,23 +105,11 @@
             this.btnok.UseVisualStyleBackColor = true;
             this.btnok.Click += new System.EventHandler(this.btnok_Click);
             // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "Pawn",
-            "User"});
-            this.checkedListBox1.Location = new System.Drawing.Point(16, 184);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(256, 235);
-            this.checkedListBox1.TabIndex = 3;
-            // 
             // frmRegisteruser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(516, 475);
-            this.Controls.Add(this.checkedListBox1);
+            this.ClientSize = new System.Drawing.Size(516, 185);
             this.Controls.Add(this.btnok);
             this.Controls.Add(this.btncancel);
             this.Controls.Add(this.txtrepass);
@@ -150,6 +137,5 @@
         private System.Windows.Forms.TextBox txtrepass;
         private System.Windows.Forms.Button btncancel;
         private System.Windows.Forms.Button btnok;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
     }
 }

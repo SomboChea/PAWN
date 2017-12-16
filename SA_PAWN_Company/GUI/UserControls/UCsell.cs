@@ -55,7 +55,7 @@ namespace SA_PAWN_Company.GUI
 
         private void bunifuTileButton5_Click(object sender, EventArgs e)
         {
-
+            clear(this);
         }
 
         private void cblisttype_SelectedIndexChanged(object sender, EventArgs e)
@@ -67,12 +67,30 @@ namespace SA_PAWN_Company.GUI
         {
             txtprice.Text = double.Parse( Connect.ExecuteScalar("Select Price from viewInventory Where SID=" + cbinventoryname.SelectedValue) + "").ToString("#,##0.00 $");
             //string imgname= Connect.ExecuteScalar("Select Photo from viewInventory Where SID=" + cbinventoryname.SelectedValue) + "";
-            //pictureBox1.Image = File.Exists("./Image/" + imgname) ? Image.FromFile("./Image/" + imgname) : Properties.Resources.download1;
+            //pictureBox1.Image = File.Exists( Pawnshop.PATH_PREFIX+ imgname) ? Image.FromFile(Pawnshop.PATH_PREFIX + imgname) : Properties.Resources.download1;
         }
 
         private void cbinventype_SelectedIndexChanged(object sender, EventArgs e)
         {
             Helper.FillCombobox(cbinventoryname, "Stuff", "SID", "Select * from viewInventory Where STID=" + cbinventype.SelectedValue);
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            string[] item = {cbinventype.Text,cbinventoryname.Text,txtprice.Text };
+            ListViewItem listitem = new ListViewItem(item);
+            listView1.Items.Add(listitem);
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count > 0)
+            {
+                ListViewItem row = listView1.SelectedItems[0];
+                cbinventype.SelectedItem = row.SubItems[0];
+                cbinventoryname.SelectedItem = row.SubItems[1];
+                txtprice.Text = row.SubItems[2]+"";
+            }
         }
     }
 }
