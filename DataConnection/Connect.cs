@@ -151,7 +151,7 @@ namespace DataConnection
             {
                 DataTable usr = Connect.GetModel("SELECT * FROM [User] WHERE [Username] = '" + user + "' AND [Password] = '" + pass + "' AND [Status] = 1;");
                 DataRow r = usr.Rows[0];
-                FullName = r["Name"] + "";
+                FullName = r["Username"] + "";
                 return int.Parse(r["UID"].ToString());
             }
             catch (Exception)

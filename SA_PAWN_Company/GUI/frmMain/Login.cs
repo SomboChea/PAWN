@@ -27,6 +27,10 @@ namespace SA_PAWN_Company
             FullMode.Fullscreen(this);
         }
 
+        /** Instance Declared Variables **/
+        private int user_id;
+        private string user_name;
+
         private void Login_Load(object sender, EventArgs e)
         {
         }
@@ -38,19 +42,53 @@ namespace SA_PAWN_Company
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
+            AutoLogin();
+        }
+
+        /** Check Auto Login **/
+
+        private void AutoLogin()
+        {
+            if (SubmitLogin())
+                loadMain();
+        }
+
+        /** Login Submit **/
+
+        private bool SubmitLogin()
+        {
             DataConnection.Connect.Open();
-            string fullname="";
-            int name = DataConnection.Test.logUser(txtUsername.Text, txtPassword.Text,ref fullname);
-            Pawnshop.Fullname = fullname;
-            if (name != null)
+
+            user_id = DataConnection.Test.logUser(txtUsername.Text, txtPassword.Text, ref user_name);
+            if (Name != null && !user_id.Equals(0))
+
             {
-                frmMain main = new frmMain();
-                new Loading(this, main).ShowDialog();
+                return true;
             }
             else
             {
-                //new Alert();
+                return false;
             }
+        }
+
+        /** Load Dashboard **/
+
+        private void loadMain()
+        {
+            frmMain main = new frmMain(user_id, user_name);
+            new Loading(this, main).Show();
+        }
+
+        /** Message Error **/
+
+        private void MsgErr()
+        {
+            MessageBox.Show("Error!");
+        }
+
+        private void txtUsername_KeyUp(object sender, KeyEventArgs e)
+        {
+            AutoLogin();
         }
     }
 }
