@@ -74,8 +74,8 @@ namespace SA_PAWN_Company
 
         private void loadMain()
         {
-            this.Hide();
-            new Loading(this, new frmMain(user_id, user_name)).ShowDialog();
+            frmMain main = new frmMain(user_id, user_name);
+            new Loading(this, main).ShowDialog();
         }
 
         /** Message Error **/

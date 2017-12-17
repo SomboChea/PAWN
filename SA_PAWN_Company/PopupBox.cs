@@ -23,31 +23,14 @@ namespace SA_PAWN_Company
         {
             InitializeComponent();
             this.Size = new Size(uc.Size.Width, uc.Size.Height + 50);
-            panTwo.Visible = false;
             uc.Dock = DockStyle.Fill;
             panOne.Controls.Add(uc);
             FullMode.PopUp(this);
         }
 
-        public PopupBox(UserControl uc, bool next, bool prev = false)
+        private void panOne_ControlRemoved(object sender, ControlEventArgs e)
         {
-            InitializeComponent();
-            btnPrev.Visible = prev;
-            btnNext.Visible = next;
-            this.Size = new Size(uc.Size.Width, (uc.Size.Height + panTwo.Size.Height + 50));
-            panOne.Size = new Size(uc.Size.Width, uc.Size.Height);
-            panTwo.Size = new Size(uc.Size.Width, panTwo.Size.Height);
-            uc.Dock = DockStyle.Fill;
-            panOne.Controls.Add(uc);
-            FullMode.PopUp(this);
-        }
-
-        private void btnNext_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void btnPrev_Click(object sender, EventArgs e)
-        {
+            this.Hide();
         }
     }
 }

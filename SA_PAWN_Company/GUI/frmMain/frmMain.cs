@@ -19,7 +19,6 @@ namespace SA_PAWN_Company
         {
             InitializeComponent();
             FullMode.Fullscreen(this);
-            //btnReports.Text = " របាយការណ៍";
         }
 
         public frmMain(int userID, string Name = null)
@@ -33,7 +32,7 @@ namespace SA_PAWN_Company
             getTags();
             loadMenu(userID);
 
-            //btnReports.Text = " របាយការណ៍";
+            panContent.Controls.Add(new UCMain());
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -41,12 +40,16 @@ namespace SA_PAWN_Company
             Application.ExitThread();
         }
 
+        /** Minimized Button **/
+
         private void btnMin_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
         }
 
         private bool open = true;
+
+        /** Open / Close Menu **/
 
         private void btnNav_Click(object sender, EventArgs e)
         {
@@ -67,6 +70,8 @@ namespace SA_PAWN_Company
             }
         }
 
+        /** Get user tags **/
+
         private List<string> getUserTags(int roleID)
         {
             List<string> list = new List<string>();
@@ -75,6 +80,8 @@ namespace SA_PAWN_Company
                 list.Add(row["Tag"] + "");
             return list;
         }
+
+        /** List Menu **/
 
         private void loadMenu(int id)
         {
@@ -97,6 +104,56 @@ namespace SA_PAWN_Company
             this.Close();
             //App.ExitThread(this);
             //App.Open(new Login());
+        }
+
+        /** Dashboard **/
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+        }
+
+        /** New Panw **/
+
+        private void btnNewPawn_Click(object sender, EventArgs e)
+        {
+            panContent.Controls.Clear();
+            panContent.Controls.Add(new UCPawn());
+        }
+
+        /** Open Stuff **/
+
+        private void btnStuff_Click(object sender, EventArgs e)
+        {
+        }
+
+        /** Open Inventory **/
+
+        private void btnInventory_Click(object sender, EventArgs e)
+        {
+        }
+
+        /** Open Customers **/
+
+        private void btnCustomers_Click(object sender, EventArgs e)
+        {
+        }
+
+        /** Open Employees **/
+
+        private void btnEmployees_Click(object sender, EventArgs e)
+        {
+        }
+
+        /** Open Reports **/
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+        }
+
+        /** Holidays **/
+
+        private void btnHoliday_Click(object sender, EventArgs e)
+        {
         }
     }
 }

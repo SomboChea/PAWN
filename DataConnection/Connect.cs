@@ -76,15 +76,16 @@ namespace DataConnection
         /// </summary>
         /// <param name="sql">Command Select</param>
         /// <param name="param">Nullable , use with command have parameter</param>
-        public static void ExecuteNonQuery(string sql, SqlParameter[] param = null)
+        public static bool ExecuteNonQuery(string sql, SqlParameter[] param = null)
         {
             SqlCommand cmd = new SqlCommand(sql, Connection);
 
             if (param != null)
                 cmd.Parameters.AddRange(param);
 
-            cmd.ExecuteNonQuery();
+            bool x = Convert.ToBoolean(cmd.ExecuteNonQuery());
             cmd.Dispose();
+            return x;
         }
 
         ///<Summary>

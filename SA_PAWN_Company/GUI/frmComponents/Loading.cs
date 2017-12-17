@@ -67,13 +67,13 @@ namespace SA_PAWN_Company
         private void timerLoading_Tick(object sender, EventArgs e)
         {
             timerLoading.Stop();
-            Dispose();
+            this.Dispose();
             lay.Dispose();
             if (hasContext)
             {
-                oContext.Visible = false;
-                nContext.Visible = true;
                 oContext.Hide();
+                nContext.ShowDialog();
+                oContext.Show();
             }
         }
     }
