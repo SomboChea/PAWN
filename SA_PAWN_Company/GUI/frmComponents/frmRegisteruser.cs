@@ -41,8 +41,12 @@ namespace SA_PAWN_Company
             }
 
             sql = "Insert into [User] values('"+txtusername.Text.Trim()+"','"+txtpass.Text.Trim()+"',"+1+")";
+            this.Dispose();
+        }
 
-
+        private void btncancel_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

@@ -87,6 +87,12 @@
       <DependentUpon>Demo.cs</DependentUpon>
     </Compile>
     <Compile Include="DialogList.cs" />
+    <Compile Include="GUI\frmComponents\frmAddPos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmComponents\frmAddPos.Designer.cs">
+      <DependentUpon>frmAddPos.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmComponents\frmRegisteruser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -278,6 +284,9 @@
     </Compile>
     <EmbeddedResource Include="Demo.resx">
       <DependentUpon>Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmComponents\frmAddPos.resx">
+      <DependentUpon>frmAddPos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmComponents\frmRegisteruser.resx">
       <DependentUpon>frmRegisteruser.cs</DependentUpon>

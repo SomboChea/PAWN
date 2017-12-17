@@ -58,6 +58,7 @@ namespace SA_PAWN_Company
         private bool SubmitLogin()
         {
             DataConnection.Connect.Open();
+
             user_id = DataConnection.Test.logUser(txtUsername.Text, txtPassword.Text, ref user_name);
             if (user_name != null && !user_id.Equals(0))
             {
