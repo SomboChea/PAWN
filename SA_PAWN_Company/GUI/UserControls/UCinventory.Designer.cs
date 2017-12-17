@@ -1,4 +1,4 @@
-﻿namespace SA_PAWN_Company.GUI
+﻿namespace SA_PAWN_Company
 {
     partial class UCinventory
     {

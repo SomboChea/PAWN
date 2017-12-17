@@ -110,50 +110,72 @@ namespace SA_PAWN_Company
 
         private void btnHome_Click(object sender, EventArgs e)
         {
+            OpenUC(new UCMain());
+            lbTitle.Text = "Dashboard";
         }
 
         /** New Panw **/
 
         private void btnNewPawn_Click(object sender, EventArgs e)
         {
-            panContent.Controls.Clear();
-            panContent.Controls.Add(new UCPawn());
+            OpenUC(new UCPawn());
+            lbTitle.Text = "New Pawn";
         }
 
         /** Open Stuff **/
 
         private void btnStuff_Click(object sender, EventArgs e)
         {
+            OpenUC(new UCStuff());
+            lbTitle.Text = "Stuff";
         }
 
         /** Open Inventory **/
 
         private void btnInventory_Click(object sender, EventArgs e)
         {
+            OpenUC(new UCinventory());
+            lbTitle.Text = "Inventory";
         }
 
         /** Open Customers **/
 
         private void btnCustomers_Click(object sender, EventArgs e)
         {
+            OpenUC(new UCcustomer());
+            lbTitle.Text = "Customers";
         }
 
         /** Open Employees **/
 
         private void btnEmployees_Click(object sender, EventArgs e)
         {
+            OpenUC(new UCemployee());
+            lbTitle.Text = "Employees";
         }
 
         /** Open Reports **/
 
         private void btnReports_Click(object sender, EventArgs e)
         {
+            OpenUC(new UCMainReport());
+            lbTitle.Text = "Reports";
         }
 
         /** Holidays **/
 
         private void btnHoliday_Click(object sender, EventArgs e)
         {
+            OpenUC(new UCHoliday());
+            lbTitle.Text = "Holiday";
+        }
+
+        /** Open new UserControl **/
+
+        private void OpenUC(UserControl uc)
+        {
+            panContent.Controls.Clear();
+            panContent.Controls.Add(uc);
         }
     }
 }

@@ -105,6 +105,18 @@
     <Compile Include="GUI\frmMain\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UserControls\UCcustomer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\UCcustomer.Designer.cs">
+      <DependentUpon>UCcustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\UCStuff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\UCStuff.Designer.cs">
+      <DependentUpon>UCStuff.cs</DependentUpon>
+    </Compile>
     <Compile Include="PopupBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,7 +178,7 @@
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UserControls\StuffType.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\UserControls\StuffType.Designer.cs">
       <DependentUpon>StuffType.cs</DependentUpon>
@@ -276,12 +288,6 @@
     <Compile Include="STR_CLASS\People.cs" />
     <Compile Include="STR_CLASS\Role.cs" />
     <Compile Include="STR_CLASS\RoleOption.cs" />
-    <Compile Include="Stuff.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Stuff.Designer.cs">
-      <DependentUpon>Stuff.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Demo.resx">
       <DependentUpon>Demo.cs</DependentUpon>
     </EmbeddedResource>
@@ -293,6 +299,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmMain\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\UCcustomer.resx">
+      <DependentUpon>UCcustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\UCStuff.resx">
+      <DependentUpon>UCStuff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopupBox.resx">
       <DependentUpon>PopupBox.cs</DependentUpon>
@@ -377,9 +389,6 @@
     <EmbeddedResource Include="Reports\Schedule\rptSchedule.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptSchedule.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Stuff.resx">
-      <DependentUpon>Stuff.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
