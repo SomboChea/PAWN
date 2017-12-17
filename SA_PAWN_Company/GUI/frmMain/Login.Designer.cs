@@ -121,6 +121,7 @@
             this.rememberCheck.Name = "rememberCheck";
             this.rememberCheck.Size = new System.Drawing.Size(20, 20);
             this.rememberCheck.TabIndex = 5;
+            this.rememberCheck.OnChange += new System.EventHandler(this.rememberCheck_OnChange);
             // 
             // bunifuCustomLabel2
             // 
@@ -232,6 +233,7 @@
             this.btnSetting.TabIndex = 12;
             this.btnSetting.TabStop = false;
             this.btnSetting.Zoom = 10;
+            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
             // 
             // btnForceExit
             // 

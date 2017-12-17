@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation7 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.panHeader = new System.Windows.Forms.Panel();
             this.lbTitle = new System.Windows.Forms.Label();
@@ -52,6 +52,7 @@
             this.proImage = new System.Windows.Forms.PictureBox();
             this.panContent = new System.Windows.Forms.Panel();
             this.bTran = new BunifuAnimatorNS.BunifuTransition(this.components);
+            this.btnSchedule = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnNav)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).BeginInit();
@@ -146,13 +147,14 @@
             this.panNav.Dock = System.Windows.Forms.DockStyle.Left;
             this.panNav.Location = new System.Drawing.Point(0, 79);
             this.panNav.Name = "panNav";
-            this.panNav.Size = new System.Drawing.Size(269, 719);
+            this.panNav.Size = new System.Drawing.Size(269, 773);
             this.panNav.TabIndex = 1;
             // 
             // panMenu
             // 
             this.panMenu.Controls.Add(this.btnHome);
             this.panMenu.Controls.Add(this.btnNewPawn);
+            this.panMenu.Controls.Add(this.btnSchedule);
             this.panMenu.Controls.Add(this.btnStuff);
             this.panMenu.Controls.Add(this.btnInventory);
             this.panMenu.Controls.Add(this.btnCustomers);
@@ -166,7 +168,7 @@
             this.panMenu.Location = new System.Drawing.Point(0, 199);
             this.panMenu.Margin = new System.Windows.Forms.Padding(0);
             this.panMenu.Name = "panMenu";
-            this.panMenu.Size = new System.Drawing.Size(269, 520);
+            this.panMenu.Size = new System.Drawing.Size(269, 574);
             this.panMenu.TabIndex = 2;
             // 
             // btnHome
@@ -275,7 +277,7 @@
             this.btnStuff.IconVisible = true;
             this.btnStuff.IconZoom = 60D;
             this.btnStuff.IsTab = true;
-            this.btnStuff.Location = new System.Drawing.Point(4, 116);
+            this.btnStuff.Location = new System.Drawing.Point(4, 172);
             this.btnStuff.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnStuff.Name = "btnStuff";
             this.btnStuff.Normalcolor = System.Drawing.Color.DodgerBlue;
@@ -316,7 +318,7 @@
             this.btnInventory.IconVisible = true;
             this.btnInventory.IconZoom = 60D;
             this.btnInventory.IsTab = true;
-            this.btnInventory.Location = new System.Drawing.Point(4, 172);
+            this.btnInventory.Location = new System.Drawing.Point(4, 228);
             this.btnInventory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnInventory.Name = "btnInventory";
             this.btnInventory.Normalcolor = System.Drawing.Color.DodgerBlue;
@@ -357,7 +359,7 @@
             this.btnCustomers.IconVisible = true;
             this.btnCustomers.IconZoom = 60D;
             this.btnCustomers.IsTab = true;
-            this.btnCustomers.Location = new System.Drawing.Point(4, 228);
+            this.btnCustomers.Location = new System.Drawing.Point(4, 284);
             this.btnCustomers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCustomers.Name = "btnCustomers";
             this.btnCustomers.Normalcolor = System.Drawing.Color.DodgerBlue;
@@ -398,7 +400,7 @@
             this.btnEmployees.IconVisible = true;
             this.btnEmployees.IconZoom = 60D;
             this.btnEmployees.IsTab = true;
-            this.btnEmployees.Location = new System.Drawing.Point(4, 284);
+            this.btnEmployees.Location = new System.Drawing.Point(4, 340);
             this.btnEmployees.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEmployees.Name = "btnEmployees";
             this.btnEmployees.Normalcolor = System.Drawing.Color.DodgerBlue;
@@ -439,7 +441,7 @@
             this.btnReports.IconVisible = true;
             this.btnReports.IconZoom = 60D;
             this.btnReports.IsTab = true;
-            this.btnReports.Location = new System.Drawing.Point(4, 340);
+            this.btnReports.Location = new System.Drawing.Point(4, 396);
             this.btnReports.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnReports.Name = "btnReports";
             this.btnReports.Normalcolor = System.Drawing.Color.DodgerBlue;
@@ -480,7 +482,7 @@
             this.btnHoliday.IconVisible = true;
             this.btnHoliday.IconZoom = 60D;
             this.btnHoliday.IsTab = true;
-            this.btnHoliday.Location = new System.Drawing.Point(4, 396);
+            this.btnHoliday.Location = new System.Drawing.Point(4, 452);
             this.btnHoliday.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnHoliday.Name = "btnHoliday";
             this.btnHoliday.Normalcolor = System.Drawing.Color.DodgerBlue;
@@ -521,7 +523,7 @@
             this.btnSignOut.IconVisible = true;
             this.btnSignOut.IconZoom = 60D;
             this.btnSignOut.IsTab = true;
-            this.btnSignOut.Location = new System.Drawing.Point(4, 452);
+            this.btnSignOut.Location = new System.Drawing.Point(4, 508);
             this.btnSignOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSignOut.Name = "btnSignOut";
             this.btnSignOut.Normalcolor = System.Drawing.Color.Crimson;
@@ -584,35 +586,76 @@
             this.panContent.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panContent.Location = new System.Drawing.Point(269, 79);
             this.panContent.Name = "panContent";
-            this.panContent.Size = new System.Drawing.Size(991, 719);
+            this.panContent.Size = new System.Drawing.Size(991, 773);
             this.panContent.TabIndex = 2;
             // 
             // bTran
             // 
             this.bTran.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
             this.bTran.Cursor = null;
-            animation7.AnimateOnlyDifferences = true;
-            animation7.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.BlindCoeff")));
-            animation7.LeafCoeff = 0F;
-            animation7.MaxTime = 1F;
-            animation7.MinTime = 0F;
-            animation7.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.MosaicCoeff")));
-            animation7.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation7.MosaicShift")));
-            animation7.MosaicSize = 0;
-            animation7.Padding = new System.Windows.Forms.Padding(0);
-            animation7.RotateCoeff = 0F;
-            animation7.RotateLimit = 0F;
-            animation7.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.ScaleCoeff")));
-            animation7.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.SlideCoeff")));
-            animation7.TimeCoeff = 0F;
-            animation7.TransparencyCoeff = 0F;
-            this.bTran.DefaultAnimation = animation7;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.bTran.DefaultAnimation = animation2;
+            // 
+            // btnSchedule
+            // 
+            this.btnSchedule.Activecolor = System.Drawing.Color.RoyalBlue;
+            this.btnSchedule.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnSchedule.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnSchedule.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSchedule.BorderRadius = 0;
+            this.btnSchedule.ButtonText = "Schedules";
+            this.btnSchedule.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bTran.SetDecoration(this.btnSchedule, BunifuAnimatorNS.DecorationType.None);
+            this.btnSchedule.DisabledColor = System.Drawing.Color.Gray;
+            this.btnSchedule.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSchedule.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnSchedule.Iconimage = global::SA_PAWN_Company.Properties.Resources.clerk_with_tie;
+            this.btnSchedule.Iconimage_right = null;
+            this.btnSchedule.Iconimage_right_Selected = null;
+            this.btnSchedule.Iconimage_Selected = null;
+            this.btnSchedule.IconMarginLeft = 15;
+            this.btnSchedule.IconMarginRight = 0;
+            this.btnSchedule.IconRightVisible = true;
+            this.btnSchedule.IconRightZoom = 0D;
+            this.btnSchedule.IconVisible = true;
+            this.btnSchedule.IconZoom = 60D;
+            this.btnSchedule.IsTab = true;
+            this.btnSchedule.Location = new System.Drawing.Point(4, 116);
+            this.btnSchedule.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSchedule.Name = "btnSchedule";
+            this.btnSchedule.Normalcolor = System.Drawing.Color.DodgerBlue;
+            this.btnSchedule.OnHovercolor = System.Drawing.Color.RoyalBlue;
+            this.btnSchedule.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnSchedule.selected = false;
+            this.btnSchedule.Size = new System.Drawing.Size(258, 48);
+            this.btnSchedule.TabIndex = 37;
+            this.btnSchedule.Tag = "schedule";
+            this.btnSchedule.Text = "Schedules";
+            this.btnSchedule.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSchedule.Textcolor = System.Drawing.Color.White;
+            this.btnSchedule.TextFont = new System.Drawing.Font("AKbalthom KhmerLer", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSchedule.Visible = false;
+            this.btnSchedule.Click += new System.EventHandler(this.btnSchedule_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1260, 798);
+            this.ClientSize = new System.Drawing.Size(1260, 852);
             this.ControlBox = false;
             this.Controls.Add(this.panContent);
             this.Controls.Add(this.panNav);
@@ -663,5 +706,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnHome;
         private Bunifu.Framework.UI.BunifuFlatButton btnNewPawn;
         private Bunifu.Framework.UI.BunifuFlatButton btnSignOut;
+        private Bunifu.Framework.UI.BunifuFlatButton btnSchedule;
     }
 }

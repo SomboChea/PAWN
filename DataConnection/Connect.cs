@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data;
-using System.Runtime.InteropServices;
 
 namespace DataConnection
 {
@@ -128,6 +127,20 @@ namespace DataConnection
                 return dt;
             }
             catch (Exception) { return null; }
+        }
+
+        /// <summary>
+        /// Get ID from Model
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <returns></returns>
+        public static int GetID(string sql)
+        {
+            try
+            {
+                return int.Parse(ExecuteScalar(sql).ToString());
+            }
+            catch (Exception) { return 0; }
         }
 
         /// <summary>

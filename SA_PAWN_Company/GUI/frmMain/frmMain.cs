@@ -19,6 +19,7 @@ namespace SA_PAWN_Company
         {
             InitializeComponent();
             FullMode.Fullscreen(this);
+            panMenu.AutoScroll = true;
         }
 
         public frmMain(int userID, string Name = null)
@@ -37,6 +38,7 @@ namespace SA_PAWN_Company
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            this.Close();
             Application.ExitThread();
         }
 
@@ -110,8 +112,7 @@ namespace SA_PAWN_Company
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            //OpenUC(new UCMain());
-            OpenUC(new ScheduleList());
+            OpenUC(new UCMain());
             lbTitle.Text = "Dashboard";
         }
 
@@ -178,6 +179,14 @@ namespace SA_PAWN_Company
             panContent.Controls.Clear();
             uc.Dock = DockStyle.Fill;
             panContent.Controls.Add(uc);
+        }
+
+        /** Schedule Lists **/
+
+        private void btnSchedule_Click(object sender, EventArgs e)
+        {
+            OpenUC(new ScheduleList());
+            lbTitle.Text = "Schedule Lists";
         }
     }
 }

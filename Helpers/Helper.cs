@@ -59,7 +59,6 @@ namespace Helpers
         /// <returns>True: No problem , False: Have null</returns>
         public static Boolean CheckRequirement(Control main, Control[] requirement)
         {
-
             bool check = true;
 
             foreach (Control ctrl in requirement)
@@ -70,7 +69,6 @@ namespace Helpers
                 }
 
             return check;
-
         }
 
         /// <summary>
@@ -79,7 +77,6 @@ namespace Helpers
         /// <param name="uc"> The Container of Control</param>
         public static void ClearRedbox(Control uc)
         {
-
             foreach (Control control in uc.Controls)
             {
                 try
@@ -98,20 +95,15 @@ namespace Helpers
                 }
                 catch (Exception) { }
             }
-                if (uc is BunifuMetroTextbox)
-                {
-                    BunifuMetroTextbox box = (BunifuMetroTextbox)uc;
-                    box.BorderColorFocused = Color.Black;
-                    box.BorderColorIdle = Color.Black;
-                    box.BorderColorMouseHover = Color.Black;
-                    uc = box;
-                  
-                }
-            
-           
+            if (uc is BunifuMetroTextbox)
+            {
+                BunifuMetroTextbox box = (BunifuMetroTextbox)uc;
+                box.BorderColorFocused = Color.Black;
+                box.BorderColorIdle = Color.Black;
+                box.BorderColorMouseHover = Color.Black;
+                uc = box;
+            }
         }
-
-        
 
         /// <summary>
         /// Set the Combobox Language Depend on Files with Extension Json of Path;
@@ -319,4 +311,32 @@ namespace Helpers
             return;
         }
     }
+
+    //public class Crypt
+    //{
+    //    public static string encode(string value)
+    //    {
+    //        return null;
+    //    }
+
+    //    private string _encode(string val, int len)
+    //    {
+    //        string xcode = null;
+    //        char[] ABC = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'X', 'Y', 'Z' };
+    //        char[] NUM = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+
+    //        char[] value = val.ToCharArray();
+    //        for (int i = 0; i < len; i++)
+    //        {
+    //            for(int j=0;j<value.Length;j++)
+    //            {
+    //                switch(value[j])
+    //                {
+    //                }
+    //            }
+    //        }
+
+    //        return xcode;
+    //    }
+    //}
 }
