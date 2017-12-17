@@ -94,9 +94,9 @@ namespace SA_PAWN_Company
 
         private void btnSignOut_Click(object sender, EventArgs e)
         {
-            App.Hide(this);
-            App.ExitThread(this);
-            App.Open(new Login());
+            this.Close();
+            //App.ExitThread(this);
+            //App.Open(new Login());
         }
     }
 }
