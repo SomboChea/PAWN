@@ -60,8 +60,7 @@ namespace SA_PAWN_Company
             DataConnection.Connect.Open();
 
             user_id = DataConnection.Test.logUser(txtUsername.Text, txtPassword.Text, ref user_name);
-            if (Name != null && !user_id.Equals(0))
-
+            if (user_name != null && !user_id.Equals(0))
             {
                 return true;
             }
@@ -76,7 +75,7 @@ namespace SA_PAWN_Company
         private void loadMain()
         {
             frmMain main = new frmMain(user_id, user_name);
-            new Loading(this, main).Show();
+            new Loading(this, main).ShowDialog();
         }
 
         /** Message Error **/

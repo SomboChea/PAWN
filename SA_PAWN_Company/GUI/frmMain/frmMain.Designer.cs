@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation9 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.panHeader = new System.Windows.Forms.Panel();
             this.lbTitle = new System.Windows.Forms.Label();
@@ -208,6 +208,7 @@
             this.btnHome.Textcolor = System.Drawing.Color.White;
             this.btnHome.TextFont = new System.Drawing.Font("AKbalthom KhmerLer", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.Visible = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // btnNewPawn
             // 
@@ -248,6 +249,7 @@
             this.btnNewPawn.Textcolor = System.Drawing.Color.White;
             this.btnNewPawn.TextFont = new System.Drawing.Font("AKbalthom KhmerLer", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewPawn.Visible = false;
+            this.btnNewPawn.Click += new System.EventHandler(this.btnNewPawn_Click);
             // 
             // btnStuff
             // 
@@ -288,6 +290,7 @@
             this.btnStuff.Textcolor = System.Drawing.Color.White;
             this.btnStuff.TextFont = new System.Drawing.Font("AKbalthom KhmerLer", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStuff.Visible = false;
+            this.btnStuff.Click += new System.EventHandler(this.btnStuff_Click);
             // 
             // btnInventory
             // 
@@ -328,6 +331,7 @@
             this.btnInventory.Textcolor = System.Drawing.Color.White;
             this.btnInventory.TextFont = new System.Drawing.Font("AKbalthom KhmerLer", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInventory.Visible = false;
+            this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click);
             // 
             // btnCustomers
             // 
@@ -368,6 +372,7 @@
             this.btnCustomers.Textcolor = System.Drawing.Color.White;
             this.btnCustomers.TextFont = new System.Drawing.Font("AKbalthom KhmerLer", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomers.Visible = false;
+            this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
             // 
             // btnEmployees
             // 
@@ -408,6 +413,7 @@
             this.btnEmployees.Textcolor = System.Drawing.Color.White;
             this.btnEmployees.TextFont = new System.Drawing.Font("AKbalthom KhmerLer", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmployees.Visible = false;
+            this.btnEmployees.Click += new System.EventHandler(this.btnEmployees_Click);
             // 
             // btnReports
             // 
@@ -448,6 +454,7 @@
             this.btnReports.Textcolor = System.Drawing.Color.White;
             this.btnReports.TextFont = new System.Drawing.Font("AKbalthom KhmerLer", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReports.Visible = false;
+            this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
             // 
             // btnHoliday
             // 
@@ -488,6 +495,7 @@
             this.btnHoliday.Textcolor = System.Drawing.Color.White;
             this.btnHoliday.TextFont = new System.Drawing.Font("AKbalthom KhmerLer", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHoliday.Visible = false;
+            this.btnHoliday.Click += new System.EventHandler(this.btnHoliday_Click);
             // 
             // btnSignOut
             // 
@@ -582,22 +590,22 @@
             // 
             this.bTran.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
             this.bTran.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.bTran.DefaultAnimation = animation2;
+            animation9.AnimateOnlyDifferences = true;
+            animation9.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.BlindCoeff")));
+            animation9.LeafCoeff = 0F;
+            animation9.MaxTime = 1F;
+            animation9.MinTime = 0F;
+            animation9.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.MosaicCoeff")));
+            animation9.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation9.MosaicShift")));
+            animation9.MosaicSize = 0;
+            animation9.Padding = new System.Windows.Forms.Padding(0);
+            animation9.RotateCoeff = 0F;
+            animation9.RotateLimit = 0F;
+            animation9.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.ScaleCoeff")));
+            animation9.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.SlideCoeff")));
+            animation9.TimeCoeff = 0F;
+            animation9.TransparencyCoeff = 0F;
+            this.bTran.DefaultAnimation = animation9;
             // 
             // frmMain
             // 

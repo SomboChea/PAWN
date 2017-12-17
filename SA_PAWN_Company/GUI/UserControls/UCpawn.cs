@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Helpers;
 
 namespace SA_PAWN_Company
 {
@@ -53,6 +54,13 @@ namespace SA_PAWN_Company
             {
                 txtAttachement.Text = Path.GetFileName(fd.FileName);
             }
+        }
+
+        /** Add Stuff Type **/
+
+        private void btnStuffType_Click(object sender, EventArgs e)
+        {
+            App.Open(new StuffType());
         }
     }
 }
