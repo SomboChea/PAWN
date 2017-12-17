@@ -88,7 +88,7 @@ namespace SA_PAWN_Company
         {
             if (dgEmployee.SelectedRows.Count > 0)
             {
-                DataRow row = dt.Rows[dgEmployee.SelectedRows[0].Index];
+                DataRow row = Connect.GetModel("Select * from viewEmployee where EID="+dgEmployee.SelectedRows[0].Cells[0].Value).Rows[0];
 
                 picturebox.Image = File.Exists(Pawnshop.PATH_PREFIX + "Customers\\" + row["Photo"]) ? Image.FromFile(Pawnshop.PATH_PREFIX + "Customers\\" + row["Photo"]) : Properties.Resources.Simpleicons_Interface_business_man_1_svg;
                 foreach (Control ctrl in groupBox1.Controls)
