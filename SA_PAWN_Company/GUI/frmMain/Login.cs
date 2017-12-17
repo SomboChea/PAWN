@@ -39,7 +39,9 @@ namespace SA_PAWN_Company
         private void btnSignIn_Click(object sender, EventArgs e)
         {
             DataConnection.Connect.Open();
-            string name = DataConnection.Test.logUser(txtUsername.Text, txtPassword.Text);
+            string fullname="";
+            int name = DataConnection.Test.logUser(txtUsername.Text, txtPassword.Text,ref fullname);
+            Pawnshop.Fullname = fullname;
             if (name != null)
             {
                 frmMain main = new frmMain();

@@ -32,8 +32,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtname = new MetroFramework.Controls.MetroTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkactive = new System.Windows.Forms.CheckBox();
+            this.btnclr = new System.Windows.Forms.Button();
             this.btnadd = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnaddpos = new System.Windows.Forms.Button();
             this.cbposition = new MetroFramework.Controls.MetroComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtpassword = new MetroFramework.Controls.MetroTextBox();
@@ -50,8 +52,6 @@
             this.txtaddress = new MetroFramework.Controls.MetroTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnbrowse = new System.Windows.Forms.Button();
-            this.chkactive = new System.Windows.Forms.CheckBox();
-            this.btnclr = new System.Windows.Forms.Button();
             this.picturebox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgEmployee)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -114,7 +114,7 @@
             this.groupBox1.Controls.Add(this.chkactive);
             this.groupBox1.Controls.Add(this.btnclr);
             this.groupBox1.Controls.Add(this.btnadd);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.btnaddpos);
             this.groupBox1.Controls.Add(this.cbposition);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtpassword);
@@ -140,6 +140,32 @@
             this.groupBox1.Text = "Employee";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // chkactive
+            // 
+            this.chkactive.AutoSize = true;
+            this.chkactive.Location = new System.Drawing.Point(574, 163);
+            this.chkactive.Name = "chkactive";
+            this.chkactive.Size = new System.Drawing.Size(79, 29);
+            this.chkactive.TabIndex = 21;
+            this.chkactive.Text = "Active";
+            this.chkactive.UseVisualStyleBackColor = true;
+            this.chkactive.CheckedChanged += new System.EventHandler(this.chkactive_CheckedChanged);
+            // 
+            // btnclr
+            // 
+            this.btnclr.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnclr.BackColor = System.Drawing.Color.Red;
+            this.btnclr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnclr.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnclr.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnclr.Location = new System.Drawing.Point(714, 286);
+            this.btnclr.Name = "btnclr";
+            this.btnclr.Size = new System.Drawing.Size(184, 48);
+            this.btnclr.TabIndex = 20;
+            this.btnclr.Text = "Clear";
+            this.btnclr.UseVisualStyleBackColor = false;
+            this.btnclr.Click += new System.EventHandler(this.button8_Click);
+            // 
             // btnadd
             // 
             this.btnadd.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -155,18 +181,18 @@
             this.btnadd.UseVisualStyleBackColor = false;
             this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
             // 
-            // button2
+            // btnaddpos
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.Info;
-            this.button2.Location = new System.Drawing.Point(839, 124);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(59, 29);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "ADD";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnaddpos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnaddpos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnaddpos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnaddpos.ForeColor = System.Drawing.SystemColors.Info;
+            this.btnaddpos.Location = new System.Drawing.Point(839, 124);
+            this.btnaddpos.Name = "btnaddpos";
+            this.btnaddpos.Size = new System.Drawing.Size(59, 29);
+            this.btnaddpos.TabIndex = 18;
+            this.btnaddpos.Text = "ADD";
+            this.btnaddpos.UseVisualStyleBackColor = false;
             // 
             // cbposition
             // 
@@ -378,32 +404,6 @@
             this.btnbrowse.Text = "Browse";
             this.btnbrowse.UseVisualStyleBackColor = true;
             // 
-            // chkactive
-            // 
-            this.chkactive.AutoSize = true;
-            this.chkactive.Location = new System.Drawing.Point(574, 163);
-            this.chkactive.Name = "chkactive";
-            this.chkactive.Size = new System.Drawing.Size(79, 29);
-            this.chkactive.TabIndex = 21;
-            this.chkactive.Text = "Active";
-            this.chkactive.UseVisualStyleBackColor = true;
-            this.chkactive.CheckedChanged += new System.EventHandler(this.chkactive_CheckedChanged);
-            // 
-            // btnclr
-            // 
-            this.btnclr.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnclr.BackColor = System.Drawing.Color.Red;
-            this.btnclr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnclr.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnclr.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnclr.Location = new System.Drawing.Point(714, 286);
-            this.btnclr.Name = "btnclr";
-            this.btnclr.Size = new System.Drawing.Size(184, 48);
-            this.btnclr.TabIndex = 20;
-            this.btnclr.Text = "Clear";
-            this.btnclr.UseVisualStyleBackColor = false;
-            this.btnclr.Click += new System.EventHandler(this.button8_Click);
-            // 
             // picturebox
             // 
             this.picturebox.Image = global::SA_PAWN_Company.Properties.Resources.Simpleicons_Interface_business_man_1_svg;
@@ -456,7 +456,7 @@
         private MetroFramework.Controls.MetroTextBox txtphone;
         private System.Windows.Forms.Label label3;
         private MetroFramework.Controls.MetroComboBox cbposition;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnaddpos;
         private System.Windows.Forms.Button btnadd;
         private System.Windows.Forms.Label label7;
         private MetroFramework.Controls.MetroTextBox txtpassword;
