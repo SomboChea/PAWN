@@ -32,16 +32,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtname = new MetroFramework.Controls.MetroTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.chkactive = new System.Windows.Forms.CheckBox();
             this.btnclr = new System.Windows.Forms.Button();
             this.btnadd = new System.Windows.Forms.Button();
             this.btnaddpos = new System.Windows.Forms.Button();
             this.cbposition = new MetroFramework.Controls.MetroComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtpassword = new MetroFramework.Controls.MetroTextBox();
-            this.txtusername = new MetroFramework.Controls.MetroTextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.txtsalary = new MetroFramework.Controls.MetroTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtphone = new MetroFramework.Controls.MetroTextBox();
@@ -53,6 +48,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnbrowse = new System.Windows.Forms.Button();
             this.picturebox = new System.Windows.Forms.PictureBox();
+            this.btnAdduser = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtemail = new MetroFramework.Controls.MetroTextBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgEmployee)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -111,19 +110,18 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.groupBox1.Controls.Add(this.chkactive);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.btnAdduser);
             this.groupBox1.Controls.Add(this.btnclr);
             this.groupBox1.Controls.Add(this.btnadd);
             this.groupBox1.Controls.Add(this.btnaddpos);
             this.groupBox1.Controls.Add(this.cbposition);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.txtpassword);
-            this.groupBox1.Controls.Add(this.txtusername);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtsalary);
             this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.txtemail);
             this.groupBox1.Controls.Add(this.txtphone);
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.txtaddress);
@@ -139,17 +137,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Employee";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // chkactive
-            // 
-            this.chkactive.AutoSize = true;
-            this.chkactive.Location = new System.Drawing.Point(574, 163);
-            this.chkactive.Name = "chkactive";
-            this.chkactive.Size = new System.Drawing.Size(79, 29);
-            this.chkactive.TabIndex = 21;
-            this.chkactive.Text = "Active";
-            this.chkactive.UseVisualStyleBackColor = true;
-            this.chkactive.CheckedChanged += new System.EventHandler(this.chkactive_CheckedChanged);
             // 
             // btnclr
             // 
@@ -193,6 +180,7 @@
             this.btnaddpos.TabIndex = 18;
             this.btnaddpos.Text = "ADD";
             this.btnaddpos.UseVisualStyleBackColor = false;
+            this.btnaddpos.Click += new System.EventHandler(this.btnaddpos_Click);
             // 
             // cbposition
             // 
@@ -205,55 +193,6 @@
             this.cbposition.Tag = "Positon";
             this.cbposition.UseSelectable = true;
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(475, 249);
-            this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 25);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "Password";
-            // 
-            // txtpassword
-            // 
-            this.txtpassword.BackColor = System.Drawing.Color.White;
-            this.txtpassword.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtpassword.Lines = new string[0];
-            this.txtpassword.Location = new System.Drawing.Point(574, 243);
-            this.txtpassword.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.txtpassword.MaxLength = 32767;
-            this.txtpassword.Multiline = true;
-            this.txtpassword.Name = "txtpassword";
-            this.txtpassword.PasswordChar = '\0';
-            this.txtpassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtpassword.SelectedText = "";
-            this.txtpassword.Size = new System.Drawing.Size(324, 34);
-            this.txtpassword.TabIndex = 13;
-            this.txtpassword.Tag = "Password";
-            this.txtpassword.UseCustomBackColor = true;
-            this.txtpassword.UseSelectable = true;
-            // 
-            // txtusername
-            // 
-            this.txtusername.BackColor = System.Drawing.Color.White;
-            this.txtusername.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtusername.Lines = new string[0];
-            this.txtusername.Location = new System.Drawing.Point(574, 201);
-            this.txtusername.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.txtusername.MaxLength = 32767;
-            this.txtusername.Multiline = true;
-            this.txtusername.Name = "txtusername";
-            this.txtusername.PasswordChar = '\0';
-            this.txtusername.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtusername.SelectedText = "";
-            this.txtusername.Size = new System.Drawing.Size(324, 34);
-            this.txtusername.TabIndex = 13;
-            this.txtusername.Tag = "Username";
-            this.txtusername.UseCustomBackColor = true;
-            this.txtusername.UseSelectable = true;
-            this.txtusername.Click += new System.EventHandler(this.metroTextBox1_Click);
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -263,16 +202,6 @@
             this.label5.Size = new System.Drawing.Size(80, 25);
             this.label5.TabIndex = 16;
             this.label5.Text = "Position:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(475, 201);
-            this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(93, 25);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Username";
             // 
             // txtsalary
             // 
@@ -287,7 +216,7 @@
             this.txtsalary.PasswordChar = '\0';
             this.txtsalary.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtsalary.SelectedText = "";
-            this.txtsalary.Size = new System.Drawing.Size(324, 34);
+            this.txtsalary.Size = new System.Drawing.Size(295, 34);
             this.txtsalary.TabIndex = 13;
             this.txtsalary.Tag = "Salary";
             this.txtsalary.UseCustomBackColor = true;
@@ -308,7 +237,7 @@
             this.txtphone.BackColor = System.Drawing.Color.White;
             this.txtphone.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtphone.Lines = new string[0];
-            this.txtphone.Location = new System.Drawing.Point(113, 300);
+            this.txtphone.Location = new System.Drawing.Point(113, 274);
             this.txtphone.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtphone.MaxLength = 32767;
             this.txtphone.Multiline = true;
@@ -325,12 +254,13 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 300);
+            this.label3.Location = new System.Drawing.Point(21, 274);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 25);
             this.label3.TabIndex = 12;
             this.label3.Text = "Tel:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // groupBox2
             // 
@@ -403,6 +333,7 @@
             this.btnbrowse.TabIndex = 7;
             this.btnbrowse.Text = "Browse";
             this.btnbrowse.UseVisualStyleBackColor = true;
+            this.btnbrowse.Click += new System.EventHandler(this.btnbrowse_Click);
             // 
             // picturebox
             // 
@@ -414,6 +345,57 @@
             this.picturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picturebox.TabIndex = 1;
             this.picturebox.TabStop = false;
+            // 
+            // btnAdduser
+            // 
+            this.btnAdduser.BackColor = System.Drawing.Color.Blue;
+            this.btnAdduser.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAdduser.Location = new System.Drawing.Point(502, 199);
+            this.btnAdduser.Name = "btnAdduser";
+            this.btnAdduser.Size = new System.Drawing.Size(361, 56);
+            this.btnAdduser.TabIndex = 21;
+            this.btnAdduser.Text = "Add User";
+            this.btnAdduser.UseVisualStyleBackColor = false;
+            this.btnAdduser.Click += new System.EventHandler(this.btnAdduser_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(21, 336);
+            this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(55, 25);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Email";
+            this.label6.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // txtemail
+            // 
+            this.txtemail.BackColor = System.Drawing.Color.White;
+            this.txtemail.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.txtemail.Lines = new string[0];
+            this.txtemail.Location = new System.Drawing.Point(113, 336);
+            this.txtemail.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtemail.MaxLength = 32767;
+            this.txtemail.Multiline = true;
+            this.txtemail.Name = "txtemail";
+            this.txtemail.PasswordChar = '\0';
+            this.txtemail.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtemail.SelectedText = "";
+            this.txtemail.Size = new System.Drawing.Size(324, 34);
+            this.txtemail.TabIndex = 11;
+            this.txtemail.Tag = "Email";
+            this.txtemail.UseCustomBackColor = true;
+            this.txtemail.UseSelectable = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(877, 69);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(22, 25);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "$";
             // 
             // UCemployee
             // 
@@ -458,11 +440,10 @@
         private MetroFramework.Controls.MetroComboBox cbposition;
         private System.Windows.Forms.Button btnaddpos;
         private System.Windows.Forms.Button btnadd;
-        private System.Windows.Forms.Label label7;
-        private MetroFramework.Controls.MetroTextBox txtpassword;
-        private MetroFramework.Controls.MetroTextBox txtusername;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.CheckBox chkactive;
         private System.Windows.Forms.Button btnclr;
+        private System.Windows.Forms.Button btnAdduser;
+        private MetroFramework.Controls.MetroTextBox txtemail;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }

@@ -37,7 +37,8 @@ namespace SA_PAWN_Company
 
         private void btnclear_Click(object sender, EventArgs e)
         {
-            chklist.ClearSelected();
+            for (int i = 0; i < chklist.Items.Count; i++)
+                chklist.SetItemChecked(i, false);
             txtname.Enabled = true;
             btnOK.Text = "OK";
         }
@@ -66,20 +67,29 @@ namespace SA_PAWN_Company
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            if (chklisthaveSelected())
+            if (!chklisthaveSelected())
             { return; }
             if (btnOK.Text == "OK")
             {
-                string sql = "Insert into Position Value('" + txtname.Text.Trim() + "');Select Scope_identity()";
+                string sql = "Insert into Position Values('" + txtname.Text.Trim() + "');Select Scope_identity()";
                 int RoleId = int.Parse(Connect.ExecuteScalar(sql) + "");
                 for (int i = 0; i < chklist.Items.Count; i++)
                     if (chklist.GetItemChecked(i))
                     {
                         sql = "Insert into RoleOption values('" + RoleId + "','"+optionID[i]+"')";
                         Connect.ExecuteNonQuery(sql);
+                    }                
+            }
+            if (btnOK.Text == "Update")
+            {
+                int RoleId = int.Parse(dgPos.SelectedRows[0].Cells[0].Value.ToString());
+                Connect.ExecuteNonQuery("Delete from RoleOption where RoleID="+RoleId);
+                for (int i = 0; i < chklist.Items.Count; i++)
+                    if (chklist.GetItemChecked(i))
+                    {
+                        string sql = "Insert into RoleOption values('" + RoleId + "','" + optionID[i] + "')";
+                        Connect.ExecuteNonQuery(sql);
                     }
-
-                
             }
         }
     }

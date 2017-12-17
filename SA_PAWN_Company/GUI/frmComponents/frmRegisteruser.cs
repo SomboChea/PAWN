@@ -40,12 +40,13 @@ namespace SA_PAWN_Company
                 return;
             }
 
-            sql = "Insert into [User] values('"+txtusername.Text.Trim()+"','"+txtpass.Text.Trim()+"',"+1+")";
+            sql = "Insert into [User] values('"+txtusername.Text.Trim()+"','"+txtpass.Text.Trim()+"',"+1+",Ident_Current('Employee'))";
             this.Dispose();
         }
 
         private void btncancel_Click(object sender, EventArgs e)
         {
+            sql = "";
             this.Dispose();
         }
     }

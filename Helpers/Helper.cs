@@ -45,10 +45,11 @@ namespace Helpers
                 return;
             }
             Label Redbox = new Label();
-            Redbox.Size = new System.Drawing.Size(Redbox.Width + 4, Redbox.Height + 4);
-            Redbox.Location = new System.Drawing.Point(Redbox.Location.X - 2, Redbox.Location.Y - 2);
+            Redbox.Size = new System.Drawing.Size(control.Width + 4, control.Height + 4);
+            Redbox.Location = new System.Drawing.Point(control.Location.X - 2, control.Location.Y - 2);
             Redbox.BackColor = Color.Red;
             Redbox.Tag = "remove";
+            main.Controls.Add(Redbox);
         }
 
         /// <summary>
@@ -58,43 +59,59 @@ namespace Helpers
         /// <returns>True: No problem , False: Have null</returns>
         public static Boolean CheckRequirement(Control main, Control[] requirement)
         {
+
             bool check = true;
+
             foreach (Control ctrl in requirement)
                 if (ctrl.Text.Equals(""))
                 {
                     SetRedbox(ctrl, main);
                     check = false;
                 }
+
             return check;
+
         }
 
         /// <summary>
         /// use for clear all redbox around Textbox or Combobox for UserControl
         /// </summary>
-        /// <param name="uc">UserControl:(if in Current UserControl You Can put "this")</param>
-        public static void ClearRedbox(UserControl uc)
+        /// <param name="uc"> The Container of Control</param>
+        public static void ClearRedbox(Control uc)
         {
+
             foreach (Control control in uc.Controls)
-                if (control.Tag.Equals("remove"))
-                    control.Visible = false;
+            {
+                try
+                {
+                    if (control.Tag.Equals("remove"))
+                        control.Visible = false;
+                }
+                catch (Exception) { }
+            }
             foreach (Control control in uc.Controls)
-                if (control.Tag.Equals("remove"))
-                    uc.Controls.Remove(control);
+            {
+                try
+                {
+                    if (control.Tag.Equals("remove"))
+                        uc.Controls.Remove(control);
+                }
+                catch (Exception) { }
+            }
+                if (uc is BunifuMetroTextbox)
+                {
+                    BunifuMetroTextbox box = (BunifuMetroTextbox)uc;
+                    box.BorderColorFocused = Color.Black;
+                    box.BorderColorIdle = Color.Black;
+                    box.BorderColorMouseHover = Color.Black;
+                    uc = box;
+                  
+                }
+            
+           
         }
 
-        /// <summary>
-        /// Use for Clear Redbox around Box for Form
-        /// </summary>
-        /// <param name="frm">Form (if in Current form , You can set "this")</param>
-        public static void ClearRedbox(Form frm)
-        {
-            foreach (Control control in frm.Controls)
-                if (control.Tag.Equals("remove"))
-                    control.Visible = false;
-            foreach (Control control in frm.Controls)
-                if (control.Tag.Equals("remove"))
-                    frm.Controls.Remove(control);
-        }
+        
 
         /// <summary>
         /// Set the Combobox Language Depend on Files with Extension Json of Path;

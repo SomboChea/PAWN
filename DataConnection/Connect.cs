@@ -122,7 +122,7 @@ namespace DataConnection
         /// </summary>
         /// <param name="values">Can be text or number , Parameter is @obj#</param>
         /// <returns>Return value to use in ExecuteScalar and ExecuteNonQuery</returns>
-        public static List<SqlParameter> GetParams(object[] values)
+        public static SqlParameter[] GetParams(object[] values)
         {
             List<SqlParameter> parameters = new List<SqlParameter>();
             for (int i = 0; i < values.Length; i++)
@@ -132,7 +132,7 @@ namespace DataConnection
                 param.ParameterName = "@obj" + (i + 1);
                 parameters.Add(param);
             }
-            return parameters;
+            return parameters.ToArray();
         }
 
         /// <summary>
