@@ -78,14 +78,18 @@ namespace DataConnection
         /// <param name="param">Nullable , use with command have parameter</param>
         public static bool ExecuteNonQuery(string sql, SqlParameter[] param = null)
         {
-            SqlCommand cmd = new SqlCommand(sql, Connection);
+            try
+            {
+                SqlCommand cmd = new SqlCommand(sql, Connection);
 
-            if (param != null)
-                cmd.Parameters.AddRange(param);
+                if (param != null)
+                    cmd.Parameters.AddRange(param);
 
-            bool x = Convert.ToBoolean(cmd.ExecuteNonQuery());
-            cmd.Dispose();
-            return x;
+                bool x = Convert.ToBoolean(cmd.ExecuteNonQuery());
+                cmd.Dispose();
+                return x;
+            }
+            catch (Exception) { return false; }
         }
 
         ///<Summary>
@@ -94,14 +98,18 @@ namespace DataConnection
         ///</Summary>
         public static object ExecuteScalar(string sql, SqlParameter[] param = null)
         {
-            SqlCommand cmd = new SqlCommand(sql, Connection);
+            try
+            {
+                SqlCommand cmd = new SqlCommand(sql, Connection);
 
-            if (param != null)
-                cmd.Parameters.AddRange(param);
+                if (param != null)
+                    cmd.Parameters.AddRange(param);
 
-            object value = cmd.ExecuteScalar();
-            cmd.Dispose();
-            return value;
+                object value = cmd.ExecuteScalar();
+                cmd.Dispose();
+                return value;
+            }
+            catch (Exception) { return null; }
         }
 
         /// <summary>
@@ -111,11 +119,15 @@ namespace DataConnection
         /// <returns></returns>
         public static DataTable GetModel(string sql)
         {
-            DataTable dt = new DataTable();
-            SqlDataAdapter adapter = new SqlDataAdapter(sql, Connection);
-            adapter.Fill(dt);
-            adapter.Dispose();
-            return dt;
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, Connection);
+                adapter.Fill(dt);
+                adapter.Dispose();
+                return dt;
+            }
+            catch (Exception) { return null; }
         }
 
         /// <summary>
@@ -125,15 +137,19 @@ namespace DataConnection
         /// <returns>Return value to use in ExecuteScalar and ExecuteNonQuery</returns>
         public static SqlParameter[] GetParams(object[] values)
         {
-            List<SqlParameter> parameters = new List<SqlParameter>();
-            for (int i = 0; i < values.Length; i++)
+            try
             {
-                SqlParameter param = new SqlParameter();
-                param.Value = values[i];
-                param.ParameterName = "@obj" + (i + 1);
-                parameters.Add(param);
+                List<SqlParameter> parameters = new List<SqlParameter>();
+                for (int i = 0; i < values.Length; i++)
+                {
+                    SqlParameter param = new SqlParameter();
+                    param.Value = values[i];
+                    param.ParameterName = "@obj" + (i + 1);
+                    parameters.Add(param);
+                }
+                return parameters.ToArray();
             }
-            return parameters.ToArray();
+            catch (Exception) { return null; }
         }
 
         /// <summary>

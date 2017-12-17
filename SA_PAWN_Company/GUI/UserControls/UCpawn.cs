@@ -17,6 +17,8 @@ namespace SA_PAWN_Company
         public UCPawn()
         {
             InitializeComponent();
+            loadStuffType();
+            loadDurationType();
         }
 
         private void stuffPicture_Click(object sender, EventArgs e)
@@ -61,6 +63,24 @@ namespace SA_PAWN_Company
         private void btnStuffType_Click(object sender, EventArgs e)
         {
             App.Open(new StuffType());
+        }
+
+        /** Load Stuff Type **/
+
+        private void loadStuffType()
+        {
+            DataTable dt = DataConnection.Connect.GetModel("SELECT * FROM viewStuffType;");
+            foreach (DataRow row in dt.Rows)
+                stuffType.Items.Add(row["Type"]);
+        }
+
+        /** Load Duration Type **/
+
+        private void loadDurationType()
+        {
+            DataTable dt = DataConnection.Connect.GetModel("SELECT * FROM viewDuration;");
+            foreach (DataRow row in dt.Rows)
+                durationType.Items.Add(row["Type"]);
         }
     }
 }

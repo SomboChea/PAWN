@@ -105,6 +105,18 @@
     <Compile Include="GUI\frmMain\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UserControls\ScheduleItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\ScheduleItem.Designer.cs">
+      <DependentUpon>ScheduleItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\ScheduleList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\ScheduleList.Designer.cs">
+      <DependentUpon>ScheduleList.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UserControls\UCcustomer.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -299,6 +311,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmMain\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\ScheduleItem.resx">
+      <DependentUpon>ScheduleItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\ScheduleList.resx">
+      <DependentUpon>ScheduleList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\UCcustomer.resx">
       <DependentUpon>UCcustomer.cs</DependentUpon>

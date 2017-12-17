@@ -110,7 +110,8 @@ namespace SA_PAWN_Company
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            OpenUC(new UCMain());
+            //OpenUC(new UCMain());
+            OpenUC(new ScheduleList());
             lbTitle.Text = "Dashboard";
         }
 
@@ -175,6 +176,7 @@ namespace SA_PAWN_Company
         private void OpenUC(UserControl uc)
         {
             panContent.Controls.Clear();
+            uc.Dock = DockStyle.Fill;
             panContent.Controls.Add(uc);
         }
     }
