@@ -110,8 +110,7 @@ namespace SA_PAWN_Company.GUI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            bool changed = listView1.View == View.LargeIcon;
-            listView1.View = View.LargeIcon;
+    
             Helper.CheckRequirement(bunifuCards1, requirement);
 
             try
@@ -126,10 +125,10 @@ namespace SA_PAWN_Company.GUI
             string code = cbinventype.SelectedValue + "" + cbinventoryname.SelectedValue;
             listView1.LargeImageList.Images.Add(code,pictureBox1.Image);
             string[] item = {cbinventoryname.Text,cbinventype.Text,txtprice.Text,(cbinventype.SelectedValue+""+cbinventoryname.SelectedValue) };
-            ListViewItem listitem = new ListViewItem(item);
-            listitem.ImageKey = code;
+            ListViewItem listitem = new ListViewItem(item,listView1.LargeImageList.Images.IndexOfKey(code));
+         
             listView1.Items.Add(listitem);
-            listView1.View = changed?View.LargeIcon:View.Details;
+
 
 
             txttotalqty.Text = listView1.Items.Count+"";
@@ -145,8 +144,8 @@ namespace SA_PAWN_Company.GUI
             if (listView1.SelectedItems.Count > 0)
             {
                 ListViewItem row = listView1.SelectedItems[0];
-                cbinventype.SelectedItem = row.SubItems[0];
-                cbinventoryname.SelectedItem = row.SubItems[1];
+                cbinventype.SelectedItem = row.SubItems[0].Text;
+                cbinventoryname.SelectedItem = row.SubItems[1].Text;
                 txtprice.Text = double.Parse(Connect.ExecuteScalar("Select Price from viewInventory Where SID=" + cbinventoryname.SelectedValue) + "").ToString("#,##0.00");
                 btnDelete.Enabled = true;
             }
@@ -205,10 +204,21 @@ namespace SA_PAWN_Company.GUI
                 {
                     string InID = item.SubItems[3].Text[1]+"";
                     string exe = "Insert into SaleDetail values(" + SID + "," + InID + ","+item.SubItems[2]+")";
-                    Connect.ExecuteNonQuery(sql);
+                    Connect.ExecuteNonQuery(sql); 
                 }
                 MessageBox.Show("Successful Sold"+Environment.NewLine+"You Must Return :           $ "+change,"Successful",MessageBoxButtons.OK,MessageBoxIcon.None);
                 // Invoice Here
+            }
+        }
+
+        private void btnpay_Click(object sender, EventArgs e)
+        {
+            frmlistInventory frm = new frmlistInventory();
+            DialogResult diag=frm.ShowDialog();
+            if (diag == DialogResult.OK)
+            {
+                cbinventype.SelectedValue = frm.Code[0].ToString();
+                cbinventoryname.SelectedValue = frm.Code[1].ToString();
             }
         }
     }
