@@ -57,12 +57,13 @@ namespace SA_PAWN_Company
 
         private void button8_Click(object sender, EventArgs e)
         {
-            Reload();
+            
             
             Helper.ClearRedbox(groupBox1);
             btnadd.Text = "ADD Employee";
             btnAdduser.Text = "Add User";
             btnAdduser.BackColor = Color.Blue;
+            Reload();
         }
 
         private void metroTextBox1_Click(object sender, EventArgs e)

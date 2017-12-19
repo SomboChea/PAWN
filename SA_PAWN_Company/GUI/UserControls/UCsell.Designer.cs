@@ -32,8 +32,10 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txttotalqty = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
+            this.label2 = new System.Windows.Forms.Label();
             this.cbinventype = new System.Windows.Forms.ComboBox();
             this.cbinventoryname = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -71,7 +73,8 @@
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
-            this.columnHeader3});
+            this.columnHeader3,
+            this.columnHeader4});
             this.listView1.FullRowSelect = true;
             this.listView1.Location = new System.Drawing.Point(33, 345);
             this.listView1.MultiSelect = false;
@@ -80,6 +83,7 @@
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.listView1_ColumnWidthChanging);
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // columnHeader1
@@ -93,6 +97,10 @@
             // columnHeader3
             // 
             this.columnHeader3.Text = "Inventory Price";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "id";
             // 
             // txttotalqty
             // 
@@ -117,6 +125,7 @@
             this.bunifuCards1.BorderRadius = 5;
             this.bunifuCards1.BottomSahddow = true;
             this.bunifuCards1.color = System.Drawing.Color.Tomato;
+            this.bunifuCards1.Controls.Add(this.label2);
             this.bunifuCards1.Controls.Add(this.cbinventype);
             this.bunifuCards1.Controls.Add(this.cbinventoryname);
             this.bunifuCards1.Controls.Add(this.pictureBox1);
@@ -132,6 +141,15 @@
             this.bunifuCards1.ShadowDepth = 20;
             this.bunifuCards1.Size = new System.Drawing.Size(765, 270);
             this.bunifuCards1.TabIndex = 11;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(493, 173);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(25, 27);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "$";
             // 
             // cbinventype
             // 
@@ -202,10 +220,10 @@
             this.txtprice.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtprice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtprice.isPassword = false;
-            this.txtprice.Location = new System.Drawing.Point(207, 167);
+            this.txtprice.Location = new System.Drawing.Point(227, 167);
             this.txtprice.Margin = new System.Windows.Forms.Padding(4);
             this.txtprice.Name = "txtprice";
-            this.txtprice.Size = new System.Drawing.Size(309, 39);
+            this.txtprice.Size = new System.Drawing.Size(259, 39);
             this.txtprice.TabIndex = 16;
             this.txtprice.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -359,6 +377,7 @@
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(128, 129);
             this.btnDelete.TabIndex = 9;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnClear
             // 
@@ -496,11 +515,11 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnSale);
             this.Controls.Add(this.listView1);
-            this.Enabled = false;
             this.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.Name = "UCsell";
             this.Size = new System.Drawing.Size(1250, 835);
+            this.Load += new System.EventHandler(this.UCsell_Load);
             this.bunifuCards1.ResumeLayout(false);
             this.bunifuCards1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -547,5 +566,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ComboBox cblisttype;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }
