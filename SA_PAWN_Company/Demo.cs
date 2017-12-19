@@ -19,8 +19,6 @@ namespace SA_PAWN_Company
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Stuff st = new Stuff();
-            DialogList.UC.Add(st);
             //new PopupBox(st, true);
         }
     }

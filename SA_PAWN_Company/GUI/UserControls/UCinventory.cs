@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SA_PAWN_Company.GUI
+namespace SA_PAWN_Company
 {
     public partial class UCinventory : UserControl
     {
@@ -17,7 +17,8 @@ namespace SA_PAWN_Company.GUI
             InitializeComponent();
         }
 
-        Panel MainPanel;
+        private Panel MainPanel;
+
         public UCinventory(Panel panel)
         {
             InitializeComponent();
@@ -26,14 +27,13 @@ namespace SA_PAWN_Company.GUI
 
         private void UCinventory_Load(object sender, EventArgs e)
         {
-
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            UCconvert uc = new UCconvert(MainPanel);       
-            MainPanel.Controls.Add(uc);
-            uc.BringToFront();
+            //UCconvert uc = new UCconvert(MainPanel);
+            //MainPanel.Controls.Add(uc);
+            //uc.BringToFront();
         }
     }
 }

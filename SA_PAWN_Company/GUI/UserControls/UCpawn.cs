@@ -17,6 +17,8 @@ namespace SA_PAWN_Company
         public UCPawn()
         {
             InitializeComponent();
+            loadStuffType();
+            loadDurationType();
         }
 
         private void stuffPicture_Click(object sender, EventArgs e)
@@ -31,20 +33,27 @@ namespace SA_PAWN_Company
 
         private void btnGenerate_Click(object sender, EventArgs e)
         {
-            string stuffname = txtStuffName.Text;
-            string stufftype = stuffType.Text;
+            try
+            {
+                //Stuff Info
+                string stuffname = txtStuffName.Text;
+                int stufftype = DataConnection.Connect.GetID("SELECT * FROM viewStuffType WHERE Type='" + stuffType.Text + "';");
 
-            float pawnprice = float.Parse(txtPawnPrice.Text);
-            int duration = int.Parse(durationType.Text);
-            float interestrate = float.Parse(txtRate.Text);
-            int paycount = int.Parse(txtPaycount.Text);
-            string file = txtAttachement.Text;
+                //Pawn Info
+                float pawnprice = float.Parse(txtPawnPrice.Text);
+                int duration = int.Parse(durationType.Text);
+                float interestrate = float.Parse(txtRate.Text);
+                int paycount = int.Parse(txtPaycount.Text);
+                string file = txtAttachement.Text;
 
-            string customername = txtCustomerName.Text;
-            string gender = cbGender.Text;
-            string tel = txtTel.Text;
-            int idtype = int.Parse(idType.Text);
-            string address = txtAddress.Text;
+                //Customer Info
+                string customername = txtCustomerName.Text;
+                string gender = cbGender.Text;
+                string tel = txtTel.Text;
+                int idtype = DataConnection.Connect.GetID("SELECT * FROM viewDuration WHERE Type = '" + durationType.Text + "';");
+                string address = txtAddress.Text;
+            }
+            catch (Exception) { return; }
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
@@ -61,6 +70,24 @@ namespace SA_PAWN_Company
         private void btnStuffType_Click(object sender, EventArgs e)
         {
             App.Open(new StuffType());
+        }
+
+        /** Load Stuff Type **/
+
+        private void loadStuffType()
+        {
+            DataTable dt = DataConnection.Connect.GetModel("SELECT * FROM viewStuffType;");
+            foreach (DataRow row in dt.Rows)
+                stuffType.Items.Add(row["Type"]);
+        }
+
+        /** Load Duration Type **/
+
+        private void loadDurationType()
+        {
+            DataTable dt = DataConnection.Connect.GetModel("SELECT * FROM viewDuration;");
+            foreach (DataRow row in dt.Rows)
+                durationType.Items.Add(row["Type"]);
         }
     }
 }

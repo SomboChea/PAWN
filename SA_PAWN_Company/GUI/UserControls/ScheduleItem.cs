@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace SA_PAWN_Company
 {
-    public partial class UCMainReport : UserControl
+    public partial class ScheduleItem : UserControl
     {
-        public UCMainReport()
+        public ScheduleItem(string title = "Schedule ID: ")
         {
             InitializeComponent();
+            this.lbSchTitle.Text = title;
         }
     }
 }

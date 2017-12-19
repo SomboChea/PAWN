@@ -25,7 +25,6 @@ namespace SA_PAWN_Company
         private void DBSetting_Load(object sender, EventArgs e)
         {
             reloadCheck();
-            DataConnection.Connect.Open("localhost", "SAPAWN", "sa", "sa");
         }
 
         //AuthType
@@ -98,12 +97,16 @@ namespace SA_PAWN_Company
                 dbsetting.Write("dbname", "SAPAWN", section);
                 dbsetting.Write("username", txtUsername.Text, section);
                 dbsetting.Write("password", txtPassword.Text, section);
+                Connect.Close();
+                Connect.Open(dbsetting.Read("hostname"), "SAPAWN", dbsetting.Read("username"), dbsetting.Read("password"));
             }
             else
             {
                 dbsetting.Write("AuthType", 0 + "");
                 dbsetting.Write("hostname", txtServer.Text, section2);
                 dbsetting.Write("dbname", "SAPAWN", section2);
+                Connect.Close();
+                Connect.Open(dbsetting.Read("hostname"), "SAPAWN");
             }
         }
 
