@@ -1,6 +1,7 @@
 ﻿using DataConnection;
 using Helpers;
 using MetroFramework.Forms;
+using SA_PAWN_Company.GUI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SA_PAWN_Company.GUI
+namespace SA_PAWN_Company
 {
     public partial class frmDashboard : Form
     {
@@ -42,7 +43,7 @@ namespace SA_PAWN_Company.GUI
             ////uc.Dock = DockStyle.Fill;
             ////panelMain.Controls.Add(uc);
 Connect.Open();
-            panelMain.Controls.Add(new UCemployee());
+            panelMain.Controls.Add(new UCsell());
             panelMain.AutoScroll = true;
             
         }

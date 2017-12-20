@@ -93,6 +93,12 @@
     <Compile Include="GUI\frmComponents\frmAddPos.Designer.cs">
       <DependentUpon>frmAddPos.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmComponents\frmlistInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmComponents\frmlistInventory.Designer.cs">
+      <DependentUpon>frmlistInventory.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmComponents\frmRegisteruser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -305,6 +311,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmComponents\frmAddPos.resx">
       <DependentUpon>frmAddPos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmComponents\frmlistInventory.resx">
+      <DependentUpon>frmlistInventory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmComponents\frmRegisteruser.resx">
       <DependentUpon>frmRegisteruser.cs</DependentUpon>

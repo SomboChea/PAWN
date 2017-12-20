@@ -118,15 +118,15 @@ namespace DataConnection
         /// <returns></returns>
         public static DataTable GetModel(string sql)
         {
-            try
-            {
-                DataTable dt = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(sql, Connection);
-                adapter.Fill(dt);
-                adapter.Dispose();
-                return dt;
-            }
-            catch (Exception) { return null; }
+            //try
+            //{
+            DataTable dt = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, Connection);
+            adapter.Fill(dt);
+            adapter.Dispose();
+            return dt;
+            //}
+            //catch (Exception) { return null; }
         }
 
         /// <summary>
