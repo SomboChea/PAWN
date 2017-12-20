@@ -11,7 +11,6 @@ using System.Windows.Forms;
 
 namespace SA_PAWN_Company
 {
-    
     public partial class frmAddPos : Form
     {
         public frmAddPos()
@@ -20,11 +19,10 @@ namespace SA_PAWN_Company
             Connect.Open();
         }
 
-        List<int> optionID = new List<int>(); 
+        private List<int> optionID = new List<int>();
 
         private void frmAddPos_Load(object sender, EventArgs e)
         {
-
             DataTable dt = Connect.GetModel("Select * From [Option];");
             foreach (DataRow row in dt.Rows)
             {
@@ -45,7 +43,6 @@ namespace SA_PAWN_Company
 
         private void dgPos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
         }
 
         private void dgPos_Click(object sender, EventArgs e)
@@ -76,14 +73,14 @@ namespace SA_PAWN_Company
                 for (int i = 0; i < chklist.Items.Count; i++)
                     if (chklist.GetItemChecked(i))
                     {
-                        sql = "Insert into RoleOption values('" + RoleId + "','"+optionID[i]+"')";
+                        sql = "Insert into RoleOption values('" + RoleId + "','" + optionID[i] + "')";
                         Connect.ExecuteNonQuery(sql);
-                    }                
+                    }
             }
             if (btnOK.Text == "Update")
             {
                 int RoleId = int.Parse(dgPos.SelectedRows[0].Cells[0].Value.ToString());
-                Connect.ExecuteNonQuery("Delete from RoleOption where RoleID="+RoleId);
+                Connect.ExecuteNonQuery("Delete from RoleOption where RoleID=" + RoleId);
                 for (int i = 0; i < chklist.Items.Count; i++)
                     if (chklist.GetItemChecked(i))
                     {
@@ -91,6 +88,9 @@ namespace SA_PAWN_Company
                         Connect.ExecuteNonQuery(sql);
                     }
             }
+            MessageBox.Show("Operation Completed !");
+            btnclear_Click(null, null);
+            dgPos.DataSource = Connect.GetModel("Select * from Position");
         }
     }
 }

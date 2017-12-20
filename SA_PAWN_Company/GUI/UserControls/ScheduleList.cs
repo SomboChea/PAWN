@@ -15,7 +15,7 @@ namespace SA_PAWN_Company
         public ScheduleList()
         {
             InitializeComponent();
-            loadItems(3);
+            loadItems(15);
             itemBox.AutoScroll = true;
         }
 

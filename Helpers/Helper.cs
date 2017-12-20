@@ -284,6 +284,78 @@ namespace Helpers
         }
     }
 
+    /// <summary>
+    /// Duration Generator
+    /// Dtype = 0 || Null {Day}
+    /// Dtype = 1 {Week}
+    /// Dtype = 2 {Month}
+    /// Dtype = 3 {Year}
+    /// </summary>
+    public class Duration
+    {
+        public static int InDays(int dur, int dtype = 0)
+        {
+            DateTime start = DateTime.Today;
+            int total_days = 0;
+            switch (dtype)
+            {
+                case 1:
+                    total_days = dur * 7;
+                    break;
+
+                case 2:
+                    DateTime end = start.AddMonths(dur);
+                    total_days = int.Parse((end - start).TotalDays + "");
+                    break;
+
+                case 3:
+                    total_days = dur * 365;
+                    break;
+
+                default:
+                    total_days = dur;
+                    break;
+            }
+
+            return total_days;
+        }
+
+        public static List<string> GetHolidays(int add_days)
+        {
+            List<string> holi = new List<string>();
+            DateTime st = DateTime.Today;
+            DateTime ed = st.AddDays(add_days);
+            while (st <= ed)
+            {
+                if (st.DayOfWeek == DayOfWeek.Sunday)
+                    holi.Add(st.ToShortDateString());
+                st = st.AddDays(1);
+            }
+            return holi;
+        }
+
+        public static List<string> GetHolidays(DateTime start_date, DateTime end_date)
+        {
+            List<string> holi = new List<string>();
+
+            while (start_date <= end_date)
+            {
+                if (start_date.DayOfWeek == DayOfWeek.Sunday)
+                    holi.Add(start_date.ToShortDateString());
+                start_date = start_date.AddDays(1);
+            }
+            return holi;
+        }
+
+        public static int GetLastDayHoliday(DateTime end_date)
+        {
+            if (end_date.DayOfWeek == DayOfWeek.Sunday)
+                return 1;
+
+            return 0;
+        }
+    }
+
     public class App
     {
         public static void Open(Form context)

@@ -159,10 +159,10 @@
     <Compile Include="GUI\Not_Used\frmDashboard2.Designer.cs">
       <DependentUpon>frmDashboard2.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\frmMain\frmDashboardMaterial.cs">
+    <Compile Include="GUI\Not_Used\frmDashboardMaterial.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\frmMain\frmDashboardMaterial.Designer.cs">
+    <Compile Include="GUI\Not_Used\frmDashboardMaterial.Designer.cs">
       <DependentUpon>frmDashboardMaterial.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UserControls\PositionType.cs">
@@ -339,7 +339,7 @@
     <EmbeddedResource Include="GUI\Not_Used\frmDashboard2.resx">
       <DependentUpon>frmDashboard2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\frmMain\frmDashboardMaterial.resx">
+    <EmbeddedResource Include="GUI\Not_Used\frmDashboardMaterial.resx">
       <DependentUpon>frmDashboardMaterial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\PositionType.resx">

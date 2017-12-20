@@ -466,6 +466,7 @@
             this.durationType.Name = "durationType";
             this.durationType.Size = new System.Drawing.Size(251, 35);
             this.durationType.TabIndex = 9;
+            this.durationType.SelectedIndexChanged += new System.EventHandler(this.durationType_SelectedIndexChanged);
             // 
             // bunifuCustomLabel3
             // 
