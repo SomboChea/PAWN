@@ -33,17 +33,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
-            this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.txtcost = new MetroFramework.Controls.MetroTextBox();
+            this.cbtype = new MetroFramework.Controls.MetroComboBox();
+            this.txtprice = new MetroFramework.Controls.MetroTextBox();
+            this.txtname = new MetroFramework.Controls.MetroTextBox();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.metroTextBox8 = new MetroFramework.Controls.MetroTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnBuy = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -55,14 +53,12 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.metroTextBox3);
-            this.groupBox1.Controls.Add(this.metroComboBox1);
-            this.groupBox1.Controls.Add(this.metroTextBox2);
-            this.groupBox1.Controls.Add(this.metroTextBox1);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.txtcost);
+            this.groupBox1.Controls.Add(this.cbtype);
+            this.groupBox1.Controls.Add(this.txtprice);
+            this.groupBox1.Controls.Add(this.txtname);
+            this.groupBox1.Controls.Add(this.btnAdd);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.metroTextBox8);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Location = new System.Drawing.Point(17, 20);
             this.groupBox1.Name = "groupBox1";
@@ -74,116 +70,106 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(257, 133);
+            this.label2.Location = new System.Drawing.Point(253, 177);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 31);
+            this.label2.Size = new System.Drawing.Size(59, 26);
             this.label2.TabIndex = 4;
             this.label2.Text = "Type";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(255, 323);
+            this.label4.Location = new System.Drawing.Point(255, 271);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 31);
+            this.label4.Size = new System.Drawing.Size(57, 26);
             this.label4.TabIndex = 4;
             this.label4.Text = "Cost";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(257, 370);
+            this.label3.Location = new System.Drawing.Point(257, 345);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 31);
+            this.label3.Size = new System.Drawing.Size(62, 26);
             this.label3.TabIndex = 4;
             this.label3.Text = "Price";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(255, 85);
+            this.label1.Location = new System.Drawing.Point(253, 83);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 31);
+            this.label1.Size = new System.Drawing.Size(89, 26);
             this.label1.TabIndex = 4;
             this.label1.Text = "Name : ";
             // 
-            // metroTextBox3
+            // txtcost
             // 
-            this.metroTextBox3.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.metroTextBox3.Lines = new string[0];
-            this.metroTextBox3.Location = new System.Drawing.Point(369, 323);
-            this.metroTextBox3.MaxLength = 32767;
-            this.metroTextBox3.Multiline = true;
-            this.metroTextBox3.Name = "metroTextBox3";
-            this.metroTextBox3.PasswordChar = '\0';
-            this.metroTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox3.SelectedText = "";
-            this.metroTextBox3.Size = new System.Drawing.Size(217, 31);
-            this.metroTextBox3.TabIndex = 2;
-            this.metroTextBox3.UseCustomBackColor = true;
-            this.metroTextBox3.UseSelectable = true;
+            this.txtcost.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.txtcost.Lines = new string[0];
+            this.txtcost.Location = new System.Drawing.Point(369, 271);
+            this.txtcost.MaxLength = 32767;
+            this.txtcost.Multiline = true;
+            this.txtcost.Name = "txtcost";
+            this.txtcost.PasswordChar = '\0';
+            this.txtcost.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtcost.SelectedText = "";
+            this.txtcost.Size = new System.Drawing.Size(217, 31);
+            this.txtcost.TabIndex = 2;
+            this.txtcost.UseCustomBackColor = true;
+            this.txtcost.UseSelectable = true;
             // 
-            // metroComboBox1
+            // cbtype
             // 
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 24;
-            this.metroComboBox1.Location = new System.Drawing.Point(371, 133);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(261, 30);
-            this.metroComboBox1.TabIndex = 3;
-            this.metroComboBox1.UseSelectable = true;
+            this.cbtype.FormattingEnabled = true;
+            this.cbtype.ItemHeight = 23;
+            this.cbtype.Location = new System.Drawing.Point(367, 177);
+            this.cbtype.Name = "cbtype";
+            this.cbtype.Size = new System.Drawing.Size(261, 29);
+            this.cbtype.TabIndex = 3;
+            this.cbtype.UseSelectable = true;
             // 
-            // metroTextBox2
+            // txtprice
             // 
-            this.metroTextBox2.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.metroTextBox2.Lines = new string[0];
-            this.metroTextBox2.Location = new System.Drawing.Point(369, 370);
-            this.metroTextBox2.MaxLength = 32767;
-            this.metroTextBox2.Multiline = true;
-            this.metroTextBox2.Name = "metroTextBox2";
-            this.metroTextBox2.PasswordChar = '\0';
-            this.metroTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox2.SelectedText = "";
-            this.metroTextBox2.Size = new System.Drawing.Size(217, 31);
-            this.metroTextBox2.TabIndex = 2;
-            this.metroTextBox2.UseCustomBackColor = true;
-            this.metroTextBox2.UseSelectable = true;
+            this.txtprice.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.txtprice.Lines = new string[0];
+            this.txtprice.Location = new System.Drawing.Point(369, 345);
+            this.txtprice.MaxLength = 32767;
+            this.txtprice.Multiline = true;
+            this.txtprice.Name = "txtprice";
+            this.txtprice.PasswordChar = '\0';
+            this.txtprice.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtprice.SelectedText = "";
+            this.txtprice.Size = new System.Drawing.Size(217, 31);
+            this.txtprice.TabIndex = 2;
+            this.txtprice.UseCustomBackColor = true;
+            this.txtprice.UseSelectable = true;
             // 
-            // metroTextBox1
+            // txtname
             // 
-            this.metroTextBox1.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.metroTextBox1.Lines = new string[0];
-            this.metroTextBox1.Location = new System.Drawing.Point(369, 85);
-            this.metroTextBox1.MaxLength = 32767;
-            this.metroTextBox1.Multiline = true;
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox1.SelectedText = "";
-            this.metroTextBox1.Size = new System.Drawing.Size(362, 31);
-            this.metroTextBox1.TabIndex = 2;
-            this.metroTextBox1.UseCustomBackColor = true;
-            this.metroTextBox1.UseSelectable = true;
+            this.txtname.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.txtname.Lines = new string[0];
+            this.txtname.Location = new System.Drawing.Point(367, 83);
+            this.txtname.MaxLength = 32767;
+            this.txtname.Multiline = true;
+            this.txtname.Name = "txtname";
+            this.txtname.PasswordChar = '\0';
+            this.txtname.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtname.SelectedText = "";
+            this.txtname.Size = new System.Drawing.Size(362, 31);
+            this.txtname.TabIndex = 2;
+            this.txtname.UseCustomBackColor = true;
+            this.txtname.UseSelectable = true;
             // 
-            // label13
+            // btnAdd
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label13.Location = new System.Drawing.Point(258, 187);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(259, 29);
-            this.label13.TabIndex = 4;
-            this.label13.Text = "Attachment Description";
-            // 
-            // button2
-            // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(638, 132);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(95, 32);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "ADD";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Location = new System.Drawing.Point(634, 176);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(95, 32);
+            this.btnAdd.TabIndex = 1;
+            this.btnAdd.Text = "ADD";
+            this.btnAdd.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -194,22 +180,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Browse";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // metroTextBox8
-            // 
-            this.metroTextBox8.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.metroTextBox8.Lines = new string[0];
-            this.metroTextBox8.Location = new System.Drawing.Point(262, 227);
-            this.metroTextBox8.MaxLength = 32767;
-            this.metroTextBox8.Multiline = true;
-            this.metroTextBox8.Name = "metroTextBox8";
-            this.metroTextBox8.PasswordChar = '\0';
-            this.metroTextBox8.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox8.SelectedText = "";
-            this.metroTextBox8.Size = new System.Drawing.Size(469, 77);
-            this.metroTextBox8.TabIndex = 2;
-            this.metroTextBox8.UseCustomBackColor = true;
-            this.metroTextBox8.UseSelectable = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox1
             // 
@@ -221,40 +192,42 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // button3
+            // btnClear
             // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button3.BackColor = System.Drawing.Color.Red;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.SystemColors.Control;
-            this.button3.Location = new System.Drawing.Point(668, 468);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(169, 43);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Cancel";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnClear.BackColor = System.Drawing.Color.Red;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnClear.Location = new System.Drawing.Point(668, 468);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(169, 43);
+            this.btnClear.TabIndex = 1;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // button4
+            // btnBuy
             // 
-            this.button4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button4.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.SystemColors.Control;
-            this.button4.Location = new System.Drawing.Point(434, 469);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(169, 42);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "BUY";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnBuy.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnBuy.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnBuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuy.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnBuy.Location = new System.Drawing.Point(434, 469);
+            this.btnBuy.Name = "btnBuy";
+            this.btnBuy.Size = new System.Drawing.Size(169, 42);
+            this.btnBuy.TabIndex = 1;
+            this.btnBuy.Text = "BUY";
+            this.btnBuy.UseVisualStyleBackColor = false;
+            this.btnBuy.Click += new System.EventHandler(this.btnBuy_Click);
             // 
             // UCbuy
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnBuy);
+            this.Controls.Add(this.btnClear);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "UCbuy";
@@ -273,16 +246,14 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private MetroFramework.Controls.MetroTextBox metroTextBox3;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
-        private MetroFramework.Controls.MetroTextBox metroTextBox2;
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button button2;
+        private MetroFramework.Controls.MetroTextBox txtcost;
+        private MetroFramework.Controls.MetroComboBox cbtype;
+        private MetroFramework.Controls.MetroTextBox txtprice;
+        private MetroFramework.Controls.MetroTextBox txtname;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button button1;
-        private MetroFramework.Controls.MetroTextBox metroTextBox8;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnBuy;
     }
 }

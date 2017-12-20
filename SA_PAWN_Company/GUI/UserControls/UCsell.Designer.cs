@@ -38,7 +38,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cbinventype = new System.Windows.Forms.ComboBox();
             this.cbinventoryname = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.btnlist = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtprice = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -53,8 +55,6 @@
             this.txtreceive = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.cblisttype = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnlist = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnDelete = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnClear = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnUpdate = new Bunifu.Framework.UI.BunifuTileButton();
@@ -62,10 +62,10 @@
             this.btnAdd = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnSale = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuCards1.SuspendLayout();
-            this.bunifuCards2.SuspendLayout();
-            this.bunifuCards3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnlist)).BeginInit();
+            this.bunifuCards2.SuspendLayout();
+            this.bunifuCards3.SuspendLayout();
             this.SuspendLayout();
             // 
             // listView1
@@ -170,6 +170,16 @@
             this.cbinventoryname.TabIndex = 23;
             this.cbinventoryname.SelectedIndexChanged += new System.EventHandler(this.cbinventoryname_SelectedIndexChanged);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SA_PAWN_Company.Properties.Resources.download1;
+            this.pictureBox1.Location = new System.Drawing.Point(542, 64);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(178, 182);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 22;
+            this.pictureBox1.TabStop = false;
+            // 
             // bunifuCustomLabel7
             // 
             this.bunifuCustomLabel7.AutoSize = true;
@@ -178,6 +188,20 @@
             this.bunifuCustomLabel7.Size = new System.Drawing.Size(176, 27);
             this.bunifuCustomLabel7.TabIndex = 20;
             this.bunifuCustomLabel7.Text = "Inventory Type:";
+            // 
+            // btnlist
+            // 
+            this.btnlist.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnlist.Image = global::SA_PAWN_Company.Properties.Resources.badge1;
+            this.btnlist.ImageActive = null;
+            this.btnlist.Location = new System.Drawing.Point(542, 23);
+            this.btnlist.Name = "btnlist";
+            this.btnlist.Size = new System.Drawing.Size(178, 35);
+            this.btnlist.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnlist.TabIndex = 19;
+            this.btnlist.TabStop = false;
+            this.btnlist.Zoom = 10;
+            this.btnlist.Click += new System.EventHandler(this.btnpay_Click);
             // 
             // bunifuCustomLabel6
             // 
@@ -359,30 +383,6 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "List Type :";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SA_PAWN_Company.Properties.Resources.download1;
-            this.pictureBox1.Location = new System.Drawing.Point(542, 64);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(178, 182);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 22;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnlist
-            // 
-            this.btnlist.BackColor = System.Drawing.Color.DarkCyan;
-            this.btnlist.Image = global::SA_PAWN_Company.Properties.Resources.badge1;
-            this.btnlist.ImageActive = null;
-            this.btnlist.Location = new System.Drawing.Point(542, 23);
-            this.btnlist.Name = "btnlist";
-            this.btnlist.Size = new System.Drawing.Size(178, 35);
-            this.btnlist.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnlist.TabIndex = 19;
-            this.btnlist.TabStop = false;
-            this.btnlist.Zoom = 10;
-            this.btnlist.Click += new System.EventHandler(this.btnpay_Click);
-            // 
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.SeaGreen;
@@ -499,6 +499,7 @@
             this.btnSale.Name = "btnSale";
             this.btnSale.Size = new System.Drawing.Size(128, 129);
             this.btnSale.TabIndex = 2;
+            this.btnSale.Click += new System.EventHandler(this.btnSale_Click);
             // 
             // UCsell
             // 
@@ -524,12 +525,12 @@
             this.Load += new System.EventHandler(this.UCsell_Load);
             this.bunifuCards1.ResumeLayout(false);
             this.bunifuCards1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnlist)).EndInit();
             this.bunifuCards2.ResumeLayout(false);
             this.bunifuCards2.PerformLayout();
             this.bunifuCards3.ResumeLayout(false);
             this.bunifuCards3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnlist)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
