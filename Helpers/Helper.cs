@@ -308,10 +308,6 @@ namespace Helpers
                     total_days = int.Parse((end - start).TotalDays + "");
                     break;
 
-                case 3:
-                    total_days = dur * 365;
-                    break;
-
                 default:
                     total_days = dur;
                     break;

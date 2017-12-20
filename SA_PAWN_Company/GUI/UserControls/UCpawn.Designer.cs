@@ -65,6 +65,7 @@
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnGenerate = new System.Windows.Forms.Button();
             this.panPawnBox = new System.Windows.Forms.Panel();
+            this.panPreview = new System.Windows.Forms.FlowLayoutPanel();
             this.bunifuCards1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stuffPicture)).BeginInit();
             this.bunifuCards2.SuspendLayout();
@@ -74,7 +75,7 @@
             // 
             // bunifuCards1
             // 
-            this.bunifuCards1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bunifuCards1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.bunifuCards1.BackColor = System.Drawing.Color.White;
             this.bunifuCards1.BorderRadius = 5;
             this.bunifuCards1.BottomSahddow = true;
@@ -87,13 +88,14 @@
             this.bunifuCards1.Controls.Add(this.bunifuCustomLabel2);
             this.bunifuCards1.Controls.Add(this.bunifuCustomLabel13);
             this.bunifuCards1.LeftSahddow = false;
-            this.bunifuCards1.Location = new System.Drawing.Point(4, 4);
+            this.bunifuCards1.Location = new System.Drawing.Point(40, 21);
             this.bunifuCards1.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuCards1.Name = "bunifuCards1";
             this.bunifuCards1.RightSahddow = true;
             this.bunifuCards1.ShadowDepth = 20;
             this.bunifuCards1.Size = new System.Drawing.Size(595, 215);
             this.bunifuCards1.TabIndex = 20;
+            this.bunifuCards1.Paint += new System.Windows.Forms.PaintEventHandler(this.bunifuCards1_Paint);
             // 
             // bunifuCustomLabel1
             // 
@@ -176,7 +178,7 @@
             // 
             // bunifuCards2
             // 
-            this.bunifuCards2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bunifuCards2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.bunifuCards2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.bunifuCards2.BackColor = System.Drawing.Color.White;
             this.bunifuCards2.BorderRadius = 5;
@@ -195,12 +197,13 @@
             this.bunifuCards2.Controls.Add(this.bunifuCustomLabel11);
             this.bunifuCards2.Controls.Add(this.bunifuCustomLabel12);
             this.bunifuCards2.LeftSahddow = false;
-            this.bunifuCards2.Location = new System.Drawing.Point(619, 4);
+            this.bunifuCards2.Location = new System.Drawing.Point(641, 21);
             this.bunifuCards2.Name = "bunifuCards2";
             this.bunifuCards2.RightSahddow = true;
             this.bunifuCards2.ShadowDepth = 20;
-            this.bunifuCards2.Size = new System.Drawing.Size(592, 479);
+            this.bunifuCards2.Size = new System.Drawing.Size(592, 449);
             this.bunifuCards2.TabIndex = 19;
+            this.bunifuCards2.Paint += new System.Windows.Forms.PaintEventHandler(this.bunifuCards2_Paint);
             // 
             // bunifuCustomLabel15
             // 
@@ -255,7 +258,7 @@
             this.txtAddress.Location = new System.Drawing.Point(192, 345);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(384, 110);
+            this.txtAddress.Size = new System.Drawing.Size(384, 79);
             this.txtAddress.TabIndex = 15;
             // 
             // bunifuCustomLabel9
@@ -332,7 +335,7 @@
             // 
             // bunifuCards3
             // 
-            this.bunifuCards3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bunifuCards3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.bunifuCards3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.bunifuCards3.BackColor = System.Drawing.Color.White;
             this.bunifuCards3.BorderRadius = 5;
@@ -352,12 +355,13 @@
             this.bunifuCards3.Controls.Add(this.bunifuCustomLabel3);
             this.bunifuCards3.Controls.Add(this.bunifuCustomLabel4);
             this.bunifuCards3.LeftSahddow = false;
-            this.bunifuCards3.Location = new System.Drawing.Point(4, 236);
+            this.bunifuCards3.Location = new System.Drawing.Point(40, 243);
             this.bunifuCards3.Name = "bunifuCards3";
             this.bunifuCards3.RightSahddow = true;
             this.bunifuCards3.ShadowDepth = 20;
             this.bunifuCards3.Size = new System.Drawing.Size(595, 326);
             this.bunifuCards3.TabIndex = 3;
+            this.bunifuCards3.Paint += new System.Windows.Forms.PaintEventHandler(this.bunifuCards3_Paint);
             // 
             // txtDuration
             // 
@@ -488,10 +492,10 @@
             // 
             // btnGenerate
             // 
-            this.btnGenerate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnGenerate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerate.Font = new System.Drawing.Font("Century Gothic", 13.8F);
-            this.btnGenerate.Location = new System.Drawing.Point(619, 507);
+            this.btnGenerate.Location = new System.Drawing.Point(641, 514);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(592, 55);
             this.btnGenerate.TabIndex = 1;
@@ -503,6 +507,7 @@
             // 
             this.panPawnBox.AutoSize = true;
             this.panPawnBox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panPawnBox.Controls.Add(this.panPreview);
             this.panPawnBox.Controls.Add(this.btnGenerate);
             this.panPawnBox.Controls.Add(this.bunifuCards1);
             this.panPawnBox.Controls.Add(this.bunifuCards2);
@@ -511,8 +516,21 @@
             this.panPawnBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panPawnBox.Location = new System.Drawing.Point(0, 0);
             this.panPawnBox.Name = "panPawnBox";
-            this.panPawnBox.Size = new System.Drawing.Size(1272, 750);
+            this.panPawnBox.Size = new System.Drawing.Size(1272, 784);
             this.panPawnBox.TabIndex = 0;
+            // 
+            // panPreview
+            // 
+            this.panPreview.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panPreview.AutoScroll = true;
+            this.panPreview.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panPreview.Location = new System.Drawing.Point(40, 585);
+            this.panPreview.Name = "panPreview";
+            this.panPreview.Size = new System.Drawing.Size(1193, 182);
+            this.panPreview.TabIndex = 21;
+            this.panPreview.Paint += new System.Windows.Forms.PaintEventHandler(this.panPreview_Paint);
             // 
             // UCPawn
             // 
@@ -522,7 +540,7 @@
             this.Controls.Add(this.panPawnBox);
             this.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "UCPawn";
-            this.Size = new System.Drawing.Size(1272, 750);
+            this.Size = new System.Drawing.Size(1272, 784);
             this.bunifuCards1.ResumeLayout(false);
             this.bunifuCards1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stuffPicture)).EndInit();
@@ -574,5 +592,6 @@
         private System.Windows.Forms.Button btnGenerate;
         private System.Windows.Forms.TextBox txtDuration;
         private System.Windows.Forms.Panel panPawnBox;
+        private System.Windows.Forms.FlowLayoutPanel panPreview;
     }
 }
