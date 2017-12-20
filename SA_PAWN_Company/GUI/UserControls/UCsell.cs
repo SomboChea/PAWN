@@ -48,7 +48,13 @@ namespace SA_PAWN_Company.GUI
                 if (main is BunifuMetroTextbox)
                     main.Text = "";
                 if (main is ComboBox)
-                    ((ComboBox)main).SelectedIndex = 0;
+                {
+                    try
+                    {
+                        ((ComboBox)main).SelectedIndex = 0;
+                    }
+                    catch (Exception) { }
+                }
 
             }
             if (this.Equals(mains))
@@ -63,7 +69,7 @@ namespace SA_PAWN_Company.GUI
             txtprice.Text = double.Parse(Connect.ExecuteScalar("Select Price from viewInventory Where SID=" + cbinventoryname.SelectedValue) + "").ToString("#,##0.00");
 
             btnDelete.Enabled = false;
-
+            
             return null;
         }
 
@@ -188,6 +194,8 @@ namespace SA_PAWN_Company.GUI
                 if (diag == DialogResult.Retry)
                 {
                     // Open Form Payagain
+                    btnSale_Click(null, null);
+                    
                 }
                 else
                 {
@@ -197,17 +205,26 @@ namespace SA_PAWN_Company.GUI
             else
             {
                 double change = pay-total;
-
+                txtreceive.Text = total.ToString("#,##0.00 $");
+                txtreturn.Text = change.ToString("#,##0.00 $");
                 string sql = "Insert into [Sale](Date,EID,TotalAmount) values(GETDATE(),"+Pawnshop.EmployeeID+","+total+");Select Ident_Current('Sale')";
                 int SID=int.Parse(Connect.ExecuteScalar(sql)+"");
                 foreach(ListViewItem item in listView1.Items)
                 {
                     string InID = item.SubItems[3].Text[1]+"";
+                    string changeInventorystatus = "Update Inventory set Status=0 Where InID=" + InID;
                     string exe = "Insert into SaleDetail values(" + SID + "," + InID + ","+item.SubItems[2]+")";
-                    Connect.ExecuteNonQuery(sql); 
+                    Connect.ExecuteNonQuery(sql);
+                    Connect.ExecuteNonQuery(changeInventorystatus);
                 }
-                MessageBox.Show("Successful Sold"+Environment.NewLine+"You Must Return :           $ "+change,"Successful",MessageBoxButtons.OK,MessageBoxIcon.None);
                 // Invoice Here
+                    // ....
+
+
+                // Invoice End
+                MessageBox.Show("Successful Sold"+Environment.NewLine+"You Must Return :           $ "+change+Environment.NewLine+"Press OK to clear !","Successful",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                clear(this);
+                
             }
         }
 
@@ -220,6 +237,27 @@ namespace SA_PAWN_Company.GUI
                 cbinventype.SelectedValue = frm.Code[0].ToString();
                 cbinventoryname.SelectedValue = frm.Code[1].ToString();
             }
+        }
+
+        private void btnSale_Click(object sender, EventArgs e)
+        {
+            tryagain:
+            frminputbox inputbox = new frminputbox();
+            inputbox.Text = "Get Customer Pay";
+            inputbox.lbparam.Text = "Customer Pay : ";
+            if (inputbox.ShowDialog() == DialogResult.OK) {
+                try
+                {
+                    payment(double.Parse(inputbox.Value));
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Cannot Get Value !\nPlease Try again later Correctly!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    goto tryagain;
+                }
+            };
+
+
         }
     }
 }

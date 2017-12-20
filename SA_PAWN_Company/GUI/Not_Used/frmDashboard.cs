@@ -43,7 +43,7 @@ namespace SA_PAWN_Company
             ////uc.Dock = DockStyle.Fill;
             ////panelMain.Controls.Add(uc);
 Connect.Open();
-            panelMain.Controls.Add(new UCsell());
+            panelMain.Controls.Add(new UCbuy());
             panelMain.AutoScroll = true;
             
         }

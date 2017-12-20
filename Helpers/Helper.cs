@@ -28,6 +28,49 @@ namespace Helpers
         public static string SetCurrentLang;
 
         /// <summary>
+        /// This is A function Use to Upload Photo into Specific Directory
+        /// </summary>
+        /// <param name="filepath">Original full file path</param>
+        /// <param name="Directory_Path">Directory to Copy file into</param>
+        /// <returns>Return a name and extension of Image in Directory_path</returns>
+        public static string Upload_Photo(string filepath, string Directory_Path)
+        {
+            string[] filesplit = filepath.Split('\\');
+            string filename = filesplit[filesplit.Length-1];
+            string imgpath = Directory_Path + filename;
+
+
+            if (!Directory.Exists(Directory_Path))
+            {
+                Directory.CreateDirectory(Directory_Path);
+            }
+
+            if (File.Exists(imgpath))
+            {
+                DialogResult diag = MessageBox.Show("File : \n" + filepath + Environment.NewLine + " is Already Exist ! \nDo you want to Replace file" + Environment.NewLine + "\n\nYes : Replace File" + Environment.NewLine + "No : Auto Rename file" + Environment.NewLine + "Cancel : Abort", "File Exist", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                for (int i = 1; File.Exists(imgpath); i++)
+                {
+                    if (diag == DialogResult.Yes)
+                    {
+                        File.Delete(imgpath);
+                        break;
+                    }
+                    else if (diag == DialogResult.No)
+                    {
+                        imgpath = Directory_Path + filename.Split('.')[0] + "-" + i + "." + filename.Split('.')[filename.Split('.').Length - 1];
+                    }
+                    else
+                    {
+                        return "";
+                    }
+                }
+            }
+            File.Copy(filepath, imgpath);
+
+            return filename;
+        }
+
+        /// <summary>
         /// Use For set Redbox around TextBox , Combobox.
         /// By Create Label with Backcolor
         /// </summary>
@@ -68,6 +111,19 @@ namespace Helpers
                     check = false;
                 }
 
+            return check;
+        }
+
+        public static bool CheckDouble(Control main,params Control[] Controls)
+        {
+            bool check = true;
+            double d = 0 ;
+            foreach(Control ctrl in Controls)
+            {
+                if (!double.TryParse(ctrl.Text,out d)){
+                    check = false;
+                }
+            }
             return check;
         }
 
