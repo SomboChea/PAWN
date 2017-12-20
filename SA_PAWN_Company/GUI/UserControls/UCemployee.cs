@@ -39,12 +39,17 @@ namespace SA_PAWN_Company
             dgEmployee.Columns["UserEID"].Visible = false;
             Helper.FillCombobox(cbposition,"Position", "PID", "Select * from Position");
 
-            foreach(Control temp in groupBox1.Controls)
-            {                
+            foreach (Control temp in groupBox1.Controls)
+            {
                 if (temp is MetroTextBox)
                     temp.Text = "";
                 if (temp is MetroComboBox)
-                    ((MetroComboBox)temp).SelectedIndex = 0;                
+                {
+                    try {
+                        ((MetroComboBox)temp).SelectedIndex = 0;
+                    }
+                    catch (Exception) { }
+                    }
             }
             rmale.Checked = true;
             picturebox.Image = Properties.Resources.Simpleicons_Interface_business_man_1_svg;

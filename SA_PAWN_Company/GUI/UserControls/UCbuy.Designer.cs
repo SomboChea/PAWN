@@ -233,6 +233,7 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "UCbuy";
             this.Size = new System.Drawing.Size(862, 539);
+            this.Load += new System.EventHandler(this.UCbuy_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

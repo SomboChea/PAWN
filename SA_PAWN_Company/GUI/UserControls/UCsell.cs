@@ -48,7 +48,13 @@ namespace SA_PAWN_Company.GUI
                 if (main is BunifuMetroTextbox)
                     main.Text = "";
                 if (main is ComboBox)
-                    ((ComboBox)main).SelectedIndex = 0;
+                {
+                    try
+                    {
+                        ((ComboBox)main).SelectedIndex = 0;
+                    }
+                    catch (Exception) { }
+                }
 
             }
             if (this.Equals(mains))

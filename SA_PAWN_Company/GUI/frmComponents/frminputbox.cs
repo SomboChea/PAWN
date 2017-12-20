@@ -41,14 +41,14 @@ namespace SA_PAWN_Company
 
         private void frminputbox_Load(object sender, EventArgs e)
         {
-            DataConnection.Connect.Open();
-            this.WindowState = FormWindowState.Maximized;
-            //this.IsMdiContainer = true;
-            frmRegisteruser frm = new frmRegisteruser();
-            this.Controls.Add(frm);
-            //frm.MdiParent = this;
-            //frm.WindowState = FormWindowState.Normal;
-            //frm.Show();
+            //DataConnection.Connect.Open();
+            //this.WindowState = FormWindowState.Maximized;
+            ////this.IsMdiContainer = true;
+            //frmRegisteruser frm = new frmRegisteruser();
+            //this.Controls.Add(frm);
+            ////frm.MdiParent = this;
+            ////frm.WindowState = FormWindowState.Normal;
+            ////frm.Show();
         }
     }
 }

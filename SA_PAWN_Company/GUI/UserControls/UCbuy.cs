@@ -22,7 +22,8 @@ namespace SA_PAWN_Company.GUI
             InitializeComponent();
             Control[] ct = { txtname, txtcost, txtprice, cbtype };
             requirement = ct;
-            btnClear_Click(null,null);
+            //btnClear_Click(null,null);
+            cbtype.SelectedItem = "dsds";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -90,6 +91,11 @@ namespace SA_PAWN_Company.GUI
                 Connect.ExecuteNonQuery("Insert Into StuffType Values('"+inputbox.Value+"',1)");
                 Helper.FillCombobox(cbtype, "Type", "STID", "Select * from StuffType");
             }
+        }
+
+        private void UCbuy_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
