@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using Helpers;
 using MetroFramework.Controls;
+using DataConnection;
 
 namespace SA_PAWN_Company.GUI
 {
@@ -21,6 +22,7 @@ namespace SA_PAWN_Company.GUI
             InitializeComponent();
             Control[] ct = { txtname, txtcost, txtprice, cbtype };
             requirement = ct;
+            btnClear_Click(null,null);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -30,11 +32,11 @@ namespace SA_PAWN_Company.GUI
             opf.Title = "Browse Product Image ...";
             if (opf.ShowDialog() == DialogResult.OK)
             {
-                string imgpath = Helper.Upload_Photo(opf.FileName, Pawnshop.PATH_PREFIX + "Stuff\\");
-                pictureBox1.Image = imgpath==""?Properties.Resources.download1:Image.FromFile(imgpath);
+                imgpath = opf.FileName;
+                pictureBox1.Image = Image.FromFile(imgpath);
             }
         }
-
+        public string imgpath { get; set; } = "";
         private void btnBuy_Click(object sender, EventArgs e)
         {
             if (!Helper.CheckRequirement(groupBox1, requirement))
@@ -45,14 +47,21 @@ namespace SA_PAWN_Company.GUI
             {
                 return;
             }
-           
-                
-            
+
+
+            string imgname= imgpath==""?"": Helper.Upload_Photo(imgpath, Pawnshop.PATH_PREFIX + "Stuff\\");
+            int BID = int.Parse(Connect.ExecuteScalar("Insert Into Buy([Date],[EID]) values(GETDATE(),"+Pawnshop.EmployeeID+");Select Scope_identity()") + "");
+            int SID = int.Parse(Connect.ExecuteScalar("Insert into Stuff values('"+txtname.Text.Trim()+"',"+cbtype.SelectedValue+",'"+imgname+"');Select Scope_Identity();")+"");
+            int InvID=int.Parse(Connect.ExecuteScalar("Insert into Inventory values("+SID+",'"+txtprice.Text.Trim()+"',1);Select Scope_identity();")+"");
+            Connect.ExecuteNonQuery("Insert into BuyDetail values("+BID+"," + InvID + "," + txtcost.Text + ")");
+            //MessageBox.Show(imgname+"");
+
+            btnClear_Click(null, null);
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            
+            Helper.ClearRedbox(groupBox1);
             foreach(Control ctrl in groupBox1.Controls)
             {
                 if (ctrl is MetroTextBox)
@@ -66,6 +75,20 @@ namespace SA_PAWN_Company.GUI
                     catch (Exception) { }
                 }
                 pictureBox1.Image = Properties.Resources.download1;
+                Helper.FillCombobox(cbtype, "Type", "STID", "Select * from StuffType");
+                imgpath = "";
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            frminputbox inputbox = new frminputbox();
+            inputbox.Text = "Add Inventory Type";
+            inputbox.lbparam.Text = "Inventory Type Name :";
+            if (inputbox.ShowDialog() == DialogResult.OK)
+            {
+                Connect.ExecuteNonQuery("Insert Into StuffType Values('"+inputbox.Value+"',1)");
+                Helper.FillCombobox(cbtype, "Type", "STID", "Select * from StuffType");
             }
         }
     }

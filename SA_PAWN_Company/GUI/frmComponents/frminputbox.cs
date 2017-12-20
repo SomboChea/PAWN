@@ -22,16 +22,12 @@ namespace SA_PAWN_Company
             DialogResult = DialogResult == DialogResult.OK ? DialogResult : DialogResult.Cancel;
         }
 
-        public double Total { get; set; }
+        public string Value { get; set; }
         private void btnok_Click(object sender, EventArgs e)
         {
-            try
+            if (txtvalue.Text.Trim() == "")
             {
-                Total = double.Parse(txtvalue.Text.Trim());
-            }
-            catch (Exception)
-            {
-                txtvalue.Text = "";
+                Helpers.Helper.SetRedbox(txtvalue, this);
                 txtvalue.Focus();
                 return;
             }
@@ -45,13 +41,14 @@ namespace SA_PAWN_Company
 
         private void frminputbox_Load(object sender, EventArgs e)
         {
-            //DataConnection.Connect.Open();
+            DataConnection.Connect.Open();
             this.WindowState = FormWindowState.Maximized;
-            this.IsMdiContainer = true;
+            //this.IsMdiContainer = true;
             frmRegisteruser frm = new frmRegisteruser();
-            frm.MdiParent = this;
-            frm.WindowState = FormWindowState.Normal;
-            frm.Show();
+            this.Controls.Add(frm);
+            //frm.MdiParent = this;
+            //frm.WindowState = FormWindowState.Normal;
+            //frm.Show();
         }
     }
 }

@@ -53,7 +53,7 @@
             // btncancel
             // 
             this.btncancel.BackColor = System.Drawing.Color.Red;
-            this.btncancel.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btncancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btncancel.ForeColor = System.Drawing.SystemColors.Control;
             this.btncancel.Location = new System.Drawing.Point(469, 115);
             this.btncancel.Name = "btncancel";

@@ -32,7 +32,7 @@ namespace Helpers
         /// </summary>
         /// <param name="filepath">Original full file path</param>
         /// <param name="Directory_Path">Directory to Copy file into</param>
-        /// <returns>Return a path of Image in Directory_path</returns>
+        /// <returns>Return a name and extension of Image in Directory_path</returns>
         public static string Upload_Photo(string filepath, string Directory_Path)
         {
             string[] filesplit = filepath.Split('\\');
@@ -67,7 +67,7 @@ namespace Helpers
             }
             File.Copy(filepath, imgpath);
 
-            return imgpath;
+            return filename;
         }
 
         /// <summary>

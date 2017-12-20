@@ -63,7 +63,7 @@ namespace SA_PAWN_Company.GUI
             txtprice.Text = double.Parse(Connect.ExecuteScalar("Select Price from viewInventory Where SID=" + cbinventoryname.SelectedValue) + "").ToString("#,##0.00");
 
             btnDelete.Enabled = false;
-
+            
             return null;
         }
 
@@ -235,11 +235,20 @@ namespace SA_PAWN_Company.GUI
 
         private void btnSale_Click(object sender, EventArgs e)
         {
+            tryagain:
             frminputbox inputbox = new frminputbox();
             inputbox.Text = "Get Customer Pay";
             inputbox.lbparam.Text = "Customer Pay : ";
             if (inputbox.ShowDialog() == DialogResult.OK) {
-                payment(inputbox.Total);
+                try
+                {
+                    payment(double.Parse(inputbox.Value));
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Cannot Get Value !\nPlease Try again later Correctly!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    goto tryagain;
+                }
             };
 
 
