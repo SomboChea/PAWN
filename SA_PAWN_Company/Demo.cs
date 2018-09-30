@@ -21,5 +21,13 @@ namespace SA_PAWN_Company
         {
             //new PopupBox(st, true);
         }
+
+        private void roleItem1_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void roleItem1_Click(object sender, EventArgs e)
+        {
+        }
     }
 }

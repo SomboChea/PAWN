@@ -179,7 +179,7 @@ namespace DataConnection
         {
             try
             {
-                DataTable usr = Connect.GetModel("SELECT * FROM [User] WHERE [Username] = '" + user + "' AND [Password] = '" + pass + "' AND [Status] = 1;");
+                DataTable usr = Connect.GetModel("SELECT * FROM [User] WHERE [Username] = '" + user + "' AND [Password] = '" + pass + "'");
                 DataRow r = usr.Rows[0];
                 FullName = r["Username"] + "";
                 return int.Parse(r["UID"].ToString());

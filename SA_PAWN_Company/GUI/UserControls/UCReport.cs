@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SA_PAWN_Company.GUI
+namespace SA_PAWN_Company
 {
-    public partial class UCReport : UserControl
+    public partial class UcReports : UserControl
     {
-        public UCReport()
+        public UcReports()
         {
             InitializeComponent();
         }

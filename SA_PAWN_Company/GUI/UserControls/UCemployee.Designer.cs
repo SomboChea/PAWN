@@ -32,6 +32,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtname = new MetroFramework.Controls.MetroTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnAdduser = new System.Windows.Forms.Button();
             this.btnclr = new System.Windows.Forms.Button();
             this.btnadd = new System.Windows.Forms.Button();
             this.btnaddpos = new System.Windows.Forms.Button();
@@ -39,7 +41,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtsalary = new MetroFramework.Controls.MetroTextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtemail = new MetroFramework.Controls.MetroTextBox();
             this.txtphone = new MetroFramework.Controls.MetroTextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rfemale = new System.Windows.Forms.RadioButton();
@@ -48,10 +52,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnbrowse = new System.Windows.Forms.Button();
             this.picturebox = new System.Windows.Forms.PictureBox();
-            this.btnAdduser = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtemail = new MetroFramework.Controls.MetroTextBox();
-            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgEmployee)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -63,6 +63,8 @@
             this.dgEmployee.AllowUserToAddRows = false;
             this.dgEmployee.AllowUserToDeleteRows = false;
             this.dgEmployee.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dgEmployee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgEmployee.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgEmployee.BackgroundColor = System.Drawing.Color.White;
             this.dgEmployee.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dgEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -84,7 +86,7 @@
             this.label1.Location = new System.Drawing.Point(21, 63);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 25);
+            this.label1.Size = new System.Drawing.Size(78, 31);
             this.label1.TabIndex = 6;
             this.label1.Text = "Name:";
             // 
@@ -138,6 +140,27 @@
             this.groupBox1.Text = "Employee";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(877, 69);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(26, 31);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "$";
+            // 
+            // btnAdduser
+            // 
+            this.btnAdduser.BackColor = System.Drawing.Color.Blue;
+            this.btnAdduser.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAdduser.Location = new System.Drawing.Point(502, 199);
+            this.btnAdduser.Name = "btnAdduser";
+            this.btnAdduser.Size = new System.Drawing.Size(361, 56);
+            this.btnAdduser.TabIndex = 21;
+            this.btnAdduser.Text = "Add User";
+            this.btnAdduser.UseVisualStyleBackColor = false;
+            this.btnAdduser.Click += new System.EventHandler(this.btnAdduser_Click);
+            // 
             // btnclr
             // 
             this.btnclr.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -185,10 +208,10 @@
             // cbposition
             // 
             this.cbposition.FormattingEnabled = true;
-            this.cbposition.ItemHeight = 23;
+            this.cbposition.ItemHeight = 24;
             this.cbposition.Location = new System.Drawing.Point(574, 121);
             this.cbposition.Name = "cbposition";
-            this.cbposition.Size = new System.Drawing.Size(257, 29);
+            this.cbposition.Size = new System.Drawing.Size(257, 30);
             this.cbposition.TabIndex = 17;
             this.cbposition.Tag = "Positon";
             this.cbposition.UseSelectable = true;
@@ -199,7 +222,7 @@
             this.label5.Location = new System.Drawing.Point(475, 121);
             this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 25);
+            this.label5.Size = new System.Drawing.Size(98, 31);
             this.label5.TabIndex = 16;
             this.label5.Text = "Position:";
             // 
@@ -228,9 +251,28 @@
             this.label4.Location = new System.Drawing.Point(475, 63);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 25);
+            this.label4.Size = new System.Drawing.Size(82, 31);
             this.label4.TabIndex = 14;
             this.label4.Text = "Salary:";
+            // 
+            // txtemail
+            // 
+            this.txtemail.BackColor = System.Drawing.Color.White;
+            this.txtemail.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.txtemail.Lines = new string[0];
+            this.txtemail.Location = new System.Drawing.Point(113, 336);
+            this.txtemail.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtemail.MaxLength = 32767;
+            this.txtemail.Multiline = true;
+            this.txtemail.Name = "txtemail";
+            this.txtemail.PasswordChar = '\0';
+            this.txtemail.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtemail.SelectedText = "";
+            this.txtemail.Size = new System.Drawing.Size(324, 34);
+            this.txtemail.TabIndex = 11;
+            this.txtemail.Tag = "Email";
+            this.txtemail.UseCustomBackColor = true;
+            this.txtemail.UseSelectable = true;
             // 
             // txtphone
             // 
@@ -251,13 +293,24 @@
             this.txtphone.UseCustomBackColor = true;
             this.txtphone.UseSelectable = true;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(21, 336);
+            this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(69, 31);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Email";
+            this.label6.Click += new System.EventHandler(this.label3_Click);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(21, 274);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 25);
+            this.label3.Size = new System.Drawing.Size(51, 31);
             this.label3.TabIndex = 12;
             this.label3.Text = "Tel:";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -278,7 +331,7 @@
             this.rfemale.AutoSize = true;
             this.rfemale.Location = new System.Drawing.Point(245, 31);
             this.rfemale.Name = "rfemale";
-            this.rfemale.Size = new System.Drawing.Size(89, 29);
+            this.rfemale.Size = new System.Drawing.Size(108, 35);
             this.rfemale.TabIndex = 1;
             this.rfemale.TabStop = true;
             this.rfemale.Text = "Female";
@@ -289,7 +342,7 @@
             this.rmale.AutoSize = true;
             this.rmale.Location = new System.Drawing.Point(80, 31);
             this.rmale.Name = "rmale";
-            this.rmale.Size = new System.Drawing.Size(69, 29);
+            this.rmale.Size = new System.Drawing.Size(82, 35);
             this.rmale.TabIndex = 0;
             this.rmale.TabStop = true;
             this.rmale.Text = "Male";
@@ -320,7 +373,7 @@
             this.label2.Location = new System.Drawing.Point(21, 215);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 25);
+            this.label2.Size = new System.Drawing.Size(100, 31);
             this.label2.TabIndex = 9;
             this.label2.Text = "Address:";
             // 
@@ -346,60 +399,9 @@
             this.picturebox.TabIndex = 1;
             this.picturebox.TabStop = false;
             // 
-            // btnAdduser
-            // 
-            this.btnAdduser.BackColor = System.Drawing.Color.Blue;
-            this.btnAdduser.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnAdduser.Location = new System.Drawing.Point(502, 199);
-            this.btnAdduser.Name = "btnAdduser";
-            this.btnAdduser.Size = new System.Drawing.Size(361, 56);
-            this.btnAdduser.TabIndex = 21;
-            this.btnAdduser.Text = "Add User";
-            this.btnAdduser.UseVisualStyleBackColor = false;
-            this.btnAdduser.Click += new System.EventHandler(this.btnAdduser_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(21, 336);
-            this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 25);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Email";
-            this.label6.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // txtemail
-            // 
-            this.txtemail.BackColor = System.Drawing.Color.White;
-            this.txtemail.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtemail.Lines = new string[0];
-            this.txtemail.Location = new System.Drawing.Point(113, 336);
-            this.txtemail.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.txtemail.MaxLength = 32767;
-            this.txtemail.Multiline = true;
-            this.txtemail.Name = "txtemail";
-            this.txtemail.PasswordChar = '\0';
-            this.txtemail.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtemail.SelectedText = "";
-            this.txtemail.Size = new System.Drawing.Size(324, 34);
-            this.txtemail.TabIndex = 11;
-            this.txtemail.Tag = "Email";
-            this.txtemail.UseCustomBackColor = true;
-            this.txtemail.UseSelectable = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(877, 69);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(22, 25);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "$";
-            // 
             // UCemployee
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.groupBox1);

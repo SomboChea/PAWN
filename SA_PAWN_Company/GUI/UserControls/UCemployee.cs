@@ -19,25 +19,24 @@ namespace SA_PAWN_Company
         public UCemployee()
         {
             InitializeComponent();
-            
+
             Reload();
-            Control[] ct = { txtname,txtphone,txtaddress,txtsalary,cbposition};
+            Control[] ct = { txtname, txtphone, txtaddress, txtsalary, cbposition };
             requirement = ct;
             //Helper.SetRedbox(txtname, groupBox1);
             //MessageBox.Show(groupBox1.Controls.Count + "");
-    
-            
         }
 
-        Control[] requirement;
-        DataTable dt;
+        private Control[] requirement;
+        private DataTable dt;
+
         private void Reload()
         {
             dt = Connect.GetModel("SELECT EID,v.Name,v.Gender, v.Email,v.Address,v.Salary ,v.Tel,v.Position,v.Username,Photo,UserEID FROM viewEmployee v");
             dgEmployee.DataSource = dt;
             dgEmployee.Columns["Photo"].Visible = false;
             dgEmployee.Columns["UserEID"].Visible = false;
-            Helper.FillCombobox(cbposition,"Position", "PID", "Select * from Position");
+            Helper.FillCombobox(cbposition, "Position", "PID", "Select * from Position");
 
             foreach (Control temp in groupBox1.Controls)
             {
@@ -45,11 +44,12 @@ namespace SA_PAWN_Company
                     temp.Text = "";
                 if (temp is MetroComboBox)
                 {
-                    try {
+                    try
+                    {
                         ((MetroComboBox)temp).SelectedIndex = 0;
                     }
                     catch (Exception) { }
-                    }
+                }
             }
             rmale.Checked = true;
             picturebox.Image = Properties.Resources.Simpleicons_Interface_business_man_1_svg;
@@ -57,15 +57,12 @@ namespace SA_PAWN_Company
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
-
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            
-            
             Helper.ClearRedbox(groupBox1);
-            btnadd.Text = "ADD Employee";
+            btnadd.Text = "Add Employee";
             btnAdduser.Text = "Add User";
             btnAdduser.BackColor = Color.Blue;
             Reload();
@@ -73,7 +70,6 @@ namespace SA_PAWN_Company
 
         private void metroTextBox1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void UCemployee_Load(object sender, EventArgs e)
@@ -82,19 +78,17 @@ namespace SA_PAWN_Company
 
         private void chkactive_CheckedChanged(object sender, EventArgs e)
         {
-            
         }
 
         private void dgEmployee_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
         }
 
         private void dgEmployee_Click(object sender, EventArgs e)
         {
             if (dgEmployee.SelectedRows.Count > 0)
             {
-                DataRow row = Connect.GetModel("Select * from viewEmployee where EID="+dgEmployee.SelectedRows[0].Cells[0].Value).Rows[0];
+                DataRow row = Connect.GetModel("Select * from viewEmployee where EID=" + dgEmployee.SelectedRows[0].Cells[0].Value).Rows[0];
 
                 picturebox.Image = File.Exists(Pawnshop.PATH_PREFIX + "Customers\\" + row["Photo"]) ? Image.FromFile(Pawnshop.PATH_PREFIX + "Customers\\" + row["Photo"]) : Properties.Resources.Simpleicons_Interface_business_man_1_svg;
                 foreach (Control ctrl in groupBox1.Controls)
@@ -123,19 +117,19 @@ namespace SA_PAWN_Company
 
         private void btnadd_Click(object sender, EventArgs e)
         {
-            if (!Helper.CheckRequirement(groupBox1,requirement))
+            if (!Helper.CheckRequirement(groupBox1, requirement))
                 return;
             try
             {
                 double.Parse(txtsalary.Text);
             }
-            catch(Exception)
-            { Helper.SetRedbox(txtsalary, groupBox1);return; }
+            catch (Exception)
+            { Helper.SetRedbox(txtsalary, groupBox1); return; }
             if (btnadd.Text == "Add Employee")
             {
                 string sql = "Insert into Employee values(@obj1,@obj2,@obj3,@obj4,@obj5,@obj6,@obj7,1,@obj8);";
-                object[] objs= { txtname.Text, rmale.Checked ? "Male" : "Female", txtaddress.Text, txtemail.Text, txtphone.Text, txtsalary.Text, imgname, cbposition.SelectedValue};
-                Connect.ExecuteNonQuery(sql+additionSql,Connect.GetParams(objs));
+                object[] objs = { txtname.Text, rmale.Checked ? "Male" : "Female", txtaddress.Text, txtemail.Text, txtphone.Text, txtsalary.Text, imgname, cbposition.SelectedValue };
+                Connect.ExecuteNonQuery(sql + additionSql, Connect.GetParams(objs));
             }
             else
             {
@@ -146,17 +140,19 @@ namespace SA_PAWN_Company
             button8_Click(null, null);
         }
 
-        string additionSql = "";
+        private string additionSql = "";
+
         private void btnaddpos_Click(object sender, EventArgs e)
         {
             frmAddPos frm = new frmAddPos();
             frm.ShowDialog();
-           
+
             Helper.FillCombobox(cbposition, "Position", "PID", "Select * from Position");
         }
 
-        string imgpath = "";
-        string imgname = "";
+        private string imgpath = "";
+        private string imgname = "";
+
         private void btnbrowse_Click(object sender, EventArgs e)
         {
             OpenFileDialog opf = new OpenFileDialog();
@@ -168,14 +164,14 @@ namespace SA_PAWN_Company
                 imgpath = opf.FileName;
                 imgname = opf.SafeFileName;
                 int index = 1;
-                if(!Directory.Exists(Pawnshop.PATH_PREFIX + "Customers\\"))
+                if (!Directory.Exists(Pawnshop.PATH_PREFIX + "Customers\\"))
                     Directory.CreateDirectory(Pawnshop.PATH_PREFIX + "Customers\\");
-                while(File.Exists(Pawnshop.PATH_PREFIX + "Customers\\" + imgname))
+                while (File.Exists(Pawnshop.PATH_PREFIX + "Customers\\" + imgname))
                 {
-                    imgname = imgname.Split('.')[0] +"_Copy-"+ index + '.' + imgname.Split('.')[1];
+                    imgname = imgname.Split('.')[0] + "_Copy-" + index + '.' + imgname.Split('.')[1];
                     index++;
                 }
-                File.Copy(imgpath, Pawnshop.PATH_PREFIX + "Customers\\"+imgname);
+                File.Copy(imgpath, Pawnshop.PATH_PREFIX + "Customers\\" + imgname);
                 picturebox.Image = Image.FromFile(Pawnshop.PATH_PREFIX + "Customers\\" + imgname);
             }
         }
@@ -200,12 +196,10 @@ namespace SA_PAWN_Company
                 btnAdduser.BackColor = Color.Blue;
                 Helper.FillDatagridview(dgEmployee, "SELECT EID,v.Name,v.Gender, v.Email,v.Address,v.Salary ,v.Tel,v.Position,v.Username,Photo,UserEID FROM viewEmployee v");
             }
-          
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
-
         }
     }
 }

@@ -1,12 +1,9 @@
 ﻿using Helpers;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SA_PAWN_Company
@@ -14,6 +11,7 @@ namespace SA_PAWN_Company
     public partial class frmMain : Form
     {
         private int userID;
+        private string searchString = null;
 
         public frmMain()
         {
@@ -27,13 +25,15 @@ namespace SA_PAWN_Company
             InitializeComponent();
             FullMode.Fullscreen(this);
 
+            Name = Pawnshop.Fullname;
             DataConnection.Connect.Open();
             this.userID = userID;
             lbUsername.Text = !Name.Equals(null) ? Name : "Undefined";
             getTags();
             loadMenu(userID);
 
-            panContent.Controls.Add(new UCMain());
+            //panContent.Controls.Add(new UCMain());
+            OpenUC(new UCMain());
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -56,7 +56,7 @@ namespace SA_PAWN_Company
         private void btnNav_Click(object sender, EventArgs e)
         {
             panNav.Visible = false;
-            panNav.Width = open ? 0 : 258;
+            panNav.Width = open ? 0 : 269;
             open = !open;
             bTran.ShowSync(panNav, true, null);
         }
@@ -129,7 +129,14 @@ namespace SA_PAWN_Company
         private void btnStuff_Click(object sender, EventArgs e)
         {
             OpenUC(new UCStuff());
-            lbTitle.Text = "Stuff";
+            panSearch.Visible = true;
+            lbTitle.Text = "Stuff Pawned";
+        }
+
+        private void loadUCStuff()
+        {
+            OpenUC(new UCStuff(searchString));
+            lbTitle.Text = "Stuff Pawned : Search for '" + searchString + "'";
         }
 
         /** Open Inventory **/
@@ -152,7 +159,7 @@ namespace SA_PAWN_Company
 
         private void btnEmployees_Click(object sender, EventArgs e)
         {
-            OpenUC(new UCemployee());
+            OpenUC(new UCemployee2());
             lbTitle.Text = "Employees";
         }
 
@@ -160,16 +167,8 @@ namespace SA_PAWN_Company
 
         private void btnReports_Click(object sender, EventArgs e)
         {
-            OpenUC(new UCMainReport());
+            OpenUC(new UcReports());
             lbTitle.Text = "Reports";
-        }
-
-        /** Holidays **/
-
-        private void btnHoliday_Click(object sender, EventArgs e)
-        {
-            OpenUC(new UCHoliday());
-            lbTitle.Text = "Holiday";
         }
 
         /** Open new UserControl **/
@@ -179,6 +178,7 @@ namespace SA_PAWN_Company
             panContent.Controls.Clear();
             uc.Dock = DockStyle.Fill;
             panContent.Controls.Add(uc);
+            panSearch.Visible = false;
         }
 
         /** Schedule Lists **/
@@ -187,6 +187,32 @@ namespace SA_PAWN_Company
         {
             OpenUC(new ScheduleList());
             lbTitle.Text = "Schedule Lists";
+        }
+
+        private void btnSale_Click(object sender, EventArgs e)
+        {
+            OpenUC(new UCsell());
+            lbTitle.Text = "Sales Inventory";
+        }
+
+        private void btnBuy_Click(object sender, EventArgs e)
+        {
+            OpenUC(new UCbuy());
+            lbTitle.Text = "Buy Inventory";
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            searchString = txtSearch.Text.Trim();
+            if (searchString != null || searchString != "")
+                loadUCStuff();
+
+            if (txtSearch.TextLength <= 0)
+            {
+                OpenUC(new UCStuff());
+                lbTitle.Text = "Stuff Pawned";
+            }
+            panSearch.Visible = true;
         }
     }
 }

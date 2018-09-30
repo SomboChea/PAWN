@@ -353,6 +353,16 @@ namespace SA_PAWN_Company.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap magnifying_glass {
+            get {
+                object obj = ResourceManager.GetObject("magnifying-glass", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap menu {
             get {
                 object obj = ResourceManager.GetObject("menu", resourceCulture);
@@ -516,6 +526,16 @@ namespace SA_PAWN_Company.Properties {
         internal static System.Drawing.Bitmap Untitled_1 {
             get {
                 object obj = ResourceManager.GetObject("Untitled-1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap update_arrows {
+            get {
+                object obj = ResourceManager.GetObject("update-arrows", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -1,26 +1,31 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Windows.Input;
 using Helpers;
+using DataConnection;
 
 namespace SA_PAWN_Company
 {
     public partial class UCPawn : UserControl
     {
         private string image = null;
+        private int days = 0;
+        private int rate = 0;
+        private bool hasSuccess = false;
 
         public UCPawn()
         {
             InitializeComponent();
             loadStuffType();
             loadDurationType();
+            loadIdentityType();
+            durationType.SelectedIndex = 0;
+            cbGender.SelectedIndex = 0;
+            idType.SelectedIndex = 0;
+            stuffType.SelectedIndex = 0;
         }
 
         private void stuffPicture_Click(object sender, EventArgs e)
@@ -29,76 +34,138 @@ namespace SA_PAWN_Company
             if (fd.ShowDialog() == DialogResult.OK)
             {
                 this.stuffPicture.Image = Image.FromFile(fd.FileName);
-                image = Path.GetFullPath(fd.FileName);
+                image = Path.GetFileName(fd.FileName);
             }
         }
 
         private void btnGenerate_Click(object sender, EventArgs e)
         {
-            int paycount = int.Parse(txtPaycount.Text);
-            panPreview.Controls.Clear();
-            int rate = int.Parse(txtRate.Text);
-            float price = float.Parse(txtPawnPrice.Text);
-            generateSchedule(0, rate, price, days, paycount);
-            //try
-            //{
-            //    //Stuff Info
-            //    string stuffname = txtStuffName.Text;
-            //    int stufftype = DataConnection.Connect.GetID("SELECT * FROM viewStuffType WHERE Type='" + stuffType.Text + "';");
+            if (txtStuffName.Text.Trim() != "" && txtPawnPrice.Text.Trim() != "" && txtDuration.Text.Trim() != "" && txtCustomerName.Text.Trim() != "" && txtTel.Text.Trim() != "")
+            {
+                panPreview.Controls.Clear();
+                int cid = 0, sid = 0, eid = Pawnshop.EmployeeID, pawnid = 0, schid = 0;
+                try
+                {
+                    //Stuff Info
+                    string stuffname = txtStuffName.Text;
+                    int stufftype = DataConnection.Connect.GetID("SELECT * FROM viewStuffType WHERE Type='" + stuffType.Text + "';");
+                    hasSuccess = insertStuff(stuffname, stufftype, ref sid);
+                    //if (insertStuff(stuffname, stufftype, ref sid))
+                    //{
+                    //MessageBox.Show("Stuff Inserted!");
 
-            //    //Pawn Info
-            //    float pawnprice = float.Parse(txtPawnPrice.Text);
-            //    int duration = int.Parse(durationType.Text);
-            //    float interestrate = float.Parse(txtRate.Text);
-            //    int paycount = int.Parse(txtPaycount.Text);
-            //    string file = txtAttachement.Text;
+                    //}   //Inserting Stuff
 
-            //    //Customer Info
-            //    string customername = txtCustomerName.Text;
-            //    string gender = cbGender.Text;
-            //    string tel = txtTel.Text;
-            //    int idtype = DataConnection.Connect.GetID("SELECT * FROM viewDuration WHERE Type = '" + durationType.Text + "';");
-            //    string address = txtAddress.Text;
+                    //Customer Info
+                    string customername = txtCustomerName.Text;
+                    string gender = cbGender.Text;
+                    string tel = txtTel.Text;
+                    Helpers.Text.isNull(tel);
+                    int idtypeid = DataConnection.Connect.GetID("SELECT * FROM viewIdentity WHERE IDType = '" + idType.Text + "';");
+                    string idnote = txtIDNote.Text;
+                    string address = txtAddress.Text;
+                    hasSuccess = insertCustomer(customername, gender, tel, idtypeid, idnote, address, ref cid);
+                    //if (insertCustomer(customername, gender, tel, idtypeid, idnote, address, ref cid))
+                    //{
+                    //MessageBox.Show("Customer Inserted!");
+                    //}   //Inserting Customer
 
-            //    //Start Transactions
-            //}
-            //catch (Exception) { return; }
+                    //Pawn Info
+                    double pawnprice = float.Parse(txtPawnPrice.Text);
+                    int duration = int.Parse(txtDuration.Text);
+                    int interestrate = rate;
+                    int idtype = DataConnection.Connect.GetID("SELECT * FROM viewDuration WHERE Type = '" + durationType.Text + "';");
+                    int paycount = int.Parse(txtPaycount.Text);
+                    string file = txtAttachement.Text;
+                    hasSuccess = insertPawn(cid, eid, sid, pawnprice, duration, interestrate, file, idtype, ref pawnid);
+                    //if (insertPawn(cid, eid, sid, pawnprice, duration, interestrate, file, idtype, ref pawnid))
+                    //{
+                    //MessageBox.Show("Pawn Inserted!");
+                    //}   //Insert Pawn
+
+                    //Start Transactions
+                    hasSuccess = insertSchedule(pawnid, paycount, ref schid);
+                    //if (insertSchedule(pawnid, paycount, ref schid))
+                    //{
+                    //MessageBox.Show("Schedule Inserted");
+                    //}
+
+                    hasSuccess = generateSchedule(schid, interestrate, pawnprice, paycount);
+
+                    if (hasSuccess)
+                    {
+                        btnReset_Click(null, null);
+                        MessageBox.Show("Successfully generated!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to generating!");
+                    }
+                }
+                catch (Exception) { hasSuccess = false; return; }
+            }
+            else
+            {
+                MessageBox.Show("Please complete all required fields!");
+            }
         }
 
         /** Insert Stuff **/
 
-        private bool insertStuff(string name, int type)
+        private bool insertStuff(string name, int type, ref int stuffID)
         {
             string sql = "INSERT INTO Stuff(Stuff,STID, Image) VALUES('" + name + "'," + type + ",'" + image + "');";
-            if (DataConnection.Connect.ExecuteNonQuery(sql))
+            if (!name.Equals("") && !type.Equals(0) && DataConnection.Connect.ExecuteNonQuery(sql))
+            {
+                stuffID = int.Parse(DataConnection.Connect.ExecuteScalar("SELECT MAX(SID) FROM Stuff;") + "");
                 return true;
+            }
+            return false;
+        }
+
+        /** Insert Customer **/
+
+        private bool insertCustomer(string name, string gender, string tel, int idtype, string idnote, string address, ref int custID)
+        {
+            string sql = "INSERT INTO Customer(name, gender, tel, idtypeid, idnote, address) VALUES('" + name + "','" + gender + "','" + tel + "'," + idtype + ",'" + idnote + "','" + address + "');";
+            if (!name.Equals("") && !tel.Equals("") && DataConnection.Connect.ExecuteNonQuery(sql))
+            {
+                custID = int.Parse(DataConnection.Connect.ExecuteScalar("SELECT MAX(CID) FROM Customer;") + "");
+                return true;
+            }
             return false;
         }
 
         /** Insert Pawn **/
 
-        private bool insertPawn(int cid, int eid, int sid, float price, int duration, int rate, string file, int dtype)
+        private bool insertPawn(int cid, int eid, int sid, double price, int duration, int rate, string file, int dtype, ref int pawnID)
         {
-            string date = DateTime.Now.ToString("dd/MM/yyyy hh:m:ss");
-            string sql = "INSERT INTO PawnContract(date, cid, eid, sid, pawnprice, duration, interestrate, attachement, DIDT) VALUES('" + date + "'," + cid + "," + eid + "," + sid + "," + price + "," + duration + "," + rate + ",'" + file + "'," + dtype + ");";
+            string date = DateTime.Today.ToShortDateString();
+            string sql = "INSERT INTO PawnContract([date], cid, eid, sid, pawnprice, duration, interestrate, attachement, [Status], DIDT) VALUES('" + date + "'," + cid + "," + eid + "," + sid + "," + price + "," + duration + "," + rate + ",'" + file + "',1," + dtype + ");";
             if (DataConnection.Connect.ExecuteNonQuery(sql))
+            {
+                pawnID = int.Parse(DataConnection.Connect.ExecuteScalar("SELECT MAX(PawnID) FROM PawnContract;") + "");
                 return true;
+            }
             return false;
         }
 
         /** Insert Schedule **/
 
-        private bool insertSchedule(int pawnid, int paycount)
+        private bool insertSchedule(int pawnid, int paycount, ref int schID)
         {
-            string sql = "INSERT INTO Schedule(pawnid, paycount) VALUES(" + pawnid + "," + paycount + ");";
+            string sql = "INSERT INTO Schedule(pawnid, [status], paycount) VALUES(" + pawnid + ",1," + paycount + ");";
             if (DataConnection.Connect.ExecuteNonQuery(sql))
+            {
+                schID = int.Parse(DataConnection.Connect.ExecuteScalar("SELECT MAX(SCHID) FROM Schedule;") + "");
                 return true;
+            }
             return false;
         }
 
         /** Insert and Generating Schedule **/
 
-        private bool generateSchedule(int schid, int interestrate, float pawnprice, int duration, int paycount)
+        private bool generateSchedule(int schid, int interestrate, double pawnprice, int paycount)
         {
             double amountleft = pawnprice;
             double pay_a_day = 0;
@@ -124,22 +191,14 @@ namespace SA_PAWN_Company
             ScheduleItem[] items = new ScheduleItem[paycount];
             while (c < paycount)
             {
-                if (plus_days > 0)
-                {
-                    plus_days -= 1;
-                    ed = st.AddDays(part_days + 1);
-                }
-                else
-                {
-                    ed = st.AddDays(part_days);
-                }
+                ed = st.AddDays(part_days + plus_days);
+                plus_days = 0;
 
                 plus = Duration.GetLastDayHoliday(ed.AddDays(-1));
                 ed = ed.AddDays(plus);
                 paydate = ed.AddDays(-1).ToShortDateString(); // Get pay date
                 pay_days = int.Parse((ed - st).TotalDays + ""); // Get number days for pay
 
-                //MessageBox.Show("Pay date at: " + paydate + "\n" + "Amount days: " + pay_days);
                 /** Settings here for Schedules List **/
                 title = (c + 1) + "";
 
@@ -148,8 +207,13 @@ namespace SA_PAWN_Company
                 totalpay = Math.Round(amountpay + interest, 2);
 
                 //paydate, rate, amountpay, interest, payday, punish, totalpay, title, payRnot = false
-                items[c] = new ScheduleItem(paydate, rate + "", amountpay + "", interest + "", pay_days + "", punishement + "", totalpay + "", title);
+                items[c] = new ScheduleItem(paydate, rate + "", amountpay + "", interest + "", pay_days + "", punishement + "", totalpay + "", title, c + 1);
                 panPreview.Controls.Add(items[c]);
+
+                string sql = "INSERT INTO ScheduleDetail(schid, amountleft, interestrate, interest, amountpay, paydate, paystatus, payday) ";
+                sql += "VALUES(" + schid + "," + amountleft + "," + rate + "," + interest + "," + amountpay + ",'" + paydate + "',0, " + pay_days + ");";
+
+                DataConnection.Connect.ExecuteNonQuery(sql);
 
                 /** END **/
                 part_days -= plus;
@@ -158,8 +222,6 @@ namespace SA_PAWN_Company
             }
             /** End Generating **/
 
-            string sql = "INSERT INTO ScheduleDetail(schid, amountleft, interestrate, interest, amountpay, paydate, paystatus) ";
-            sql += "VALUES(" + schid + "," + amountleft + "," + rate + "," + interest + "," + amountpay + ",'" + paydate + "',0);";
             return false;
         }
 
@@ -178,7 +240,14 @@ namespace SA_PAWN_Company
 
         private void btnStuffType_Click(object sender, EventArgs e)
         {
-            App.Open(new StuffType());
+            frminputbox inputbox = new frminputbox();
+            inputbox.Text = "Add Stuff Type";
+            inputbox.lbparam.Text = "Stuff Type Name :";
+            if (inputbox.ShowDialog() == DialogResult.OK)
+            {
+                Connect.ExecuteNonQuery("Insert Into StuffType Values('" + inputbox.Value + "',1)");
+                Helper.FillCombobox(stuffType, "Type", "STID", "Select * from StuffType");
+            }
         }
 
         /** Load Stuff Type **/
@@ -199,28 +268,127 @@ namespace SA_PAWN_Company
                 durationType.Items.Add(row["Type"]);
         }
 
-        private int days = 0;
+        /** Load Identity Type **/
+
+        private void loadIdentityType()
+        {
+            DataTable dt = DataConnection.Connect.GetModel("SELECT * FROM viewIdentity;");
+            foreach (DataRow row in dt.Rows)
+                idType.Items.Add(row["IDType"]);
+        }
 
         private void durationType_SelectedIndexChanged(object sender, EventArgs e)
         {
+            getDays();
+        }
+
+        private int getDays()
+        {
             int idx = durationType.SelectedIndex;
-            days = Duration.InDays(int.Parse(txtDuration.Text), idx);
+            int dur = 0;
+            int.TryParse(txtDuration.Text, out dur);
+            days = Duration.InDays(dur, idx);
+            rate = getRate(days);
+            return days;
         }
 
-        private void panPreview_Paint(object sender, PaintEventArgs e)
+        private int getRate(int days)
         {
+            int rex = 0;
+            if (txtDuration.Text.Trim() != "" && txtDuration.Text != null && txtDuration.Text != "0" && days != 0)
+            {
+                int.TryParse(DataConnection.Connect.ExecuteScalar("EXEC getRate " + days) + "", out rex);
+                txtRate.Text = rex + "%";
+            }
+            else
+            {
+                txtRate.Text = rex + "%";
+            }
+
+            return rex;
         }
 
-        private void bunifuCards1_Paint(object sender, PaintEventArgs e)
+        private void UCPawn_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.Enter)
+            {
+                MessageBox.Show("Enter");
+            }
         }
 
-        private void bunifuCards2_Paint(object sender, PaintEventArgs e)
+        private void txtDuration_TextChanged(object sender, EventArgs e)
         {
+            if (txtDuration.Text != null && txtDuration.Text.Trim() != "")
+            {
+                durationType.Enabled = true;
+                durationType.SelectedIndex = durationType.SelectedIndex;
+                getDays();
+            }
+            else
+            {
+                durationType.Enabled = false;
+                txtRate.Text = "0%";
+            }
         }
 
-        private void bunifuCards3_Paint(object sender, PaintEventArgs e)
+        private void txtTel_KeyPress(object sender, KeyPressEventArgs e)
         {
+            Helpers.Text.IsDigit(e);
+        }
+
+        private void txtPaycount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Helpers.Text.IsDigit(e);
+        }
+
+        private void txtPawnPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Helpers.Text.IsDecimal(e);
+        }
+
+        private void txtDuration_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Helpers.Text.IsDigit(e);
+        }
+
+        private void txtRate_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Helpers.Text.IsDecimal(e);
+        }
+
+        private bool rateEdit = false;
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            txtRate.ReadOnly = rateEdit;
+            if (!rateEdit)
+            {
+                txtRate.Text = txtRate.Text.TrimEnd('%');
+                btnEdit.Text = "C";
+                rateEdit = true;
+            }
+            else
+            {
+                int r = 0;
+                int.TryParse(txtRate.Text.TrimEnd('%'), out r);
+                rate = r;
+                txtRate.Text = rate + "%";
+                btnEdit.Text = "E";
+                rateEdit = false;
+            }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            txtStuffName.Clear();
+            txtPawnPrice.Clear();
+            txtDuration.Clear();
+            txtRate.Clear();
+            txtAttachement.Clear();
+            txtCustomerName.Clear();
+            txtTel.Clear();
+            txtIDNote.Clear();
+            txtAddress.Clear();
         }
     }
 }

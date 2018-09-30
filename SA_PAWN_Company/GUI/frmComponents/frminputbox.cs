@@ -17,12 +17,21 @@ namespace SA_PAWN_Company
             InitializeComponent();
         }
 
+        private bool isDecimal = false;
+
+        public frminputbox(bool isDecimal)
+        {
+            InitializeComponent();
+            this.isDecimal = isDecimal;
+        }
+
         private void frminputbox_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult = DialogResult == DialogResult.OK ? DialogResult : DialogResult.Cancel;
         }
 
         public string Value { get; set; }
+
         private void btnok_Click(object sender, EventArgs e)
         {
             if (txtvalue.Text.Trim() == "")
@@ -31,6 +40,7 @@ namespace SA_PAWN_Company
                 txtvalue.Focus();
                 return;
             }
+            Value = txtvalue.Text.Trim();
             this.Dispose();
         }
 
@@ -49,6 +59,12 @@ namespace SA_PAWN_Company
             ////frm.MdiParent = this;
             ////frm.WindowState = FormWindowState.Normal;
             ////frm.Show();
+        }
+
+        private void txtvalue_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (isDecimal)
+                Helpers.Text.IsDecimal(e);
         }
     }
 }

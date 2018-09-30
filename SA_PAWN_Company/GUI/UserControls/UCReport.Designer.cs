@@ -1,6 +1,6 @@
-﻿namespace SA_PAWN_Company.GUI
+﻿namespace SA_PAWN_Company
 {
-    partial class UCReport
+    partial class UcReports
     {
         /// <summary> 
         /// Required designer variable.

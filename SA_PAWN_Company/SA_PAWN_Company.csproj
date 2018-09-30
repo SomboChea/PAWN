@@ -87,6 +87,12 @@
       <DependentUpon>Demo.cs</DependentUpon>
     </Compile>
     <Compile Include="DialogList.cs" />
+    <Compile Include="GUI\frmComponents\FindStuff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmComponents\FindStuff.Designer.cs">
+      <DependentUpon>FindStuff.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmComponents\frmAddPos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,11 +117,65 @@
     <Compile Include="GUI\frmComponents\frmRegisteruser.Designer.cs">
       <DependentUpon>frmRegisteruser.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmMain\AdminSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmMain\AdminSettings.Designer.cs">
+      <DependentUpon>AdminSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmMain\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\frmMain\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Not_Used\DemoHTTP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Not_Used\DemoHTTP.Designer.cs">
+      <DependentUpon>DemoHTTP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Not_Used\Item.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Not_Used\Item.Designer.cs">
+      <DependentUpon>Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\blockEmployee.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\blockEmployee.Designer.cs">
+      <DependentUpon>blockEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\frmEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\frmEmployee.Designer.cs">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\frmRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\frmRole.designer.cs">
+      <DependentUpon>frmRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\InventoryItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\InventoryItem.Designer.cs">
+      <DependentUpon>InventoryItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\RoleItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\RoleItem.Designer.cs">
+      <DependentUpon>RoleItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\RoleOptionEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\RoleOptionEdit.designer.cs">
+      <DependentUpon>RoleOptionEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UserControls\ScheduleItem.cs">
       <SubType>UserControl</SubType>
@@ -129,17 +189,41 @@
     <Compile Include="GUI\UserControls\ScheduleList.Designer.cs">
       <DependentUpon>ScheduleList.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UserControls\SearchBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\SearchBox.Designer.cs">
+      <DependentUpon>SearchBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\StuffItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\StuffItem.Designer.cs">
+      <DependentUpon>StuffItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UserControls\UCcustomer.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="GUI\UserControls\UCcustomer.Designer.cs">
       <DependentUpon>UCcustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UserControls\UCemployee2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\UCemployee2.Designer.cs">
+      <DependentUpon>UCemployee2.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UserControls\UCStuff.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="GUI\UserControls\UCStuff.Designer.cs">
       <DependentUpon>UCStuff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\UserRoleItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\UserRoleItem.Designer.cs">
+      <DependentUpon>UserRoleItem.cs</DependentUpon>
     </Compile>
     <Compile Include="PopupBox.cs">
       <SubType>Form</SubType>
@@ -298,22 +382,45 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Reports\Forms\All_Reports.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reports\Forms\All_Reports.Designer.cs">
+      <DependentUpon>All_Reports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\General\rptInvoice.cs">
+      <DependentUpon>rptInvoice.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\Schedule\rptPrintSchedule.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPrintSchedule.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\Schedule\rptSchedule.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptSchedule.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\struct\ST_Invoice.cs" />
     <Compile Include="Reports\struct\ST_Schedule.cs" />
     <Compile Include="Reports\struct\ST_DailyReport.cs" />
     <Compile Include="STR_CLASS\Customer.cs" />
     <Compile Include="STR_CLASS\Employee.cs" />
+    <Compile Include="STR_CLASS\Inventory.cs" />
     <Compile Include="STR_CLASS\Pawnshop.cs" />
     <Compile Include="STR_CLASS\People.cs" />
     <Compile Include="STR_CLASS\Role.cs" />
     <Compile Include="STR_CLASS\RoleOption.cs" />
     <EmbeddedResource Include="Demo.resx">
       <DependentUpon>Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmComponents\FindStuff.resx">
+      <DependentUpon>FindStuff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmComponents\frmAddPos.resx">
       <DependentUpon>frmAddPos.cs</DependentUpon>
@@ -327,8 +434,36 @@
     <EmbeddedResource Include="GUI\frmComponents\frmRegisteruser.resx">
       <DependentUpon>frmRegisteruser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmMain\AdminSettings.resx">
+      <DependentUpon>AdminSettings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmMain\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Not_Used\DemoHTTP.resx">
+      <DependentUpon>DemoHTTP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Not_Used\Item.resx">
+      <DependentUpon>Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UCemployeeAdd.resx" />
+    <EmbeddedResource Include="GUI\UserControls\blockEmployee.resx">
+      <DependentUpon>blockEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\frmEmployee.resx">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\frmRole.resx">
+      <DependentUpon>frmRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\InventoryItem.resx">
+      <DependentUpon>InventoryItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\RoleItem.resx">
+      <DependentUpon>RoleItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\RoleOptionEdit.resx">
+      <DependentUpon>RoleOptionEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\ScheduleItem.resx">
       <DependentUpon>ScheduleItem.cs</DependentUpon>
@@ -336,11 +471,20 @@
     <EmbeddedResource Include="GUI\UserControls\ScheduleList.resx">
       <DependentUpon>ScheduleList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\SearchBox.resx">
+      <DependentUpon>SearchBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\StuffItem.resx">
+      <DependentUpon>StuffItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\UCcustomer.resx">
       <DependentUpon>UCcustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\UCStuff.resx">
       <DependentUpon>UCStuff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\UserRoleItem.resx">
+      <DependentUpon>UserRoleItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopupBox.resx">
       <DependentUpon>PopupBox.cs</DependentUpon>
@@ -422,6 +566,17 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Forms\All_Reports.resx">
+      <DependentUpon>All_Reports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\General\rptInvoice.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptInvoice.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Schedule\rptPrintSchedule.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPrintSchedule.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\Schedule\rptSchedule.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptSchedule.cs</LastGenOutput>
@@ -500,7 +655,9 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\magnifying-glass.png" />
     <Content Include="Resources\Simpleicons_Interface_business-man-1.svg.png" />
+    <None Include="Resources\update-arrows.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

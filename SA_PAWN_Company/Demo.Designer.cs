@@ -28,25 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.roleItem1 = new SA_PAWN_Company.RoleItem();
+            this.roleItem2 = new SA_PAWN_Company.RoleItem();
+            this.roleItem3 = new SA_PAWN_Company.RoleItem();
+            this.roleItem4 = new SA_PAWN_Company.RoleItem();
             this.SuspendLayout();
             // 
-            // button1
+            // roleItem1
             // 
-            this.button1.Location = new System.Drawing.Point(228, 145);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(179, 60);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.roleItem1.Location = new System.Drawing.Point(12, 12);
+            this.roleItem1.Name = "roleItem1";
+            this.roleItem1.Size = new System.Drawing.Size(264, 173);
+            this.roleItem1.TabIndex = 0;
+            // 
+            // roleItem2
+            // 
+            this.roleItem2.Location = new System.Drawing.Point(294, 12);
+            this.roleItem2.Name = "roleItem2";
+            this.roleItem2.Size = new System.Drawing.Size(264, 173);
+            this.roleItem2.TabIndex = 1;
+            // 
+            // roleItem3
+            // 
+            this.roleItem3.Location = new System.Drawing.Point(12, 201);
+            this.roleItem3.Name = "roleItem3";
+            this.roleItem3.Size = new System.Drawing.Size(264, 173);
+            this.roleItem3.TabIndex = 2;
+            // 
+            // roleItem4
+            // 
+            this.roleItem4.Location = new System.Drawing.Point(294, 201);
+            this.roleItem4.Name = "roleItem4";
+            this.roleItem4.Size = new System.Drawing.Size(264, 173);
+            this.roleItem4.TabIndex = 3;
             // 
             // Demo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(687, 368);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(572, 393);
+            this.Controls.Add(this.roleItem4);
+            this.Controls.Add(this.roleItem3);
+            this.Controls.Add(this.roleItem2);
+            this.Controls.Add(this.roleItem1);
             this.Name = "Demo";
             this.Text = "Demo";
             this.ResumeLayout(false);
@@ -55,6 +79,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private RoleItem roleItem1;
+        private RoleItem roleItem2;
+        private RoleItem roleItem3;
+        private RoleItem roleItem4;
     }
 }

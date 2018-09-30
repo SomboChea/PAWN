@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Helpers
 {
-    public class Helper
+    public static class Helper
     {
         /// <summary>
         /// You can set Path of Json Language folder here
@@ -36,9 +36,8 @@ namespace Helpers
         public static string Upload_Photo(string filepath, string Directory_Path)
         {
             string[] filesplit = filepath.Split('\\');
-            string filename = filesplit[filesplit.Length-1];
+            string filename = filesplit[filesplit.Length - 1];
             string imgpath = Directory_Path + filename;
-
 
             if (!Directory.Exists(Directory_Path))
             {
@@ -114,13 +113,14 @@ namespace Helpers
             return check;
         }
 
-        public static bool CheckDouble(Control main,params Control[] Controls)
+        public static bool CheckDouble(Control main, params Control[] Controls)
         {
             bool check = true;
-            double d = 0 ;
-            foreach(Control ctrl in Controls)
+            double d = 0;
+            foreach (Control ctrl in Controls)
             {
-                if (!double.TryParse(ctrl.Text,out d)){
+                if (!double.TryParse(ctrl.Text, out d))
+                {
                     check = false;
                 }
             }
@@ -183,9 +183,13 @@ namespace Helpers
         /// <param name="sql">SQL Select Command</param>
         public static void FillCombobox(ComboBox cb, string displaymember, string valuemember, string sql)
         {
-            cb.ValueMember = valuemember;
-            cb.DisplayMember = displaymember;
-            cb.DataSource = Connect.GetModel(sql);
+            try
+            {
+                cb.ValueMember = valuemember;
+                cb.DisplayMember = displaymember;
+                cb.DataSource = Connect.GetModel(sql);
+            }
+            catch (Exception) { }
         }
 
         /// <summary>
@@ -224,7 +228,7 @@ namespace Helpers
     /// <summary>
     /// Fullmode { Screen }
     /// </summary>
-    public class FullMode
+    public static class FullMode
     {
         public static void Fullscreen(Form context)
         {
@@ -310,7 +314,7 @@ namespace Helpers
     /// <summary>
     /// Log files
     /// </summary>
-    public class Log
+    public static class Log
     {
         private static string path = "log.txt";
 
@@ -347,7 +351,7 @@ namespace Helpers
     /// Dtype = 2 {Month}
     /// Dtype = 3 {Year}
     /// </summary>
-    public class Duration
+    public static class Duration
     {
         public static int InDays(int dur, int dtype = 0)
         {
@@ -408,7 +412,7 @@ namespace Helpers
         }
     }
 
-    public class App
+    public static class App
     {
         public static void Open(Form context)
         {
@@ -432,6 +436,51 @@ namespace Helpers
         {
             Application.Exit();
             Application.ExitThread();
+            return;
+        }
+    }
+
+    public static class Text
+    {
+        public static bool IsDigitObj(object value)
+        {
+            try
+            {
+                var x = int.Parse(value.ToString());
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public static void IsDigit(KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && e.KeyChar != (char)8;
+        }
+
+        public static void IsDecimal(KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsNumber(e.KeyChar) && e.KeyChar != (char)8 && !e.KeyChar.Equals('.');
+        }
+
+        public static string isRequired(TextBox tb)
+        {
+            if (tb.Text.Trim() == "")
+            {
+                tb.Focus();
+                //MessageBox.Show("Required Field!");
+                return null;
+            }
+            else
+                return tb.Text;
+        }
+
+        public static void isNull(string val)
+        {
+            if (val == null)
+                MessageBox.Show("Required Field!");
             return;
         }
     }

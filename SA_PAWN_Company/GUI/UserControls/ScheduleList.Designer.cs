@@ -30,9 +30,9 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
-            this.cbBy = new System.Windows.Forms.ComboBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.itemBox = new System.Windows.Forms.FlowLayoutPanel();
+            this.lbCustID = new System.Windows.Forms.Label();
             this.bunifuCards1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,9 +41,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(14, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 30);
+            this.label1.Size = new System.Drawing.Size(171, 30);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Filter";
+            this.label1.Text = "Filter PAWNID";
             // 
             // bunifuCards1
             // 
@@ -51,7 +51,7 @@
             this.bunifuCards1.BorderRadius = 5;
             this.bunifuCards1.BottomSahddow = true;
             this.bunifuCards1.color = System.Drawing.Color.Tomato;
-            this.bunifuCards1.Controls.Add(this.cbBy);
+            this.bunifuCards1.Controls.Add(this.lbCustID);
             this.bunifuCards1.Controls.Add(this.txtSearch);
             this.bunifuCards1.Controls.Add(this.label1);
             this.bunifuCards1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -60,33 +60,39 @@
             this.bunifuCards1.Name = "bunifuCards1";
             this.bunifuCards1.RightSahddow = true;
             this.bunifuCards1.ShadowDepth = 20;
-            this.bunifuCards1.Size = new System.Drawing.Size(1125, 690);
+            this.bunifuCards1.Size = new System.Drawing.Size(1125, 91);
             this.bunifuCards1.TabIndex = 1;
-            // 
-            // cbBy
-            // 
-            this.cbBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbBy.FormattingEnabled = true;
-            this.cbBy.Location = new System.Drawing.Point(88, 25);
-            this.cbBy.Name = "cbBy";
-            this.cbBy.Size = new System.Drawing.Size(244, 35);
-            this.cbBy.TabIndex = 2;
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(349, 25);
+            this.txtSearch.Location = new System.Drawing.Point(191, 22);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(745, 37);
+            this.txtSearch.Size = new System.Drawing.Size(413, 35);
             this.txtSearch.TabIndex = 1;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // itemBox
             // 
-            this.itemBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.itemBox.Location = new System.Drawing.Point(0, 104);
+            this.itemBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.itemBox.AutoScroll = true;
+            this.itemBox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.itemBox.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.itemBox.Location = new System.Drawing.Point(0, 97);
             this.itemBox.Name = "itemBox";
-            this.itemBox.Size = new System.Drawing.Size(1125, 586);
+            this.itemBox.Size = new System.Drawing.Size(1125, 593);
             this.itemBox.TabIndex = 2;
+            // 
+            // lbCustID
+            // 
+            this.lbCustID.AutoSize = true;
+            this.lbCustID.Location = new System.Drawing.Point(663, 27);
+            this.lbCustID.Name = "lbCustID";
+            this.lbCustID.Size = new System.Drawing.Size(266, 30);
+            this.lbCustID.TabIndex = 2;
+            this.lbCustID.Text = "Customer Tel: Unified";
             // 
             // ScheduleList
             // 
@@ -108,8 +114,8 @@
 
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuCards bunifuCards1;
-        private System.Windows.Forms.ComboBox cbBy;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.FlowLayoutPanel itemBox;
+        private System.Windows.Forms.Label lbCustID;
     }
 }

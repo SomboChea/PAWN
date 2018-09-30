@@ -78,6 +78,9 @@ namespace SA_PAWN_Company
             user_id = DataConnection.Test.logUser(txtUsername.Text, txtPassword.Text, ref user_name);
             if (user_name != null && !user_id.Equals(0))
             {
+                Pawnshop.EmployeeID = int.Parse(Connect.ExecuteScalar("SELECT EID FROM viewUsers WHERE UID = " + user_id) + "");
+                Pawnshop.Fullname = Connect.ExecuteScalar("SELECT Name FROM viewUsers WHERE UID = " + user_id) + "";
+
                 return true;
             }
             else

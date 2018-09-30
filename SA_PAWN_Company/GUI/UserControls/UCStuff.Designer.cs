@@ -28,18 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.panStuffItems = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
+            // 
+            // panStuffItems
+            // 
+            this.panStuffItems.BackColor = System.Drawing.Color.Gainsboro;
+            this.panStuffItems.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panStuffItems.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.panStuffItems.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panStuffItems.Location = new System.Drawing.Point(0, 0);
+            this.panStuffItems.Name = "panStuffItems";
+            this.panStuffItems.Size = new System.Drawing.Size(1227, 763);
+            this.panStuffItems.TabIndex = 0;
             // 
             // UCStuff
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Controls.Add(this.panStuffItems);
             this.Name = "UCStuff";
-            this.Size = new System.Drawing.Size(878, 579);
+            this.Size = new System.Drawing.Size(1227, 763);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.FlowLayoutPanel panStuffItems;
     }
 }

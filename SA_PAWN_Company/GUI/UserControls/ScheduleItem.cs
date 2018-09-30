@@ -13,13 +13,15 @@ namespace SA_PAWN_Company
     public partial class ScheduleItem : UserControl
     {
         private bool payable = false;
+        private string paydate = null;
 
-        public ScheduleItem(string paydate, string rate, string amountpay, string interest, string payday, string punish, string totalpay, string title, bool payRnot = false, bool payable = false)
+        public ScheduleItem(string paydate, string rate, string amountpay, string interest, string payday, string punish, string totalpay, string title, int color = 0, bool payRnot = false, bool payable = false)
         {
             this.payable = payable;
+            this.paydate = paydate;
             InitializeComponent();
             lbSchTitle.Text += title;
-            lbPaydate.Text += paydate;
+            lbPaydate.Text += DateTime.Parse(paydate).ToShortDateString();
             lbRate.Text += rate + "%";
             lbAmount.Text += "$" + amountpay;
             lbInterest.Text += "$" + interest;
@@ -36,20 +38,25 @@ namespace SA_PAWN_Company
                 btnPay.Text = "Pay";
                 btnPay.Enabled = true;
             }
+
+            if (color % 2 == 0)
+                bunifuCards1.color = Color.DeepPink;
+            else
+                bunifuCards1.color = Color.DodgerBlue;
         }
 
         private void btnPay_Click(object sender, EventArgs e)
         {
             if (payable)
             {
-                int PayState = 1;
+                int PayState = 0;
                 if (btnPay.Enabled)
                 {
-                    PayState = 0;
+                    PayState = 1;
                     btnPay.Enabled = false;
                     btnPay.Text = "Paid";
                 }
-                string sql = "UPDATE ScheduleDetail SET PayStatus =  " + PayState + ";";
+                string sql = "UPDATE ScheduleDetail SET PayStatus =  " + PayState + " WHERE PayDate = '" + paydate + "';";
                 bool checkPay = DataConnection.Connect.ExecuteNonQuery(sql);
                 if (!checkPay)
                     btnPay.Enabled = true;

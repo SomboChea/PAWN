@@ -1,4 +1,4 @@
-﻿namespace SA_PAWN_Company.GUI
+﻿namespace SA_PAWN_Company
 {
     partial class UCsell
     {
@@ -72,15 +72,15 @@
             // 
             this.listView1.Alignment = System.Windows.Forms.ListViewAlignment.Left;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader4,
             this.columnHeader1,
             this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
+            this.columnHeader3});
             this.listView1.FullRowSelect = true;
-            this.listView1.Location = new System.Drawing.Point(33, 345);
+            this.listView1.Location = new System.Drawing.Point(33, 378);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1182, 299);
+            this.listView1.Size = new System.Drawing.Size(1182, 269);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -89,19 +89,23 @@
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "InventoryName";
+            this.columnHeader1.Text = "Inventory Name";
+            this.columnHeader1.Width = 263;
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "InventoryType";
+            this.columnHeader2.Text = "Inventory Type";
+            this.columnHeader2.Width = 214;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Inventory Price";
+            this.columnHeader3.Width = 227;
             // 
             // columnHeader4
             // 
-            this.columnHeader4.Text = "id";
+            this.columnHeader4.Text = "ID";
+            this.columnHeader4.Width = 132;
             // 
             // txttotalqty
             // 
@@ -113,10 +117,10 @@
             this.txttotalqty.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txttotalqty.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txttotalqty.isPassword = false;
-            this.txttotalqty.Location = new System.Drawing.Point(187, 30);
+            this.txttotalqty.Location = new System.Drawing.Point(225, 30);
             this.txttotalqty.Margin = new System.Windows.Forms.Padding(4);
             this.txttotalqty.Name = "txttotalqty";
-            this.txttotalqty.Size = new System.Drawing.Size(351, 39);
+            this.txttotalqty.Size = new System.Drawing.Size(313, 39);
             this.txttotalqty.TabIndex = 10;
             this.txttotalqty.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -146,7 +150,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(493, 173);
+            this.label2.Location = new System.Drawing.Point(217, 196);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(25, 27);
             this.label2.TabIndex = 24;
@@ -155,7 +159,7 @@
             // cbinventype
             // 
             this.cbinventype.FormattingEnabled = true;
-            this.cbinventype.Location = new System.Drawing.Point(227, 45);
+            this.cbinventype.Location = new System.Drawing.Point(249, 45);
             this.cbinventype.Name = "cbinventype";
             this.cbinventype.Size = new System.Drawing.Size(289, 35);
             this.cbinventype.TabIndex = 23;
@@ -164,7 +168,7 @@
             // cbinventoryname
             // 
             this.cbinventoryname.FormattingEnabled = true;
-            this.cbinventoryname.Location = new System.Drawing.Point(227, 109);
+            this.cbinventoryname.Location = new System.Drawing.Point(249, 116);
             this.cbinventoryname.Name = "cbinventoryname";
             this.cbinventoryname.Size = new System.Drawing.Size(289, 35);
             this.cbinventoryname.TabIndex = 23;
@@ -173,9 +177,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::SA_PAWN_Company.Properties.Resources.download1;
-            this.pictureBox1.Location = new System.Drawing.Point(542, 64);
+            this.pictureBox1.Location = new System.Drawing.Point(574, 95);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(178, 182);
+            this.pictureBox1.Size = new System.Drawing.Size(146, 136);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
@@ -194,9 +198,9 @@
             this.btnlist.BackColor = System.Drawing.Color.DarkCyan;
             this.btnlist.Image = global::SA_PAWN_Company.Properties.Resources.badge1;
             this.btnlist.ImageActive = null;
-            this.btnlist.Location = new System.Drawing.Point(542, 23);
+            this.btnlist.Location = new System.Drawing.Point(574, 45);
             this.btnlist.Name = "btnlist";
-            this.btnlist.Size = new System.Drawing.Size(178, 35);
+            this.btnlist.Size = new System.Drawing.Size(146, 35);
             this.btnlist.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnlist.TabIndex = 19;
             this.btnlist.TabStop = false;
@@ -206,7 +210,7 @@
             // bunifuCustomLabel6
             // 
             this.bunifuCustomLabel6.AutoSize = true;
-            this.bunifuCustomLabel6.Location = new System.Drawing.Point(13, 179);
+            this.bunifuCustomLabel6.Location = new System.Drawing.Point(13, 196);
             this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
             this.bunifuCustomLabel6.Size = new System.Drawing.Size(73, 27);
             this.bunifuCustomLabel6.TabIndex = 17;
@@ -222,17 +226,17 @@
             this.txtprice.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtprice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtprice.isPassword = false;
-            this.txtprice.Location = new System.Drawing.Point(227, 167);
+            this.txtprice.Location = new System.Drawing.Point(249, 186);
             this.txtprice.Margin = new System.Windows.Forms.Padding(4);
             this.txtprice.Name = "txtprice";
-            this.txtprice.Size = new System.Drawing.Size(259, 39);
+            this.txtprice.Size = new System.Drawing.Size(289, 45);
             this.txtprice.TabIndex = 16;
             this.txtprice.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // bunifuCustomLabel5
             // 
             this.bunifuCustomLabel5.AutoSize = true;
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(13, 112);
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(13, 119);
             this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
             this.bunifuCustomLabel5.Size = new System.Drawing.Size(187, 27);
             this.bunifuCustomLabel5.TabIndex = 15;
@@ -275,10 +279,10 @@
             this.txtamount.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtamount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtamount.isPassword = false;
-            this.txtamount.Location = new System.Drawing.Point(187, 87);
+            this.txtamount.Location = new System.Drawing.Point(225, 87);
             this.txtamount.Margin = new System.Windows.Forms.Padding(4);
             this.txtamount.Name = "txtamount";
-            this.txtamount.Size = new System.Drawing.Size(351, 39);
+            this.txtamount.Size = new System.Drawing.Size(313, 39);
             this.txtamount.TabIndex = 12;
             this.txtamount.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -328,10 +332,10 @@
             this.txtreturn.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtreturn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtreturn.isPassword = false;
-            this.txtreturn.Location = new System.Drawing.Point(200, 87);
+            this.txtreturn.Location = new System.Drawing.Point(256, 87);
             this.txtreturn.Margin = new System.Windows.Forms.Padding(4);
             this.txtreturn.Name = "txtreturn";
-            this.txtreturn.Size = new System.Drawing.Size(351, 39);
+            this.txtreturn.Size = new System.Drawing.Size(295, 39);
             this.txtreturn.TabIndex = 12;
             this.txtreturn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -354,10 +358,10 @@
             this.txtreceive.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtreceive.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtreceive.isPassword = false;
-            this.txtreceive.Location = new System.Drawing.Point(200, 30);
+            this.txtreceive.Location = new System.Drawing.Point(256, 30);
             this.txtreceive.Margin = new System.Windows.Forms.Padding(4);
             this.txtreceive.Name = "txtreceive";
-            this.txtreceive.Size = new System.Drawing.Size(351, 39);
+            this.txtreceive.Size = new System.Drawing.Size(295, 39);
             this.txtreceive.TabIndex = 10;
             this.txtreceive.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -368,16 +372,16 @@
             this.cblisttype.Items.AddRange(new object[] {
             "Detail",
             "Image"});
-            this.cblisttype.Location = new System.Drawing.Point(1064, 313);
+            this.cblisttype.Location = new System.Drawing.Point(1011, 336);
             this.cblisttype.Name = "cblisttype";
-            this.cblisttype.Size = new System.Drawing.Size(151, 26);
+            this.cblisttype.Size = new System.Drawing.Size(203, 26);
             this.cblisttype.TabIndex = 15;
             this.cblisttype.SelectedIndexChanged += new System.EventHandler(this.cblisttype_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(936, 312);
+            this.label1.Location = new System.Drawing.Point(883, 336);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 27);
             this.label1.TabIndex = 16;

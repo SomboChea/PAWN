@@ -18,7 +18,9 @@ namespace SA_PAWN_Company
         {
             InitializeComponent();
         }
+
         public string Code { get; set; }
+
         private void frmlistInventory_Load(object sender, EventArgs e)
         {
             Connect.Open();
@@ -28,18 +30,17 @@ namespace SA_PAWN_Company
             DataTable dt = Connect.GetModel("Select * from viewInventory");
 
             foreach (ColumnHeader col in listView1.Columns)
-                col.Width = listView1.Width/3;
+                col.Width = listView1.Width / 3;
             listView1.Columns[3].Width = 0;
-
 
             foreach (DataRow row in dt.Rows)
             {
-                string code = row["STID"] + "" + row["SID"];
-                string imgpath = Pawnshop.PATH_PREFIX + "Stuff\\" + row["Photo"];
+                string code = row["SID"] + "";
+                string imgpath = Pawnshop.PATH_PREFIX + "Stuff\\" + row["Image"];
                 Image img = File.Exists(imgpath) ? Image.FromFile(imgpath) : Properties.Resources.download1;
                 listView1.LargeImageList.Images.Add(code, img);
-                string[] item = { row["Stuff"].ToString(),row["Type"]+"",double.Parse(row["Price"]+"").ToString("#,##0.00 $"),code};
-                ListViewItem list = new ListViewItem(item,listView1.LargeImageList.Images.IndexOfKey(code));
+                string[] item = { row["Stuff"].ToString(), row["Type"] + "", double.Parse(row["Price"] + "").ToString("#,##0.00 $"), code };
+                ListViewItem list = new ListViewItem(item, listView1.LargeImageList.Images.IndexOfKey(code));
                 listView1.Items.Add(list);
             }
         }
@@ -47,7 +48,6 @@ namespace SA_PAWN_Company
         private void frmlistInventory_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult = DialogResult == DialogResult.OK ? DialogResult : DialogResult.Cancel;
-            
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -70,7 +70,7 @@ namespace SA_PAWN_Company
         private void btnok_Click(object sender, EventArgs e)
         {
             Code = listView1.SelectedItems[0].SubItems[3].Text.ToString();
-        
+
             this.Dispose();
         }
 

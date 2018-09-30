@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCMain));
+            this.panContent = new System.Windows.Forms.Panel();
             this.bunifuCards4 = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuCards3 = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
@@ -39,56 +40,73 @@
             this.bunifuCircleProgressbar3 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.bunifuCircleProgressbar2 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
+            this.panContent.SuspendLayout();
             this.bunifuCards1.SuspendLayout();
             this.SuspendLayout();
             // 
+            // panContent
+            // 
+            this.panContent.Controls.Add(this.bunifuCards4);
+            this.panContent.Controls.Add(this.bunifuCards3);
+            this.panContent.Controls.Add(this.bunifuCards2);
+            this.panContent.Controls.Add(this.bunifuCards1);
+            this.panContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panContent.Location = new System.Drawing.Point(0, 0);
+            this.panContent.Name = "panContent";
+            this.panContent.Size = new System.Drawing.Size(1413, 911);
+            this.panContent.TabIndex = 0;
+            // 
             // bunifuCards4
             // 
+            this.bunifuCards4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bunifuCards4.BackColor = System.Drawing.Color.White;
             this.bunifuCards4.BorderRadius = 5;
             this.bunifuCards4.BottomSahddow = true;
             this.bunifuCards4.color = System.Drawing.Color.DodgerBlue;
             this.bunifuCards4.LeftSahddow = false;
-            this.bunifuCards4.Location = new System.Drawing.Point(16, 623);
+            this.bunifuCards4.Location = new System.Drawing.Point(13, 619);
             this.bunifuCards4.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuCards4.Name = "bunifuCards4";
             this.bunifuCards4.RightSahddow = true;
             this.bunifuCards4.ShadowDepth = 20;
-            this.bunifuCards4.Size = new System.Drawing.Size(1387, 282);
-            this.bunifuCards4.TabIndex = 5;
+            this.bunifuCards4.Size = new System.Drawing.Size(1387, 281);
+            this.bunifuCards4.TabIndex = 9;
             // 
             // bunifuCards3
             // 
+            this.bunifuCards3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bunifuCards3.BackColor = System.Drawing.Color.White;
             this.bunifuCards3.BorderRadius = 5;
             this.bunifuCards3.BottomSahddow = true;
             this.bunifuCards3.color = System.Drawing.Color.LimeGreen;
             this.bunifuCards3.LeftSahddow = false;
-            this.bunifuCards3.Location = new System.Drawing.Point(756, 15);
+            this.bunifuCards3.Location = new System.Drawing.Point(753, 10);
             this.bunifuCards3.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuCards3.Name = "bunifuCards3";
             this.bunifuCards3.RightSahddow = true;
             this.bunifuCards3.ShadowDepth = 20;
             this.bunifuCards3.Size = new System.Drawing.Size(647, 601);
-            this.bunifuCards3.TabIndex = 6;
+            this.bunifuCards3.TabIndex = 10;
             // 
             // bunifuCards2
             // 
+            this.bunifuCards2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bunifuCards2.BackColor = System.Drawing.Color.White;
             this.bunifuCards2.BorderRadius = 5;
             this.bunifuCards2.BottomSahddow = true;
             this.bunifuCards2.color = System.Drawing.Color.Tomato;
             this.bunifuCards2.LeftSahddow = false;
-            this.bunifuCards2.Location = new System.Drawing.Point(16, 316);
+            this.bunifuCards2.Location = new System.Drawing.Point(13, 311);
             this.bunifuCards2.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuCards2.Name = "bunifuCards2";
             this.bunifuCards2.RightSahddow = true;
             this.bunifuCards2.ShadowDepth = 20;
             this.bunifuCards2.Size = new System.Drawing.Size(732, 299);
-            this.bunifuCards2.TabIndex = 4;
+            this.bunifuCards2.TabIndex = 8;
             // 
             // bunifuCards1
             // 
+            this.bunifuCards1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bunifuCards1.BackColor = System.Drawing.Color.White;
             this.bunifuCards1.BorderRadius = 5;
             this.bunifuCards1.BottomSahddow = true;
@@ -100,13 +118,13 @@
             this.bunifuCards1.Controls.Add(this.bunifuCircleProgressbar2);
             this.bunifuCards1.Controls.Add(this.bunifuCircleProgressbar1);
             this.bunifuCards1.LeftSahddow = false;
-            this.bunifuCards1.Location = new System.Drawing.Point(16, 15);
+            this.bunifuCards1.Location = new System.Drawing.Point(13, 10);
             this.bunifuCards1.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuCards1.Name = "bunifuCards1";
             this.bunifuCards1.RightSahddow = true;
             this.bunifuCards1.ShadowDepth = 20;
             this.bunifuCards1.Size = new System.Drawing.Size(732, 294);
-            this.bunifuCards1.TabIndex = 3;
+            this.bunifuCards1.TabIndex = 7;
             // 
             // bunifuCustomLabel3
             // 
@@ -209,15 +227,13 @@
             // 
             // UCMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.bunifuCards4);
-            this.Controls.Add(this.bunifuCards3);
-            this.Controls.Add(this.bunifuCards2);
-            this.Controls.Add(this.bunifuCards1);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Controls.Add(this.panContent);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UCMain";
             this.Size = new System.Drawing.Size(1413, 911);
+            this.panContent.ResumeLayout(false);
             this.bunifuCards1.ResumeLayout(false);
             this.bunifuCards1.PerformLayout();
             this.ResumeLayout(false);
@@ -226,15 +242,16 @@
 
         #endregion
 
+        private System.Windows.Forms.Panel panContent;
         private Bunifu.Framework.UI.BunifuCards bunifuCards4;
         private Bunifu.Framework.UI.BunifuCards bunifuCards3;
         private Bunifu.Framework.UI.BunifuCards bunifuCards2;
         private Bunifu.Framework.UI.BunifuCards bunifuCards1;
-        private Bunifu.Framework.UI.BunifuCircleProgressbar bunifuCircleProgressbar2;
-        private Bunifu.Framework.UI.BunifuCircleProgressbar bunifuCircleProgressbar1;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private Bunifu.Framework.UI.BunifuCircleProgressbar bunifuCircleProgressbar3;
+        private Bunifu.Framework.UI.BunifuCircleProgressbar bunifuCircleProgressbar2;
+        private Bunifu.Framework.UI.BunifuCircleProgressbar bunifuCircleProgressbar1;
     }
 }

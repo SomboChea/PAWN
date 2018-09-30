@@ -29,9 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation5 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.panHeader = new System.Windows.Forms.Panel();
+            this.panSearch = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.lbTitle = new System.Windows.Forms.Label();
             this.btnNav = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnMin = new Bunifu.Framework.UI.BunifuImageButton();
@@ -40,20 +43,21 @@
             this.panMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.btnHome = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnNewPawn = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnSchedule = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnSale = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnBuy = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnStuff = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnInventory = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnCustomers = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnEmployees = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnReports = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnHoliday = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnSignOut = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panProfile = new System.Windows.Forms.Panel();
             this.lbUsername = new System.Windows.Forms.Button();
             this.proImage = new System.Windows.Forms.PictureBox();
             this.panContent = new System.Windows.Forms.Panel();
             this.bTran = new BunifuAnimatorNS.BunifuTransition(this.components);
-            this.btnSchedule = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panHeader.SuspendLayout();
+            this.panSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnNav)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
@@ -66,6 +70,7 @@
             // panHeader
             // 
             this.panHeader.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panHeader.Controls.Add(this.panSearch);
             this.panHeader.Controls.Add(this.lbTitle);
             this.panHeader.Controls.Add(this.btnNav);
             this.panHeader.Controls.Add(this.btnMin);
@@ -77,15 +82,53 @@
             this.panHeader.Size = new System.Drawing.Size(1260, 79);
             this.panHeader.TabIndex = 0;
             // 
+            // panSearch
+            // 
+            this.panSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.panSearch.BackColor = System.Drawing.Color.Transparent;
+            this.panSearch.Controls.Add(this.label1);
+            this.panSearch.Controls.Add(this.txtSearch);
+            this.bTran.SetDecoration(this.panSearch, BunifuAnimatorNS.DecorationType.None);
+            this.panSearch.Location = new System.Drawing.Point(628, 17);
+            this.panSearch.Name = "panSearch";
+            this.panSearch.Size = new System.Drawing.Size(482, 43);
+            this.panSearch.TabIndex = 7;
+            this.panSearch.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.bTran.SetDecoration(this.label1, BunifuAnimatorNS.DecorationType.None);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(14, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(126, 25);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Search for:";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bTran.SetDecoration(this.txtSearch, BunifuAnimatorNS.DecorationType.None);
+            this.txtSearch.Location = new System.Drawing.Point(179, 8);
+            this.txtSearch.Multiline = true;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(300, 30);
+            this.txtSearch.TabIndex = 9;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
             // lbTitle
             // 
             this.lbTitle.AutoSize = true;
             this.bTran.SetDecoration(this.lbTitle, BunifuAnimatorNS.DecorationType.None);
             this.lbTitle.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitle.ForeColor = System.Drawing.Color.White;
-            this.lbTitle.Location = new System.Drawing.Point(109, 21);
+            this.lbTitle.Location = new System.Drawing.Point(87, 25);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(166, 34);
+            this.lbTitle.Size = new System.Drawing.Size(131, 25);
             this.lbTitle.TabIndex = 6;
             this.lbTitle.Text = "Dashboard";
             // 
@@ -147,7 +190,7 @@
             this.panNav.Dock = System.Windows.Forms.DockStyle.Left;
             this.panNav.Location = new System.Drawing.Point(0, 79);
             this.panNav.Name = "panNav";
-            this.panNav.Size = new System.Drawing.Size(269, 773);
+            this.panNav.Size = new System.Drawing.Size(263, 936);
             this.panNav.TabIndex = 1;
             // 
             // panMenu
@@ -155,12 +198,12 @@
             this.panMenu.Controls.Add(this.btnHome);
             this.panMenu.Controls.Add(this.btnNewPawn);
             this.panMenu.Controls.Add(this.btnSchedule);
+            this.panMenu.Controls.Add(this.btnSale);
+            this.panMenu.Controls.Add(this.btnBuy);
             this.panMenu.Controls.Add(this.btnStuff);
             this.panMenu.Controls.Add(this.btnInventory);
-            this.panMenu.Controls.Add(this.btnCustomers);
             this.panMenu.Controls.Add(this.btnEmployees);
             this.panMenu.Controls.Add(this.btnReports);
-            this.panMenu.Controls.Add(this.btnHoliday);
             this.panMenu.Controls.Add(this.btnSignOut);
             this.bTran.SetDecoration(this.panMenu, BunifuAnimatorNS.DecorationType.None);
             this.panMenu.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -168,7 +211,7 @@
             this.panMenu.Location = new System.Drawing.Point(0, 199);
             this.panMenu.Margin = new System.Windows.Forms.Padding(0);
             this.panMenu.Name = "panMenu";
-            this.panMenu.Size = new System.Drawing.Size(269, 574);
+            this.panMenu.Size = new System.Drawing.Size(263, 737);
             this.panMenu.TabIndex = 2;
             // 
             // btnHome
@@ -196,7 +239,7 @@
             this.btnHome.IconZoom = 60D;
             this.btnHome.IsTab = true;
             this.btnHome.Location = new System.Drawing.Point(4, 4);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(4);
             this.btnHome.Name = "btnHome";
             this.btnHome.Normalcolor = System.Drawing.Color.DodgerBlue;
             this.btnHome.OnHovercolor = System.Drawing.Color.RoyalBlue;
@@ -237,7 +280,7 @@
             this.btnNewPawn.IconZoom = 60D;
             this.btnNewPawn.IsTab = true;
             this.btnNewPawn.Location = new System.Drawing.Point(4, 60);
-            this.btnNewPawn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNewPawn.Margin = new System.Windows.Forms.Padding(4);
             this.btnNewPawn.Name = "btnNewPawn";
             this.btnNewPawn.Normalcolor = System.Drawing.Color.DodgerBlue;
             this.btnNewPawn.OnHovercolor = System.Drawing.Color.RoyalBlue;
@@ -252,6 +295,129 @@
             this.btnNewPawn.TextFont = new System.Drawing.Font("AKbalthom KhmerLer", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewPawn.Visible = false;
             this.btnNewPawn.Click += new System.EventHandler(this.btnNewPawn_Click);
+            // 
+            // btnSchedule
+            // 
+            this.btnSchedule.Activecolor = System.Drawing.Color.RoyalBlue;
+            this.btnSchedule.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnSchedule.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnSchedule.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSchedule.BorderRadius = 0;
+            this.btnSchedule.ButtonText = "Schedules";
+            this.btnSchedule.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bTran.SetDecoration(this.btnSchedule, BunifuAnimatorNS.DecorationType.None);
+            this.btnSchedule.DisabledColor = System.Drawing.Color.Gray;
+            this.btnSchedule.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSchedule.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnSchedule.Iconimage = global::SA_PAWN_Company.Properties.Resources.clerk_with_tie;
+            this.btnSchedule.Iconimage_right = null;
+            this.btnSchedule.Iconimage_right_Selected = null;
+            this.btnSchedule.Iconimage_Selected = null;
+            this.btnSchedule.IconMarginLeft = 15;
+            this.btnSchedule.IconMarginRight = 0;
+            this.btnSchedule.IconRightVisible = true;
+            this.btnSchedule.IconRightZoom = 0D;
+            this.btnSchedule.IconVisible = true;
+            this.btnSchedule.IconZoom = 60D;
+            this.btnSchedule.IsTab = true;
+            this.btnSchedule.Location = new System.Drawing.Point(4, 116);
+            this.btnSchedule.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSchedule.Name = "btnSchedule";
+            this.btnSchedule.Normalcolor = System.Drawing.Color.DodgerBlue;
+            this.btnSchedule.OnHovercolor = System.Drawing.Color.RoyalBlue;
+            this.btnSchedule.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnSchedule.selected = false;
+            this.btnSchedule.Size = new System.Drawing.Size(258, 48);
+            this.btnSchedule.TabIndex = 37;
+            this.btnSchedule.Tag = "schedule";
+            this.btnSchedule.Text = "Schedules";
+            this.btnSchedule.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSchedule.Textcolor = System.Drawing.Color.White;
+            this.btnSchedule.TextFont = new System.Drawing.Font("AKbalthom KhmerLer", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSchedule.Visible = false;
+            this.btnSchedule.Click += new System.EventHandler(this.btnSchedule_Click);
+            // 
+            // btnSale
+            // 
+            this.btnSale.Activecolor = System.Drawing.Color.RoyalBlue;
+            this.btnSale.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnSale.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnSale.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSale.BorderRadius = 0;
+            this.btnSale.ButtonText = "Sales";
+            this.btnSale.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bTran.SetDecoration(this.btnSale, BunifuAnimatorNS.DecorationType.None);
+            this.btnSale.DisabledColor = System.Drawing.Color.Gray;
+            this.btnSale.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSale.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnSale.Iconimage = global::SA_PAWN_Company.Properties.Resources.shopping_cart;
+            this.btnSale.Iconimage_right = null;
+            this.btnSale.Iconimage_right_Selected = null;
+            this.btnSale.Iconimage_Selected = null;
+            this.btnSale.IconMarginLeft = 15;
+            this.btnSale.IconMarginRight = 0;
+            this.btnSale.IconRightVisible = true;
+            this.btnSale.IconRightZoom = 0D;
+            this.btnSale.IconVisible = true;
+            this.btnSale.IconZoom = 60D;
+            this.btnSale.IsTab = true;
+            this.btnSale.Location = new System.Drawing.Point(4, 172);
+            this.btnSale.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSale.Name = "btnSale";
+            this.btnSale.Normalcolor = System.Drawing.Color.DodgerBlue;
+            this.btnSale.OnHovercolor = System.Drawing.Color.RoyalBlue;
+            this.btnSale.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnSale.selected = false;
+            this.btnSale.Size = new System.Drawing.Size(258, 48);
+            this.btnSale.TabIndex = 38;
+            this.btnSale.Tag = "sale";
+            this.btnSale.Text = "Sales";
+            this.btnSale.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSale.Textcolor = System.Drawing.Color.White;
+            this.btnSale.TextFont = new System.Drawing.Font("AKbalthom KhmerLer", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSale.Visible = false;
+            this.btnSale.Click += new System.EventHandler(this.btnSale_Click);
+            // 
+            // btnBuy
+            // 
+            this.btnBuy.Activecolor = System.Drawing.Color.RoyalBlue;
+            this.btnBuy.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnBuy.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnBuy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuy.BorderRadius = 0;
+            this.btnBuy.ButtonText = "Buy";
+            this.btnBuy.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bTran.SetDecoration(this.btnBuy, BunifuAnimatorNS.DecorationType.None);
+            this.btnBuy.DisabledColor = System.Drawing.Color.Gray;
+            this.btnBuy.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuy.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnBuy.Iconimage = global::SA_PAWN_Company.Properties.Resources.warehouse;
+            this.btnBuy.Iconimage_right = null;
+            this.btnBuy.Iconimage_right_Selected = null;
+            this.btnBuy.Iconimage_Selected = null;
+            this.btnBuy.IconMarginLeft = 15;
+            this.btnBuy.IconMarginRight = 0;
+            this.btnBuy.IconRightVisible = true;
+            this.btnBuy.IconRightZoom = 0D;
+            this.btnBuy.IconVisible = true;
+            this.btnBuy.IconZoom = 60D;
+            this.btnBuy.IsTab = true;
+            this.btnBuy.Location = new System.Drawing.Point(4, 228);
+            this.btnBuy.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuy.Name = "btnBuy";
+            this.btnBuy.Normalcolor = System.Drawing.Color.DodgerBlue;
+            this.btnBuy.OnHovercolor = System.Drawing.Color.RoyalBlue;
+            this.btnBuy.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnBuy.selected = false;
+            this.btnBuy.Size = new System.Drawing.Size(258, 48);
+            this.btnBuy.TabIndex = 39;
+            this.btnBuy.Tag = "buy";
+            this.btnBuy.Text = "Buy";
+            this.btnBuy.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuy.Textcolor = System.Drawing.Color.White;
+            this.btnBuy.TextFont = new System.Drawing.Font("AKbalthom KhmerLer", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuy.Visible = false;
+            this.btnBuy.Click += new System.EventHandler(this.btnBuy_Click);
             // 
             // btnStuff
             // 
@@ -277,8 +443,8 @@
             this.btnStuff.IconVisible = true;
             this.btnStuff.IconZoom = 60D;
             this.btnStuff.IsTab = true;
-            this.btnStuff.Location = new System.Drawing.Point(4, 172);
-            this.btnStuff.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStuff.Location = new System.Drawing.Point(4, 284);
+            this.btnStuff.Margin = new System.Windows.Forms.Padding(4);
             this.btnStuff.Name = "btnStuff";
             this.btnStuff.Normalcolor = System.Drawing.Color.DodgerBlue;
             this.btnStuff.OnHovercolor = System.Drawing.Color.RoyalBlue;
@@ -318,8 +484,8 @@
             this.btnInventory.IconVisible = true;
             this.btnInventory.IconZoom = 60D;
             this.btnInventory.IsTab = true;
-            this.btnInventory.Location = new System.Drawing.Point(4, 228);
-            this.btnInventory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnInventory.Location = new System.Drawing.Point(4, 340);
+            this.btnInventory.Margin = new System.Windows.Forms.Padding(4);
             this.btnInventory.Name = "btnInventory";
             this.btnInventory.Normalcolor = System.Drawing.Color.DodgerBlue;
             this.btnInventory.OnHovercolor = System.Drawing.Color.RoyalBlue;
@@ -334,47 +500,6 @@
             this.btnInventory.TextFont = new System.Drawing.Font("AKbalthom KhmerLer", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInventory.Visible = false;
             this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click);
-            // 
-            // btnCustomers
-            // 
-            this.btnCustomers.Activecolor = System.Drawing.Color.RoyalBlue;
-            this.btnCustomers.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnCustomers.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnCustomers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCustomers.BorderRadius = 0;
-            this.btnCustomers.ButtonText = " Customers";
-            this.btnCustomers.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bTran.SetDecoration(this.btnCustomers, BunifuAnimatorNS.DecorationType.None);
-            this.btnCustomers.DisabledColor = System.Drawing.Color.Gray;
-            this.btnCustomers.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCustomers.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnCustomers.Iconimage = global::SA_PAWN_Company.Properties.Resources.clerk_with_tie;
-            this.btnCustomers.Iconimage_right = null;
-            this.btnCustomers.Iconimage_right_Selected = null;
-            this.btnCustomers.Iconimage_Selected = null;
-            this.btnCustomers.IconMarginLeft = 15;
-            this.btnCustomers.IconMarginRight = 0;
-            this.btnCustomers.IconRightVisible = true;
-            this.btnCustomers.IconRightZoom = 0D;
-            this.btnCustomers.IconVisible = true;
-            this.btnCustomers.IconZoom = 60D;
-            this.btnCustomers.IsTab = true;
-            this.btnCustomers.Location = new System.Drawing.Point(4, 284);
-            this.btnCustomers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnCustomers.Name = "btnCustomers";
-            this.btnCustomers.Normalcolor = System.Drawing.Color.DodgerBlue;
-            this.btnCustomers.OnHovercolor = System.Drawing.Color.RoyalBlue;
-            this.btnCustomers.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnCustomers.selected = false;
-            this.btnCustomers.Size = new System.Drawing.Size(258, 48);
-            this.btnCustomers.TabIndex = 33;
-            this.btnCustomers.Tag = "customer";
-            this.btnCustomers.Text = " Customers";
-            this.btnCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCustomers.Textcolor = System.Drawing.Color.White;
-            this.btnCustomers.TextFont = new System.Drawing.Font("AKbalthom KhmerLer", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCustomers.Visible = false;
-            this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
             // 
             // btnEmployees
             // 
@@ -400,8 +525,8 @@
             this.btnEmployees.IconVisible = true;
             this.btnEmployees.IconZoom = 60D;
             this.btnEmployees.IsTab = true;
-            this.btnEmployees.Location = new System.Drawing.Point(4, 340);
-            this.btnEmployees.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEmployees.Location = new System.Drawing.Point(4, 396);
+            this.btnEmployees.Margin = new System.Windows.Forms.Padding(4);
             this.btnEmployees.Name = "btnEmployees";
             this.btnEmployees.Normalcolor = System.Drawing.Color.DodgerBlue;
             this.btnEmployees.OnHovercolor = System.Drawing.Color.RoyalBlue;
@@ -441,8 +566,8 @@
             this.btnReports.IconVisible = true;
             this.btnReports.IconZoom = 60D;
             this.btnReports.IsTab = true;
-            this.btnReports.Location = new System.Drawing.Point(4, 396);
-            this.btnReports.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReports.Location = new System.Drawing.Point(4, 452);
+            this.btnReports.Margin = new System.Windows.Forms.Padding(4);
             this.btnReports.Name = "btnReports";
             this.btnReports.Normalcolor = System.Drawing.Color.DodgerBlue;
             this.btnReports.OnHovercolor = System.Drawing.Color.RoyalBlue;
@@ -457,47 +582,6 @@
             this.btnReports.TextFont = new System.Drawing.Font("AKbalthom KhmerLer", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReports.Visible = false;
             this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
-            // 
-            // btnHoliday
-            // 
-            this.btnHoliday.Activecolor = System.Drawing.Color.RoyalBlue;
-            this.btnHoliday.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnHoliday.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnHoliday.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnHoliday.BorderRadius = 0;
-            this.btnHoliday.ButtonText = " Holidays";
-            this.btnHoliday.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bTran.SetDecoration(this.btnHoliday, BunifuAnimatorNS.DecorationType.None);
-            this.btnHoliday.DisabledColor = System.Drawing.Color.Gray;
-            this.btnHoliday.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHoliday.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnHoliday.Iconimage = global::SA_PAWN_Company.Properties.Resources.calendar;
-            this.btnHoliday.Iconimage_right = null;
-            this.btnHoliday.Iconimage_right_Selected = null;
-            this.btnHoliday.Iconimage_Selected = null;
-            this.btnHoliday.IconMarginLeft = 15;
-            this.btnHoliday.IconMarginRight = 0;
-            this.btnHoliday.IconRightVisible = true;
-            this.btnHoliday.IconRightZoom = 0D;
-            this.btnHoliday.IconVisible = true;
-            this.btnHoliday.IconZoom = 60D;
-            this.btnHoliday.IsTab = true;
-            this.btnHoliday.Location = new System.Drawing.Point(4, 452);
-            this.btnHoliday.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnHoliday.Name = "btnHoliday";
-            this.btnHoliday.Normalcolor = System.Drawing.Color.DodgerBlue;
-            this.btnHoliday.OnHovercolor = System.Drawing.Color.RoyalBlue;
-            this.btnHoliday.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnHoliday.selected = false;
-            this.btnHoliday.Size = new System.Drawing.Size(258, 48);
-            this.btnHoliday.TabIndex = 35;
-            this.btnHoliday.Tag = "holiday";
-            this.btnHoliday.Text = " Holidays";
-            this.btnHoliday.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHoliday.Textcolor = System.Drawing.Color.White;
-            this.btnHoliday.TextFont = new System.Drawing.Font("AKbalthom KhmerLer", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHoliday.Visible = false;
-            this.btnHoliday.Click += new System.EventHandler(this.btnHoliday_Click);
             // 
             // btnSignOut
             // 
@@ -524,7 +608,7 @@
             this.btnSignOut.IconZoom = 60D;
             this.btnSignOut.IsTab = true;
             this.btnSignOut.Location = new System.Drawing.Point(4, 508);
-            this.btnSignOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSignOut.Margin = new System.Windows.Forms.Padding(4);
             this.btnSignOut.Name = "btnSignOut";
             this.btnSignOut.Normalcolor = System.Drawing.Color.Crimson;
             this.btnSignOut.OnHovercolor = System.Drawing.Color.DarkRed;
@@ -548,7 +632,7 @@
             this.panProfile.Dock = System.Windows.Forms.DockStyle.Top;
             this.panProfile.Location = new System.Drawing.Point(0, 0);
             this.panProfile.Name = "panProfile";
-            this.panProfile.Size = new System.Drawing.Size(269, 199);
+            this.panProfile.Size = new System.Drawing.Size(263, 199);
             this.panProfile.TabIndex = 1;
             // 
             // lbUsername
@@ -561,7 +645,7 @@
             this.lbUsername.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbUsername.Location = new System.Drawing.Point(3, 137);
             this.lbUsername.Name = "lbUsername";
-            this.lbUsername.Size = new System.Drawing.Size(263, 48);
+            this.lbUsername.Size = new System.Drawing.Size(257, 48);
             this.lbUsername.TabIndex = 1;
             this.lbUsername.Text = "Chea Sambo";
             this.lbUsername.UseVisualStyleBackColor = true;
@@ -571,7 +655,7 @@
             this.proImage.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bTran.SetDecoration(this.proImage, BunifuAnimatorNS.DecorationType.None);
             this.proImage.Image = global::SA_PAWN_Company.Properties.Resources.logo;
-            this.proImage.Location = new System.Drawing.Point(74, 15);
+            this.proImage.Location = new System.Drawing.Point(71, 15);
             this.proImage.Name = "proImage";
             this.proImage.Size = new System.Drawing.Size(112, 116);
             this.proImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -580,82 +664,41 @@
             // 
             // panContent
             // 
-            this.panContent.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panContent.BackColor = System.Drawing.Color.White;
             this.bTran.SetDecoration(this.panContent, BunifuAnimatorNS.DecorationType.None);
             this.panContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panContent.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panContent.Location = new System.Drawing.Point(269, 79);
+            this.panContent.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panContent.Location = new System.Drawing.Point(263, 79);
             this.panContent.Name = "panContent";
-            this.panContent.Size = new System.Drawing.Size(991, 773);
+            this.panContent.Size = new System.Drawing.Size(997, 936);
             this.panContent.TabIndex = 2;
             // 
             // bTran
             // 
             this.bTran.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
             this.bTran.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.bTran.DefaultAnimation = animation2;
-            // 
-            // btnSchedule
-            // 
-            this.btnSchedule.Activecolor = System.Drawing.Color.RoyalBlue;
-            this.btnSchedule.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnSchedule.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnSchedule.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSchedule.BorderRadius = 0;
-            this.btnSchedule.ButtonText = "Schedules";
-            this.btnSchedule.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bTran.SetDecoration(this.btnSchedule, BunifuAnimatorNS.DecorationType.None);
-            this.btnSchedule.DisabledColor = System.Drawing.Color.Gray;
-            this.btnSchedule.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSchedule.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnSchedule.Iconimage = global::SA_PAWN_Company.Properties.Resources.clerk_with_tie;
-            this.btnSchedule.Iconimage_right = null;
-            this.btnSchedule.Iconimage_right_Selected = null;
-            this.btnSchedule.Iconimage_Selected = null;
-            this.btnSchedule.IconMarginLeft = 15;
-            this.btnSchedule.IconMarginRight = 0;
-            this.btnSchedule.IconRightVisible = true;
-            this.btnSchedule.IconRightZoom = 0D;
-            this.btnSchedule.IconVisible = true;
-            this.btnSchedule.IconZoom = 60D;
-            this.btnSchedule.IsTab = true;
-            this.btnSchedule.Location = new System.Drawing.Point(4, 116);
-            this.btnSchedule.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnSchedule.Name = "btnSchedule";
-            this.btnSchedule.Normalcolor = System.Drawing.Color.DodgerBlue;
-            this.btnSchedule.OnHovercolor = System.Drawing.Color.RoyalBlue;
-            this.btnSchedule.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnSchedule.selected = false;
-            this.btnSchedule.Size = new System.Drawing.Size(258, 48);
-            this.btnSchedule.TabIndex = 37;
-            this.btnSchedule.Tag = "schedule";
-            this.btnSchedule.Text = "Schedules";
-            this.btnSchedule.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSchedule.Textcolor = System.Drawing.Color.White;
-            this.btnSchedule.TextFont = new System.Drawing.Font("AKbalthom KhmerLer", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSchedule.Visible = false;
-            this.btnSchedule.Click += new System.EventHandler(this.btnSchedule_Click);
+            animation5.AnimateOnlyDifferences = true;
+            animation5.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.BlindCoeff")));
+            animation5.LeafCoeff = 0F;
+            animation5.MaxTime = 1F;
+            animation5.MinTime = 0F;
+            animation5.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicCoeff")));
+            animation5.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicShift")));
+            animation5.MosaicSize = 0;
+            animation5.Padding = new System.Windows.Forms.Padding(0);
+            animation5.RotateCoeff = 0F;
+            animation5.RotateLimit = 0F;
+            animation5.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.ScaleCoeff")));
+            animation5.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.SlideCoeff")));
+            animation5.TimeCoeff = 0F;
+            animation5.TransparencyCoeff = 0F;
+            this.bTran.DefaultAnimation = animation5;
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 27F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1260, 852);
+            this.ClientSize = new System.Drawing.Size(1260, 1015);
             this.ControlBox = false;
             this.Controls.Add(this.panContent);
             this.Controls.Add(this.panNav);
@@ -672,6 +715,8 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panHeader.ResumeLayout(false);
             this.panHeader.PerformLayout();
+            this.panSearch.ResumeLayout(false);
+            this.panSearch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnNav)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
@@ -699,13 +744,16 @@
         private System.Windows.Forms.FlowLayoutPanel panMenu;
         private Bunifu.Framework.UI.BunifuFlatButton btnReports;
         private Bunifu.Framework.UI.BunifuFlatButton btnEmployees;
-        private Bunifu.Framework.UI.BunifuFlatButton btnHoliday;
         private Bunifu.Framework.UI.BunifuFlatButton btnInventory;
-        private Bunifu.Framework.UI.BunifuFlatButton btnCustomers;
         private Bunifu.Framework.UI.BunifuFlatButton btnStuff;
         private Bunifu.Framework.UI.BunifuFlatButton btnHome;
         private Bunifu.Framework.UI.BunifuFlatButton btnNewPawn;
         private Bunifu.Framework.UI.BunifuFlatButton btnSignOut;
         private Bunifu.Framework.UI.BunifuFlatButton btnSchedule;
+        private Bunifu.Framework.UI.BunifuFlatButton btnSale;
+        private Bunifu.Framework.UI.BunifuFlatButton btnBuy;
+        private System.Windows.Forms.Panel panSearch;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtSearch;
     }
 }
